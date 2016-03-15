@@ -77,6 +77,7 @@ void printHashTable(HashTable ht){
   Entry* aux;
   FILE * fp = fopen("index.html","wr");
   fprintf(fp,"<HMTL>\n\t<BODY>\n");
+  fprintf(fp,"<h1> BibTex File </h1>\n");
   for(;i<HASHSIZE;i++){
     aux=ht[i];
     if(aux->state!=EMPTY && aux->state!=DELETED){
