@@ -1,0 +1,23 @@
+@string{ eth = "Institut fur Informatik, ETH Zurich" }
+
+@techreport{BW83a,
+    author = "Manfred Broy and Martin Wirsing",
+    title = "Generalized Heterogeneous Algebras and Partial Interpretations",
+    year = 1983,
+    month = Feb,
+    institution = "Institut fur Informatik, TUM",
+    note = "(draft version)",
+    annote = "espec algebrica"
+    }
+
+@inbook{Val90a,
+    author = "Jos\'e M. Valen\c{c}a",
+    title = "Processos, {O}bjectos e {C}omunica\c{c}\~ao
+                ({O}p\c{c}\~ao I - {MCC})",
+    chapter = 2,
+    year = 1990,
+    month = Oct,
+    publisher = gdcc,
+    address = um,
+    annote = "programacao oobjectos, proc comunicantes, espec formal"
+    }

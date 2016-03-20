@@ -1,0 +1,398 @@
+\documentclass{report}
+\usepackage[portuges]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{url}
+\usepackage{listings}
+\lstset{
+	basicstyle=\small,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+    frame=tB,
+	mathescape=true,
+	escapeinside={(*@}{@*)}
+}
+%
+%\lstset{ %
+%	language=Java,							% choose the language of the code
+%	basicstyle=\ttfamily\footnotesize,		% the size of the fonts that are used for the code
+%	keywordstyle=\bfseries,					% set the keyword style
+%	%numbers=left,							% where to put the line-numbers
+%	numberstyle=\scriptsize,				% the size of the fonts that are used for the line-numbers
+%	stepnumber=2,							% the step between two line-numbers. If it's 1 each line
+%											% will be numbered
+%	numbersep=5pt,							% how far the line-numbers are from the code
+%	backgroundcolor=\color{white},			% choose the background color. You must add \usepackage{color}
+%	showspaces=false,						% show spaces adding particular underscores
+%	showstringspaces=false,					% underline spaces within strings
+%	showtabs=false,							% show tabs within strings adding particular underscores
+%	frame=none,								% adds a frame around the code
+%	%abovecaptionskip=-.8em,
+%	%belowcaptionskip=.7em,
+%	tabsize=2,								% sets default tabsize to 2 spaces
+%	captionpos=b,							% sets the caption-position to bottom
+%	breaklines=true,						% sets automatic line breaking
+%	breakatwhitespace=false,				% sets if automatic breaks should only happen at whitespace
+%	title=\lstname,							% show the filename of files included with \lstinputlisting;
+%											% also try caption instead of title
+%	escapeinside={\%*}{*)},					% if you want to add a comment within your code
+%	morekeywords={*,...}					% if you want to add more keywords to the set
+%}
+
+\usepackage{xspace}
+
+\parindent=0pt
+\parskip=2pt
+
+\setlength{\oddsidemargin}{-1cm}
+\setlength{\textwidth}{18cm}
+\setlength{\headsep}{-1cm}
+\setlength{\textheight}{23cm}
+
+
+\title{Processamento de Linguagens (3º ano de MiEI)\\ \textbf{Trabalho Prático 1}\\ Relatório de Desenvolvimento de um Normalizador de ficheiros \textit{BibTex}}
+\author{Gustavo da Costa Gomes-Aluno\\ (72223) \and José Carlos da Silva Brandão Gonçalves-Aluno\\ (71223)  \and Tiago João Lopes Carvalhais-Aluno\\ (70443) }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Isto é um resumo do relatório da unidade curricular Processamento de Linguagens relativamente
+ao Trabalho Prático 1.
+Este visa a produção de um Normalizador de ficheiros \textit{BibTex} permitindo a exploração
+da ferramenta \textit{Flex} acompanhada de uma pequena demonstração de quão poderosa realmente é.
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introdução} \label{intro}
+Este trabalho envolveu o desenvolvimento de um Normalizador de ficheiros \textit{BibTex}, 
+um dos enunciados disponibilizados, no qual se procede á sua análise tendo em conta os
+seguintes pontos,
+\begin{description}
+  \item [Enquadramento] Utilização de Expressões Regulares e Filtros de Texto
+com o objetivo de produzir novos documentos a partir de padrões existentes num
+outro ficheiro.   
+  \item [Estrutura do documento] Este documento possui um anexo com todo o código
+produzido em cada uma das alíneas, uma conclusão final que une o exercício e as 
+respectivas soluções elaboradas e ainda capítulos elucidativos de cada tarefa a
+desempenhar em cada alínea.
+  \item [Resultados] Os resultados serão apreciados nos respectivos capítulos
+correspondentes a cada uma das alíneas desenvolvidas e cujo ficheiro(ou partes dele)
+estará(ão)  no Anexo correspondente.
+  \item [Conteúdo do documento] Contém a explicação do problema em si, bem como
+a apresentação das soluções produzidas para colmatar essa situação, auxiliada com 
+documentação e código produzido, presente nos Anexos.  
+\end{description}
+
+\section*{Estrutura do Relatório} \
+Este relatório possui quatro capítulos, uma conclusão,um capítulo extra dedicado a Anexos e a respectiva
+Bibliografia utilizada durante a realização deste projecto.
+Os capítulos são Análise e Especificação do problema, Especificação dos Requisitos,
+Arquitectura da solução para cada um dos sub-problemas indicados no enunciado global 
+que envolverá a explicação das estruturas de dados utilizadas e por fim o capítulo
+designado Codificação, que incluirá alguns aspectos relevantes de todos os testes realizados
+para a verificação do correcto funcionamento. 
+
+\chapter{Análise e Especificação} \label{ae}
+\section{Descrição informal do problema}
+
+\textit{BibTex} é uma ferramenta de formatação de citações bibliográficas em documentos \textit{Latex}, que separa a 
+bibliografia consultada do restante conteúdo. Um exemplo desse ficheiro, com a extensão .bib ilustra-se de seguida,
+\paragraph{}
+\lstinputlisting{enunciado.bib} 
+\paragraph{}
+Este enunciado consiste em três alíneas, nas quais são requeridas diferentes tarefas a implementar.
+Na alínea a é pedido que se elabore um documento \textit{HTML} que contenha a contagem de todas as 
+diferentes categorias presentes no documento \VerbatimInput{lpbib.txt}, explicado num capítulo vindouro, 
+\textit{Código do Programa}.
+\paragraph{}
+Na alínea b é pedido que se desenvolva uma ferramenta de normalização que faça \textit{pretty-printing}, fazendo 
+a indentação correta em cada campo, escrevendo cada autor numa linha e que coloque no início da mesma
+os campos autor e título, e quando um campo estiver entre aspas modifique para chavetas e se escreva
+o nome dos autores com o seguinte formato, \textit{N.Apelido}.
+\paragraph{}
+Por fim, na alínea c é pedido a construção de um grafo que para um determinado autor, á escolha do
+utilizador, mostre todos os autores que publicaram com esse autor. Para tal, recorrer-se-á á linguagem Dot 
+do \textit{GraphViz2}, gerando um ficheiro com esse grafo de modo a que possa, posteriormente, desenhar o mesmo
+através de uma outra ferramenta que faça a leitura desses ficheiros.
+
+\section{Especificação do Requisitos}
+Neste trabalho, o objectivo é estimular a utilização de um ambiente \textit{Linux}, da linguagem imperativa \textit{C}  
+e de outras ferramentas de apoio para a resolução de problemas de um modo diferente do habitual, que seria
+tentar resolver tudo apenas utilizando uma linguagem de programação e, para tal, visam o estudo e o 
+desenvolvimento de Expressões Regulares, bem como, a sua manipulação por forma a atingir o resultado
+pretendido. Essas expressões são fundamentais para encontrar os padrões para os quais se irá tomar uma
+ação, que será a transformação do texto, filtrando ou removendo esses.
+Como auxiliar na realização de filtros de texto recorrer-se-á á utilização de um gerador designado, \textit{Flex}.
+\paragraph{}
+Na realização deste problema é necessário concluir uma lista de tarefas que são, especificar os padrões de frases 
+que se quer encontrar no texto fonte, através de Expressões Regulares, identificar as acções semânticas a realizar
+como reacção ao reconhecimento de cada um desses padrões, identificar as estruturas de dados globais que possa 
+eventualmente precisar para armazenar temporariamente a informação que se vai extraindo do texto fonte ou que se 
+vai construindo á medida que o processamento avança e por fim desenvolver um filtro de texto para fazer o 
+reconhecimento dos padrões identificados e proceder à transformação pretendida, com recurso ao gerador \textit{Flex}.
+\subsection{Dados}
+Os dados fornecidos são o ficheiro \VerbatimInput{lpbib.txt}, a ser abordado num capítulo posterior, a definição
+e utilização da ferramenta \textit{Flex} e a definição de um ficheiro \textit{BibTex}, isto é, as suas características.
+\paragraph{}
+É também fornecido o nome de ferramentas de apoio á resolução do problema, sendo neste problema, a ferramenta
+\textit{GraphViz2}, que permitirá colocar graficamente a informação dos grafos criados, sendo que as interações entre 
+os autores se tornam mais perceptíveis. 
+
+\chapter{Concepção/desenho da Resolução}
+
+\section{Estruturas de Dados}
+\subsection{Alínea a}
+Nesta alínea optou-se por utilizar uma \textit{hashtable} como estrutura de dados auxiliar que vai guardando as categorias
+e o respectivo contador á medida que se vai encontrando um padrão no ficheiro \VerbatimInput{lpbib.txt}, ou seja, a acção
+ao padrão, que permite encontrar as categorias todas ao longo de todo o contéudo.
+\paragraph{}
+Esta estrutura segue a lógica de \textit{Open Adressing}, isto é, através de uma função de \textit{hash} é encontrada a posição
+onde se irá inserir a categoria capturada pela expressão regular e no caso de essa estar já ocupada vai tentar inserir na 
+posição seguinte, e se chegar á última reinicia, visto que é \textit{circular}. 
+Apenas se implementou funções essenciais, \textit{inserir}, \textit{remover}, \textit{procurar} e \textit{imprimir} o conteúdo desta
+estrutura e gerar o conteúdo do ficheiro \textit{HTML} pedido. 
+Para verificar se uma posição já possui ou não conteúdo basta verificar a \textit{etiqueta} associada e designada por \textit{state}, 
+no Anexo encontra-se o conteúdo integral da implementação desta estrutura de dados.
+
+\newpage
+\newpage
+
+\subsection{Alínea b}
+
+\newpage
+\newpage
+
+\subsection{Alínea c}
+
+\newpage
+\newpage
+
+\chapter{Codificação}
+\section{Alternativas, Decisões e Problemas de Implementação}
+\subsection{Alínea a}
+Um dos problemas de implementação passou por conseguir contabilizar as categorias 
+de forma independente, isto  é, após uma análise do documento fonte \VerbatimInput{lpbib.txt}
+verificou-se a existência de categorias que contem exatamente os mesmos caracteres mas 
+escritos de diferentes formas.
+Um exemplo disso é a categoria \textit{inproceedings} que pode também se encontrar como
+\textit{InProceedings} e como \textit{INPROCEEDINGS}. Então o grande desafio foi separar esta 
+categoria em três, porque apesar de terem os mesmos caracteres, elas representam a mesma 
+categoria mas de forma independente visto que na contagem destas se pretende ter um resultado
+que mostre o que realmente está no ficheiro fonte.
+\paragraph{}
+ Na fase de implementação surgiram pequenos problemas relacionados com a expressão regular
+ que foi definida por forma a filtrar apenas a categoria. Visto que essa estava delimitada por dois
+ caracteres, o '@' e o '{'. Por vezes \textit{yytext} não continha o conteúdo correto, o que revelava 
+ que a expressão regular ainda não estava a funcionar corretamente.
+\paragraph{}
+Após esse problemas estarem resolvidos conseguiu-se produzir o ficheiro \textit{HTML} sem 
+nenhuma dificuldade, apenas se efetuou a impressão do conteúdo da estrutura de dados
+que foi armazenando as categorias e atualizando os seus contadores com a indentação 
+e os \textit{headers} que permitem visualizar o ficheiro obtido num \textit{browser}.
+Esse ficheiro \textit{HTML} produzido chama-se \VerbatimInput{indexA.html} e pode ser
+visto no Anexo A.1, bem como o filtro de texto produzido, recorrendo á ferramenta \textit{Flex}, 
+neste documento.
+\paragraph{}
+Para terminar falta proceder á análise das expressões regulares utilizadas e a respectiva
+acção a tomar quando estas forem encontradas.
+
+\begin{verbatim}
+i.	@[a?zA?Z]+\{
+ii.	.|\n
+\end{verbatim}
+
+A expressão regular ii. é para filtrar todo o texto, mas é absorvente e por isso é 
+preciso muito cuidado com a sua utilização e ,associado a esta, a acção de fazer \textit{print} 
+que é a acção por defeito, quando se fornece 
+\begin{verbatim}
+{}
+\end{verbatim}
+
+\paragraph{}
+A expressão regular i. é a expressão que foi desenvolvida para a resolução do problema
+pedido, contagem das categorias, que exige inicialmente a captação das categorias e apenas
+das categorias presentes no ficheiro \VerbatimInput{lpbib.txt}, que contem muita mais
+informação.
+O objectivo desta é encontrar todos os padrões que estejam contidos entre os caracteres
+ '@' e '{', visto que essa é a definição de categoria num ficheiro \textit{BibTex}.
+ E como as categorias apenas podem conter letras temos de restringir os padrões encontrados 
+ entre esses dois caracteres ao facto de que só podem ter letras, quer minúsculas quer
+ maiúsculas, daí '[a?zA?Z]+'. O símbolo '+' refere-se á possibilidade de encontrar
+ uma ou mais ocorrências, isto é, entre esses dois caracteres encontra-se apenas uma ou 
+ mais letras.
+ Visto que não existe nenhuma restrição quanto á forma da palavra categoria, isto é, por exemplo
+ a exigência de começar por letra maiúscula e seguida apenas de letras minúsculas não é
+ necessário efetuar mais nenhuma restrição ao padrão que permitirá filtrar as categorias.
+ \paragraph{}
+ Associado a esta, última expressão regular, está a acção de copiar o conteúdo de 
+ \textit{yytext+1}, que apenas considera o texto após o '@' até  \textit{yyleng-2}, onde
+ está o '{' para um  \textit{char*} local que será então inserido na estrutura de dados
+ através da instrução  \textit{insertTable( ht, str, (int ?) count ) ; } sendo que \textit{count}
+ é um contador inicial que apenas serve para iniciar o contador na estrutura de dados.
+ Esta instrução está codificada por forma a verficar logo se a categoria já existe ou não,
+ e caso exista apenas incrementa a ocorrência dessa categoria e ignora o parâmetro 
+ \textit{count} recebido. E caso não exista procede então ao inicio do contador com valor de
+ \textit{count} recebido e insere na estrutura de dados.
+ \paragraph{}
+  Por fim é necessário criar o ficheiro \textit{HTML} pretendido com o conteúdo da estrutura
+  de dados que foi sendo atualizada até se chegar ao fim do ficheiro \VerbatimInput{lpbib.txt} e 
+  para tal na função \textit{main} do ficheiro \VerbatimInput{tp1A.l} recorreu-se á chamada da 
+  função \textit{printHashTable ( ht ) ;} que foi codificada no ficheiro \textit{hashtable.c} por forma
+  a criar o ficheiro \textit{HTML} com a formatação necessária, produzindo, desse modo, o 
+  resultado final desta alínea.
+
+\newpage
+\newpage
+
+\subsection{Alínea b}
+
+\newpage
+\newpage
+
+\subsection{Alínea c}
+
+\newpage
+\newpage
+
+\section{Testes realizados e Resultados}
+
+Mostram-se a seguir alguns testes feitos (valores introduzidos) e
+os respectivos resultados obtidos:
+\VerbatimInput{lpbib.txt} nas diferentes alíneas deste problema.
+
+\subsection{Alínea a}
+Para este problema fizeram-se testes sucessivos até encontrar a expressão regular
+que permitisse armazenar apenas a categoria na estrutura de dados evitando desse
+modo que a manipulação de \textit{strings} fosse feita através de funções definidas
+na linguagem \textit{C}, tal como, \textit{strtok} ou outra semelhante, uma vez que 
+o objectivo é a utilização de expressões regulares que façam todo o trabalho de 
+manipulação de texto.
+
+Os testes realizados passaram todos por correr a seguinte \textit{makefile}
+\paragraph{}
+\lstinputlisting{makefile} 
+\paragraph{}
+E de seguida efetuar
+\begin{verbatim}
+./tp1 < lpbib.txt
+\end{verbatim}
+
+E verificando se o resultado obtido era realmente o resultado pretendido.
+Antes de se chegar ao resultado correcto teve-se de corrigir a situação de 
+contagem de categorias com os mesmos caracteres mas que representavam
+categorias distintas porque o que acontecia era, para cada uma dessas 
+categorias o contador estava a incluir as outras, mas só mostrava as 
+ocorrências de uma dessas categorias.
+Por exemplo, para a categoria \textit{INPROCEEDINGS} verifica-se que no
+ficheiro fonte \VerbatimInput{lpbib.txt} apenas ocorre cinco vezes, mas o que 
+acontecia era que se se imprimisse o conteúdo da estrutura de dados
+ela apresentava apenas essas cinco ocorrências mas o valor do contador
+não correspondia á contagem real porque estava a incluir os contadores
+das categorias  \textit{InProceedings} e  \textit{inproceedings}.
+\paragraph{}
+Como resultado final obteve-se o ficheiro \textit{HTML} com o formato 
+pretendido, que é categoria x e o valor do contador para essa categoria x.
+Pode ser verificada abrindo o ficheiro \VerbatimInput{lpbib.txt} e procurando
+uma categoria qualquer e verificar que o número de ocorrências 
+coincidem e para visualizar o aspecto da solução apenas é necessário
+abrir o \VerbatimInput{indexA.html} com um \textit{browser} qualquer.
+
+\newpage
+\newpage
+
+\subsection{Alínea b}
+
+\newpage
+\newpage
+
+\subsection{Alínea c}
+
+\newpage
+\newpage
+
+\chapter{Conclusão} \label{concl}
+Síntese do Documento.\\
+Estado final do projecto; Análise crítica dos resultados.\\
+Trabalho futuro.
+
+\appendix
+\chapter{Código do Programa}
+Lista-se a seguir um excerto do ficheiro \textbf{\textit{BibTex}} que foi 
+utilizado para demonstrar o funcionamento, correto, do código desenvolvido
+para a resolução do problema. Ficheiro esse que foi disponibilizado em 
+\url{http://di.uminho.pt/~prh/lp.bib}
+\paragraph{}
+\paragraph{}
+\lstinputlisting{lpbibShort.txt} 
+
+\newpage
+\newpage
+
+\section{Alínea a}
+O código do programa desenvolvido em \textit{Flex}, tal como está no ficheiro fonte 
+\textit{tp1A.l} encontra-se de seguida.
+\paragraph{}
+\paragraph{}
+\lstinputlisting{tp1A.l} 
+
+\newpage
+\newpage
+
+Apesar de existirem librarias disponíveis com estruturas de dados já implementadas,
+tomou-se a liberdade de reutilizar uma libraria já produzida numa unidade curricular 
+anterior em vez de utilizar \textit{hsearch.h} disponível em \textit{glib2.h}.
+ 
+O código da estrutura de dados utilizada na resolução da alínea \textit{a} deste 
+problema foi desenvolvido na linguagem \textit{C} e apresenta-se de seguida 
+o código na integra, que pode ser encontrado no ficheiro fonte \textit{hashtable.h}. 
+Relembra-se que as operações de inserir, remover e procura nesta estrutura
+de dados encontra-se em \textit{hashtable.c}.
+ 
+Ficheiro \textit{.h},
+\paragraph{}
+\paragraph{}
+\lstinputlisting{hashtable.h}
+
+\newpage
+\newpage
+
+Ficheiro \textit{.c},
+\paragraph{}
+\paragraph{}
+\lstinputlisting{hashtable.c}
+
+\newpage
+\newpage
+
+O ficheiro com a resolução da alínea \textit{a} é apresentado em baixo, e o seu conteúdo
+está no ficheiro \textit{indexA.html}.
+\paragraph{}
+\paragraph{}
+\lstinputlisting{indexA.html}
+
+\newpage
+\newpage
+\section{Alínea b}
+
+\newpage
+\newpage
+
+\section{Alínea c}
+
+\newpage
+\newpage
+
+\begin{thebibliography}{9} 
+\bibitem{compilers} 
+\textit{V. Aho, Alfred} , \textit{S. Lam,Monica} , \textit{Sethi,Ravi}  and \textit{D. Ullman,Jeffrey} Second Edition, 
+\textit{Compilers Principles Techniques and Tools}.
+\bibitem{tutorials} 
+ShareLatex examples and tutorials, \texttt{https://www.sharelatex.com}
+\end{thebibliography}
+
+\end{document} 
