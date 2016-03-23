@@ -52,6 +52,7 @@
 \{\{.*\}\}														  	{yytext[yyleng-2]='\0';fprintf(fp,"\n%cbegin{figure}[!ht]\n\t %ccentering\n\t %cincludegraphics[width=0.25 %ctextwidth]{%s} \n\t %ccaption{Atom}\n %cend{figure}\n",92,92,92,92,yytext+4,92,92);}
 
 \*.+\*																		{yytext[yyleng-2]='\0';fprintf(fp,"%ctextbf{%s}\n",92,yytext+2);}
+\_.+\_																		{yytext[yyleng-2]='\0';fprintf(fp,"\n%cunderline{%s}\n",92,yytext+2);}
 [/]{2}[a-zA-z0-9 ]+[/]{2}									{yytext[yyleng-2]='\0';fprintf(fp,"\n%ctextit{%s}\n",92,yytext+2);}
 [~]{2}[a-zA-z0-9 ]+[~]{2}									{yytext[yyleng-2]='\0';fprintf(fp,"\n%ccancel{%s}\n",92,yytext+2);}
 [']{2}.+[']{2}														{yytext[yyleng-2]='\0';fprintf(fp,"\n%cend{frame}\n%cbegin{frame}[fragile]\n%cbegin{verbatim}\n%s\n%cend{verbatim}\n%cend{frame}\n",92,92,92,yytext+2,92,92);}
@@ -59,12 +60,13 @@
 [0-9]\.[ A-Za-z0-9]+											{fprintf(fp,"\n%cbegin{itemize}\n\n%cbegin{itemize}\n%citem %s\n%cend{itemize}\n%cend{itemize}\n",92,92,92,yytext,92,92);}
 [a-z]\.[ ]{1}[A-Za-z0-9]+									{fprintf(fp,"\n%cbegin{itemize}\n\n%cbegin{itemize}\n%citem %s\n%cend{itemize}\n%cend{itemize}\n",92,92,92,yytext,92,92);}
 
-^[A-Z][A-Za-z0-9 \!]+														{fprintf(fp,"%s\n",yytext);}
+^[A-Z][A-Za-z0-9 \!]+											{fprintf(fp,"%s\n",yytext);}
 
-\[[ ]\].*       													{fprintf(fp,"%cding{112} %s\n",92,yytext+4);}
-\n\[\*\].*     														{fprintf(fp,"%chspace{5ex}%cverb|%ccheckmark%s\n",92,92,92,yytext+4);}
-\[\*\].*        													{fprintf(fp,"%cverb|%ccheckmark%s\n",92,92,yytext+4);}
-\[[X|x]\].*    													  {fprintf(fp,"%cverb|%cxmark%s\n",92,92,yytext+4);}
+\[[ ]\].*       													{fprintf(fp,"\n%cding{112} %s %cpar\n",92,yytext+4,92);}
+.\[[ ]\].*       													{fprintf(fp,"%chspace{5ex}%cding{112} %s %cpar\n",92,92,yytext+4,92);}
+.\[\*\].*     														{fprintf(fp,"%chspace{5ex}%cverb|%ccheckmark%s %cpar\n",92,92,92,yytext+4,92);}
+\[\*\].*        													{fprintf(fp,"%cverb|%ccheckmark %s %cpar\n",92,92,yytext+4,92);}
+\[[X|x]\].*    													  {fprintf(fp,"%cverb|%cxmark X %s %cpar\n",92,92,yytext+4,92);}
 
 \n\*[ ]{1}[a-zA-Z0-9 ]+										{fprintf(fp,"\n%cbegin{itemize}\n%citem %s\n%cend{itemize}\n",92,92,yytext+3,92);}
 

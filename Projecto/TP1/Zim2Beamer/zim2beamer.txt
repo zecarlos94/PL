@@ -18,7 +18,13 @@ Next items should produce a **List in Bold** with three different bullets!
 Should be a new slide!!
 Now it should be appearing //check boxes in italic//
 === head 4 ===
-Should not be a new slide!!
+Should not be a new __slide underlined__!!
+
+[ ] empty
+[*] checked wright
+        [*] sub checked wright
+        [ ] sub empty
+[x] checked wrong
 
 
 ==== Header 3 ====
