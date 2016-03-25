@@ -3,6 +3,8 @@
 \usepackage[latin1]{inputenc}
 \usepackage{url}
 \usepackage{listings}
+\usepackage{graphics}
+
 \lstset{
 	basicstyle=\small,
 	numbers=left,
@@ -64,6 +66,8 @@ Isto é um resumo do relatório da unidade curricular Processamento de Linguagens 
 ao Trabalho Prático 1.
 Este visa a produção de um Normalizador de ficheiros \textit{BibTex} permitindo a exploração
 da ferramenta \textit{Flex} acompanhada de uma pequena demonstração de quão poderosa realmente é.
+Também é possível encontrar numa seção, no capítulo "Anexo", que possui a resolução de um segundo 
+enunciado, que é a conversão de ficheiros \textit{Zim-Wiki} para slides \textit{Beamer}.
 \end{abstract}
 
 \tableofcontents
@@ -384,6 +388,71 @@ está no ficheiro \textit{indexA.html}.
 
 \section{Alínea c}
 
+\newpage
+\newpage
+
+\section{Extra- Zim to Beamer}
+
+Decidiu-se também resolver o útlimo enunciado que fiz respeito á conversão de ficheiros \textit{Zim-wiki} para 
+slides \textit{Beamer}, que é uma variação de \textit{LaTex}, cujos slides são criados consoante o tipo de 
+\textit{Header} lido (apenas os tipos 3,4,5 permitem criar novo slide).
+
+Ficheiro \textit{Zim-Wiki} escrito em .txt,
+\paragraph{}
+\paragraph{}
+\lstinputlisting{zim2beamer.txt}
+
+\newpage
+\newpage
+
+Ficheiro \textit{Ficheiro .l } com as expressões regulares que permitem resolver o problema,
+\paragraph{}
+\paragraph{}
+\lstinputlisting{zim2beamer.l}
+
+\newpage
+\newpage
+
+Ficheiro \textit{Ficheiro .tex } com os slides criados a partir de \textit{zim2beamer.txt},
+que representa o conteúdo de um ficheiro \textit{Zim-Wiki}.
+
+Para criar os respetivos slides apenas bastará compilar o ficheiro .tex para se obter
+o ficheiro PDF.
+\paragraph{}
+\paragraph{}
+\lstinputlisting{zim2beamer.tex}
+
+\newpage
+\newpage
+
+Alguns \textit{prints} do ficheiro PDF final, visto que não fazia sentido incluir um PDF dentro de outro.
+Pretende-se apenas mostrar três slides que contém a maior parte das características de uma
+apresentação.
+\paragraph{}
+\paragraph{}
+ \center\includegraphics{itemize.png} 
+ 
+ \paragraph{}
+\paragraph{}
+ \center\includegraphics{images.png} 
+ 
+ \paragraph{}
+\paragraph{}
+ \center\includegraphics{checkBoxes.png} 
+ \paragraph{}
+\paragraph{}
+ Durante a elaboração deste enunciado os testes realizados passaram pela geração do seus
+ ficheiros PDF e ir comparando com o ficheiro .txt que possui o conteúdo de um ficheiro 
+ \textit{Zim-Wiki} e observando se os slides estavam de acordo com a sua especificação.
+ 
+ O ficheiro .l contém todo o conjunto de expressões regulares que permitem capturar os padrões
+ que dizem respeito ás regras de escrita de um ficheiro \textit{zim} e as ações que toma, escrever o 
+ respectivo conteúdo no ficheiro \textit{LaTex Beamer}. 
+ 
+ Os problemas que ocorreram relacionam-se com o o facto de por vezes não estar alinhado 
+ mas nada de especial. O maior problema foi apenas o facto de ao fazer "fprintf" para o 
+ ficheiro .tex não colocava '\' e como tal recorreu-se á utilização do seu valor \textit{ASCII}, que é
+ o número 92 e verificava-se quando surge o símbolo percentagem seguido de 'c'.
 \newpage
 \newpage
 
