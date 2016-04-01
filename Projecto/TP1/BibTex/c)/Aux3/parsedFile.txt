@@ -1,0 +1,644 @@
+Manfred Broy -> Martin Wirsing
+Jos\'e M. Valen\c{c}a
+Jos\'e M. Valen\c{c}a
+Jos\'e Nuno Oliveira
+J. E. Stoy
+P. D. Mosses
+D. S.  Scott
+Tim Nicholson -> Normann Foo
+Niklas Holsti
+Guy L. Steele
+Aho, Alfred  V. -> Lam, Monica  S. -> Sethi, Ravi -> Ullman, Jeffrey  D.
+A. V. Aho -> R. Sethi -> J. D. Ullman
+Brian W. Kernighan -> Dennis M. Ritchie
+Pierre Boullier
+William W. Pugh
+Thomas Reps -> Carla Marceau -> Tim Teitelbaum
+Thomas Reps
+Thomas Reps -> Tim Teitelbaum
+Thomas Reps -> Tim Teitelbaum
+Thomas Reps -> Tim Teitelbaum -> A. Demers
+Thomas Reps
+Tim Teitelbaum -> Thomas Reps
+Roger Hoover
+Fahimeh Jalili -> Jean Gallier
+Fahimeh Jalili
+G. E. Rev\'esz
+Robin Hunter
+Peter Lee
+P. Rechenberg -> H. {M\"ossenb\"ock}
+Carine Fedele
+Carine Fedele -> Olivier Lecarme
+Carine Fedele -> Olivier Lecarme
+P. Naur
+E. Klein -> K. Koskimies
+Kai Koskimies
+Kai Koskimies
+Jukka Paakki
+Kai Koskimies -> T. Elomaa -> T. Lehtonen -> J. Paakki
+Kai Koskimies -> Jukka Paakki
+Kai Koskimies -> O. Nurmi -> J. Paakki -> S. Sippu
+Kai Koskimies
+Kai Koskimies -> Kari-Jouko {R\"aih\"a}
+Jaak Vilo
+E. Tyugu
+Donald E. Knuth
+Martti Tienari
+B. Courcelle -> P. Deransart
+B. Courcelle -> P. Franchi-Zannettacci
+B. Courcelle -> P. Franchi-Zannettacci
+P. Deransart
+P. Deransart
+Pierre Deransart
+P. Deransart -> G. Ferr -> 
+P. Deransart -> J. Maluszynski
+P. Deransart -> M. Jourdan -> B. Lorho
+P. Deransart -> M. Jourdan -> B. Lorho
+P. Deransart -> M. Jourdan -> B. Lorho
+P. Deransart -> M. Jourdan -> B. Lorho
+Martin Jourdan
+Martin Jourdan
+Martin Jourdan
+Martin Jourdan -> Carole Le Bellec -> Didier Parigot
+Martin Jourdan -> Didier Parigot
+Didier Parigot
+Bijan Arbab
+K.J. {R\"aih\"a} -> M. Saarinen -> M. Sarjakoski -> S. Sippu -> E. Soisalon-Soininen -> M. Tienari
+K. J. R{\"a}ih{\"a}
+William Waite -> Gerhard Goos
+Luis S. Barbosa -> Pedro R. Henriques
+Luis Soares Barbosa
+J. J. Almeida -> L. S. Barbosa
+J. J. Almeida -> J. Barros -> P. Castro -> F. Madeira
+Leonor Barroca -> Pedro Rangel Henriques
+Pedro R. Henriques
+Pedro R. Henriques
+Pedro R. Henriques
+Pedro R. Henriques
+Pedro R. Henriques
+Pedro R. Henriques
+Pedro R. Henriques
+Pedro R. Henriques -> José João Almeida
+Pedro R. Henriques -> José João Almeida
+Fern -> o Mário Martins -> José João AlmeidaJ. -> Pedro R. Henriques
+Luis Filipe Pinto -> Pedro Rangel Henriques
+Uwe Kastens
+Uwe Kastens
+Uwe Kastens
+Uwe Kastens
+Uwe Kastens -> B. Hutt -> E. Zimmermann
+K. Barbar
+Y. Yamashita -> I. Nakata
+Masataka Sassa
+Ikuo Nakata -> Masataka Sassa
+M. Sassa -> H. Ishizuka -> I. Nakata
+M. Sassa -> H. Ishizuka -> I. Nakata
+G. Fil\`e
+J. Engelfriet -> G. Fil\`e
+J. Engelfriet
+Bernard Lorho
+Bernard Lorho
+Reinhard Wilhelm
+P. Lipps -> U. M{\"o}ncke -> R. Wilhelm
+P. Lipps -> U. M{\"o}ncke -> M. Olk -> R. Wilhelm
+U. M{\"o}ncke
+U. M{\"o}ncke -> B. Weisgerber -> R. Wilhelm
+M. Greim -> {St. Pistorius} -> M. Solsbacher -> B. Weisberger
+Robert Giegerich
+Harald Ganzinger -> Robert Giegerich
+H. Ganzinger -> R. Giegerich -> U. {M\"{o}ncke} -> R. Wilhelm
+G. Bartmuss -> R. Giegerich
+Rodney Farrow
+Goran O. Uddeborg
+N. P. Chapman
+A. Nijholt
+Henning Christiansen
+R. Backhouse
+M. Wand
+L. Paulson
+M. C. Gaudel
+M. C. Gaudel -> P. Deschamps -> M. Mazaud
+P. Deschamp
+A. Despl ->  -> M. Mazaud -> R. Rokotozafy
+M. Mazaud -> R. Rokotozafy -> A. Despl -> 
+Joel Bonnet
+Sylvie Billot
+P. Dencker
+C. J. H. Jacobs
+J. Tolzki -> T. Gyim\'othi -> T. Horvcith -> F. Kocsiz
+I. Margitics
+F. C. N. Pereira -> D. H. D. Warren
+Stan Szpakowicz
+Leon Sterling -> Ehud Shapiro
+Elaine Rich
+Ulf Nilsson -> Jan Maluszynski
+U. Nilsson
+Y. Matsumoto -> H. Tanaka -> H. Hirakawa et al
+Kuniaki Uehara -> R. Ochitani -> O. Kakusho et al
+Harvey Abramson
+Jacques Cohen -> Timothy J. Hickey
+Jean-Fran\c{c}ois Monin
+Eduard Klein
+E. Klein -> M. Martin
+Richard Marion Schell
+Alan Keith Zaring
+William Waite
+Uwe Kastens -> William Waite
+William Waite -> Anthony M. Sloane
+William Waite
+R. Gray -> V. Heuring -> S. Kram -> A. Sloam -> W. Waite
+V. Heuring -> W. Waite -> G. Fischer
+W. Waite -> J. Grosch -> F. {Schr\"oer}
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch -> Helmut Emmelmann
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch
+Josef  Grosch
+Bertram Vielsack
+Helmut Emmelmann
+Maria Estrela R. Ferreira
+Maria Estrela R. Ferreira
+Elvira Pimenta -> Isabel Silva -> Maria C\'eu Vivas
+Jos\'e C. Carvalhal -> Manuel Coelho -> Jos\'e C. Espirito Santo
+F. Luis Neves
+M. F\'atima Pires
+Filipe Lopes
+Filipe Lopes
+Olga Maria Pacheco
+Joao Grenhas
+Carla Mendes -> Duarte Duarte
+M. Joao Frade -> Jos\'{e} E. Pina Mir -> a
+M. Joao Frade
+Jos\'e Eduardo Pina Mir -> a
+Luis Filipe Pinto
+Luis Filipe Pinto
+A. Alves -> A. Amador -> A. Mir -> a -> C. Ribeiro -> F. Ferreira -> J. Moreira -> L. Ferreira -> L. Neves
+Henrique Pereira -> Jorge Silva -> Jose Ribeiro
+Rui Soares -> Julio Bigas -> Pedro Areias
+Joao Saraiva
+Joao Saraiva
+Joao Saraiva
+Adalberto G. Ferreira
+Pedro P. Silva -> Adalberto G. Ferreira
+Pedro P. Silva -> Adalberto G. Ferreira
+Pedro P. Silva -> Adalberto G. Ferreira
+Pedro P. Silva -> Adalberto G. Ferreira
+Pedro P. Silva -> Adalberto G. Ferreira
+Jorge G. Rocha
+J.A. Mendes -> A. Roeck
+S. Steel -> A. Roeck
+Thierry Le Sergent -> Bernard Berthomieu
+Bernard Berthomieu
+Bernard Berthomieu
+The {Mjolner} {G}roup
+B. Magnusson -> M. Bengtsson -> L.-O. Dahlin -> G. Fries -> A. Gustavsson -> G. Hedin -> S. {Min\"or} -> D. Oscarsson -> M. Taube
+B. Magnusson
+Anders  Gustavsson
+Anders  Gustavsson
+Sten  {Min\"or}
+Sten  {Min\"or}
+{G\"orel} Hedin
+{G\"orel} Hedin
+{G\"orel} Hedin
+{G\"orel} Hedin
+Yoichi Shinode -> Takuya Katayama
+F.E.J. Kruseman-Aretz
+Lex Augsteijn
+Lex Augsteijn
+Lex Augsteijn
+David Watt
+J. Heering, P. Klint, J.G. Rekers
+H.-J. Boehm -> W. Zwaenepoel
+G.E. Kaiser -> S. M. Kaplan
+S. M. Kaplan -> G.E. Kaiser
+S. M. Kaplan -> G.E. Kaiser
+George Papakonstantinou -> Panayotis Tsanakas
+Mark Thierry Vandevoorde
+M.F. Kuiper
+M.F. Kuiper -> A. Dijkstra
+Matthijs F. Kuiper
+M.J. Walsteijn -> M.F. Kuiper
+M.F. Kuiper -> S.D. Swierstra
+M. Pennings -> S.D. Swierstra -> H.H. Vogt
+S.D. Swierstra -> H.H. Vogt
+H.H. Vogt -> S.D. Swierstra -> M.F. Kuiper
+S.D. Swierstra -> H.H. Vogt
+H.H. Vogt -> S.D. Swierstra -> M.F. Kuiper
+A. Sernadas -> J. Fiadeiro -> C. Sernadas -> H.-D. Ehrich
+A. Sernadas -> C. Sernadas -> J. F. Costa -> P. Gouveia
+J. F. Costa -> A. Sernadas -> C. Sernadas
+J. F. Costa -> A. Sernadas -> C. Sernadas
+Ernesto  Costa
+Ernesto  Costa
+Helder  Coelho
+Helder  Coelho
+Helder  Coelho
+Ernesto Morgado -> J. Pav\~ao Martins
+Ant\'onio Porto
+Jose A. Mendes -> Anne De Roeck
+Sam Steel -> Anne De Roeck
+Jose A. Mendes
+Jose A. Mendes
+Gabriela A. Matos
+Michael F. Barnsley -> Alan D. Sloan
+Roman Hascoet -> Joel Fumeron
+N. Wirth -> J. Gutknecht
+N. Wirth
+N. Wirth
+N. Wirth
+Henk Alblas
+Henk Alblas
+Henk Alblas
+Scott A. Vorthmann
+An Feg -> Tohru Kikuno -> Koji Torii
+Stephen Peckham
+Stephen Peckham
+Reinhold Heckmann
+Chisato Numaoka -> Mario Tokoro
+
+
+
+J. McCormak -> P. Asente -> R. Swick
+
+
+Saumya K. Debray
+
+AXON/INESC
+Jean-Christophe Filliâtre
+Jan Heering -> Paul Klint
+Marjan Mernik -> Viljem Zumer -> Mitja Lenic -> Enis Avdicausevic
+Marjan Mernik -> Mitja Lenic -> Enis Avdicausevic -> Viljem Zumer
+Marjan Mernik -> Viljem Zumer
+Marjan Mernik -> Pedro Henriques -> Tomaz Kosar -> Maria João Var -> a -> Viljem Zumer
+Tomaz Kosar -> Marjan Mernik -> Pedro Henriques -> Maria João Var -> a -> Viljem Zumer
+Pedro Henriques -> Tomaz Kosar -> Marjan Mernik -> Maria João Var -> a -> Viljem Zumer
+Maria João Var -> a -> Pedro Rangel Henriques
+Pedro Henriques -> Maria João  Var -> a -> Marjan Mernik -> Mitja Lenic
+Maria João Var -> a -> Pedro Rangel Henriques
+Pedro Henriques -> Maria João Var -> a -> Marjan Mernik -> Mitja Lenic -> Jeff Gray -> Hui Wu
+Damijan Rebernak -> Marjan Mernik -> Pedro Rangel Henriques -> Maria João Var -> a
+Damijan Rebernak -> Marjan Mernik -> Pedro Rangel Henriques -> Daniela da Cruz -> Maria João Var -> a
+Damijan Rebernak -> Marjan Mernik -> Pedro Rangel Henriques -> Maria João Var -> a Pereira
+Damijan Rebernak -> Marjan Mernik -> Pedro Rangel Henriques -> Maria João Var -> a Pereira -> Daniela Cruz
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Pedro Rangel Henriques
+Stephen C. Johnson
+M. E. Lesk -> E. Schmidt
+Terence Parr -> Russell W. Quong
+Terence Parr -> Russell W. Quong
+Terence Parr
+Terence Parr
+Sven Moen
+JGraph
+Iain D. Craig
+Chaomei Chen
+Donald E. Knuth
+P. R. Henriques
+Pat Terry
+Bruno R. Preiss
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Sandra Cristina Lopes -> Pedro Rangel Henriques
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Maria João Var -> a Pereira -> Mário Béron -> Rúben Fonseca -> Pedro Rangel Henriques
+Daniela da Cruz -> Maria João Var -> a Pereira -> Pedro Rangel Henriques
+Daniela da Cruz -> Maria João Var -> a Pereira -> Pedro Rangel Henriques
+Terence Parr -> Russell W. Quong
+João Gomes -> Daniel Martins -> Simão Melo de Sousa -> Jorge Sousa Pinto
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Pedro Rangel Henriques
+Daniela da Cruz -> Maria João Var -> a Pereira -> Pedro Rangel Henriques
+João Gomes
+Uwe Kastens
+Rui Gustavo Crespo
+Rodrigo Baptista
+Rúben Fonseca
+Simão Melo de Sousa
+Michael R. Birch -> Christopher M. Boroni -> Frances W. Goosey -> Samuel D. Patton -> David K. Poole -> Craig M. Pratt -> Rockford J. Ross
+Eric Gramond -> Susan H. Rodger
+Miguel Augusto Mendes Oliveira e Silva
+Bertr -> Meyer
+Joost Visser
+Meike Klettke -> Lars Schneider -> Andreas Heuer
+Josep Silva
+F. Tip
+Altova
+
+Microsoft
+Stylus Studio
+Altova
+Jos Warmer, Anneke Kleepe
+Omondo
+Mirco Kuhlmann
+Technische Universitat Dresden
+Microsoft
+J. Rumbaugh, I. Jacobson, G. Booch
+Martin Fowler, Kendall Scott
+R.~L{\"a}mmel -> Stan Kitsis -> D.~Remy
+James Clark -> Steve DeRose
+D. Olteanu -> H. Meuss -> T. Furche -> F. Bry
+D. Chamberlin
+Josep Silva
+David Mertz
+Greg Newby
+Andreas Zeller -> Dorothea L\"{u}tkehaus
+GDB
+R. Stallman, R. Pesch, -> S. Shebs
+R. Stallman
+Mark A. Linton
+Mark Weiser
+K. B. Gallagher -> J. R. Lyle
+David Binkley -> Mark Harman -> Jens Krinke
+Dennis Strein -> Hans Kratz -> Welf Lowe
+Magiel Bruntink
+Jeremy Lau -> Erez Perelman -> Brad Calder
+Kai Pan -> Sunghun Kim -> E. James Whitehead, Jr.
+A. Cox -> C. Clarke
+Arpad Beszedes -> Tamas Gergely -> Tibor Gyimothy
+George C. Necula
+Gilles Barthe -> Tamara Rezk -> Ando Saabas
+Shin-ya Katsumata -> Atsushi Ohori
+S. Mukherjea -> J. T. Stasko
+Michael J. Pacione -> M. Roper -> M. Wood
+Ruven Brooks
+N. Pennington
+Margaret-Anne Storey
+Jonathan I. Maletic -> Andrian Marcus
+Norman E. Fenton
+Don Coleman -> Dan Ash -> Bruce Lowther -> Paul Oman
+Norman E. Fenton -> Martin Neil
+Joachim van den Berg -> Bart Jacobs
+G. Barthe -> L. Burdy -> J. Charles -> B. Gr{\'e}goire -> M. Huisman -> J.-L. Lanet -> M. Pavlova -> A. Requet
+Lilian Burdy -> Marieke Huisman -> Mariela Pavlova
+L. Burdy -> Y. Cheon -> D. Cok -> M. Ernst -> J. Kiniry -> G. Leavens -> K. Leino -> E. Poll
+Gary T. Leavens -> Albert L. Baker -> Clyde Ruby
+G. Leavens -> E. Poll -> C. Clifton -> Y. Cheon -> C. Ruby
+George C. Necula
+Lawrence C. Paulson
+N. Shankar -> S. Owre -> J. M. Rushby
+M. Dahm
+Geoff Cohen -> Jeff Chase -> David Kaminsky
+Christopher Colby -> Peter Lee -> George C. Necula
+Clark Barrett -> Silvio Ranise -> Aaron Stump -> Cesare Tinelli
+Terence Parr
+Terence Parr
+Mark David Weiser
+Jean-Francois Bergeretti -> Bernard A. Carr\'{e}
+B. Korel -> J. Laski
+G. A. Venkatesh
+J. Jiang -> X. Zhou ->  -> D.J. Robson
+Mark Harman -> David Binkley -> Sebastian Danicic
+R.J. Hall
+Gerardo Canfora -> Aniello Cimitile -> Andrea De Lucia
+Bogdan Korel -> Janusz Laski
+Andrea De Lucia
+John Field -> G. Ramalingam -> Frank Tip
+James C. King
+P. David Coward
+Gerardo Canfora -> Aniello Cimitile -> Andrea De Lucia -> Giuseppe A. Di Lucca
+Mark Harman -> Sebastian Danicic
+Rajiv Gupta -> Mary Lou Soffa -> John Howard
+T. Y. Chen -> Y. Y Cheung
+Jim Lyle -> Mark Weiser
+Daniel Jackson -> Eugene J. Rollins
+Kamkar M.
+Hiralal Agrawal -> Richard A. DeMillo -> Eugene H. Spafford
+Mark Weiser -> Jim Lyle
+David Binkley
+Mark Harman -> Sebastian Danicic
+Arun Lakhotia
+Aniello Cimitile -> Andrea De Lucia -> Malcolm Munro
+Andrea De Lucia -> A. R. Fasolino -> M. Munro
+Mark Harman -> Rob Hierons -> Chris Fox -> Sebastian Danicic -> John Howroyd
+Jon Beck -> David Eichmann
+Aniello Cimitile -> Andrea De Lucia -> Malcolm Munro
+David Binkley -> Susan Horwitz -> Thomas Reps
+Susan Horwitz -> Jan Prins -> Thomas Reps
+A. Beszedes -> C. Farago -> Z. Szabo -> J. Csirik -> T. Gyimothy
+A. Beszedes -> T. Gyimothy
+Sebastian Danicic -> Andrea De Lucia -> Mark Harman
+Karl J. Ottenstein -> Linda M. Ottenstein
+Andrea De Lucia -> Mark Harman -> Robert Hierons -> Jens Krinke
+Jeanne Ferrante -> Karl J. Ottenstein -> Joe D. Warren
+Susan Horwitz -> Thomas Reps -> David Binkley
+Dave Binkley -> Sebastian Danicic -> Tibor Gyim\'{o}thy -> Mark Harman -> \'{A}kos Kiss -> Bogdan Korel
+Mariam Kamkar -> Peter Fritzson -> Nahid Shahmehri
+Jong-Deok Choi -> Jeanne Ferrante
+Dave Binkley -> Sebastian Danicic -> Tibor Gyimothy -> Mark Harman -> Akos Kiss -> Lahcen Ouarbya
+Susan Horwitz -> Jan Prins -> Thomas Reps
+James Robert Lyle
+Keith Brian Gallagher -> James R. Lyle
+Keith Brian Gallagher
+Hiralal Agrawal
+Thomas Ball -> Susan Horwitz
+Thomas J. Ball
+Mark Harman -> Sebastian Danicic
+Sumit Kumar -> Susan Horwitz
+Hwang J.C. -> M.W. Du  -> C.R. Chou
+Reps, Thomas -> Horwitz, Susan -> Sagiv, Mooly -> Rosay, Genevieve
+Thomas W. Reps
+Jeffrey M. Barth
+David Binkley -> Keith Brian Gallagher
+David Binkley
+Arun Lakhotia
+Edmund M. Clarke -> Masahiro Fujita -> Sreeranga P. Rajan -> Thomas W. Reps -> Subash Shankar -> Tim Teitelbaum
+Aless -> ro Orso -> Saurabh Sinha -> Mary Jean Harrold
+Istvan Forgács -> Tibor Gyimóthy
+Panos E. Livadas -> Stephen Croll
+Akos Kiss -> Judit Jasz -> Gabor Lehotai -> Tibor Gyimothy
+Saurabh Sinha -> Mary Jean Harrold -> Gregg Rothermel
+Dixie Hisley -> Matthew J. Bridges -> Lori L. Pollock
+Utpal K. Banerjee
+William Landi -> Barbara G. Ryder
+Jong-Deok Choi -> Michael Burke -> Paul Carini
+Susan Horwitz -> P. Pfeiffer -> Thomas Reps
+William Landi
+B. P. Miller -> Jong-Deok Choi
+H. Agrawal -> J. R. Horgan
+R. Gopal
+D. Goswami -> R. Mall
+G. B. Mund -> Rajib Mall -> S. Sarkar
+Xiangyu Zhang -> Rajiv Gupta
+Xiangyu Zhang -> Rajiv Gupta -> Youtao Zhang
+Mariam Kamkar -> Nahid Shahmehri -> Peter Fritzson
+Hiralal Agrawal -> Richard A. {DeMillo} -> Eugene H. Spafford
+Bogdan Korel
+Bogdan Korel
+Hareton K. N. Leung -> Hassan K. Reghbati
+Mark Weiser
+D. Huynh -> Y. Song
+Bogdan Korel -> Satish Yalamanchili
+Csaba Farag\'{o} -> Tam\'{a}s Gergely
+Jim Lyle -> Mark Weiser
+Gerardo Canfora -> Andrea Di Luccia -> Giuseppe Di Lucca -> A. R. Fasolino
+Filippo Lanubile -> Giuseppe Visaggio
+Peter Fritzson -> Nahid Shahmehri -> Mariam Kamkar -> Tibor Gyimothy
+Mark Harman -> Yoga Sivagurunathan -> Sebastian Danicic
+Yoga Sivagurunathan -> Mark Harman -> Bala Sivagurunathan
+Raghavan Komondoor -> Susan Horwitz
+Jean Henrard -> Vincent Englebert -> Jean-Marc Hick -> Didier Rol ->  -> Jean-Luc Hainaut
+Bogdan Korel -> Jurgen Rilling
+Evelyn Duesterwald -> Rajiv Gupta -> Mary Lou Soffa
+Mariam Kamkar -> Peter Fritzson -> Nahid Shahmehri
+R. Gupta -> M. Harrold -> Mary Lou Soffa
+Samuel Bates -> Susan Horwitz
+David Binkley
+H. D. Longworth
+Linda Ottenstein -> Jeffrey J. Thuss
+Linda Ottenstein -> James Bieman
+Linda Ottenstein
+Linda Ottenstein -> J. Thuss
+J.J. Thuss
+James M. Bieman -> Linda M. Ott
+Mark Harman -> Margaret Okulawon -> Bala Sivagurunathan -> Sebastian
+    Danicic
+David Binkley -> Nicolas Gold -> Mark Harman
+Paul Anderson -> Tim Teitelbaum
+David Binkley -> Mark Harman
+Tao Wang -> Abhik Roychoudhury -> Liang Guo
+Tao Wang -> Abhik Roychoudhury
+Nuno Rodrigues -> Luis Soares Barbosa
+Nuno Rodrigues
+Tibor Gyim\'{o}thy -> \'{A}rp\'{a}d Besz\'{e}des -> Ist\'{a}n Forg\'{a}cs
+Crista Lopes
+Ot\'{a}vio Augusto Lazzarini Lemos -> Sushil Krishna Bajracharya -> Joel Ossher -> Ricardo Santos Morla -> Paulo Cesar Masiero -> Pierre Baldi -> Cristina Videira Lopes
+Arpad Beszedes
+Jim Lyle -> D. Wallace -> J. Graham -> Keith Gallagher -> J. Poole -> David Binkley
+Electrical, Institute  O. -> (ieee), Electronics  E.
+Michael Pecht
+Ronald J. Pehrson
+David Binkley
+Charles N. Fischer -> Richard J. LeBlanc, Jr.
+Alfred V. Aho -> Jeffrey D. Ullman
+Daniel Weise -> Roger F. Crew -> Michael Ernst -> Bjarne Steensgaard
+David A. Schmidt
+Susan Horwitz -> Thomas Reps
+Fran\c{c}oise Balmas
+Spiros Mancoridis -> Brian S. Mitchell -> Y. Chen -> Emden R. Gansner
+Feng Qian -> Laurie Hendren
+Sokhom Pheng -> Clark Verbrugge
+Jamieson M. Cobleigh -> Lori A. Clarke -> Leon J. Osterweil
+Daniel Jackson -> Martin Rinard
+Daniel Ratiu -> Florian Deissenboeck
+Mooly Sagiv -> Thomas Reps -> Reinhard Wilhelm
+David Binkley -> Mark Harman
+Thomas Reps
+Dennis Strein -> Hans Kratz -> Welf Lowe
+Dan E. Tamir -> Ravi Ananthakrishnan -> Abraham Kandel
+Thomas Reps -> Gogul Balakrishnan -> Junghee Lim
+David W. Wall
+Nick Kidd -> Thomas Reps -> David Melski -> Akash Lal
+Thomas Reps -> Stefan Schwoon -> Somesh Jha -> David Melski
+Jihong Zeng -> Peter A. Bloniarz
+Andrian Marcus -> Andrey Sergeyev -> Vaclav Rajlich -> Jonathan I. Maletic
+Ulrich G\"{u}ntzer -> Rudolf M\"{u}ller -> Stefan M\"{u}ller -> Ralf-Dieter Schimkat
+Andrian Marcus
+Eric J. Stierna -> Neil C. Rowe
+William B. Frakes -> Brian A. Nejmeh
+Dawn J. Lawrie -> Henry Feild -> David Binkley
+Urs Hoelzle
+Uri Hanani -> Bracha Shapira -> Peretz Shoval
+Dawn Lawrie -> Christopher Morrell -> Henry Feild -> David Binkley
+Sankar K. Pal -> Pabitra Mitra
+Hongjun Lu  -> Rudy Setiono -> Huan Liu
+João Gama -> Ricardo Fern -> es -> Ricardo Rocha
+Yiannis Kanellopoulos -> Christos Tjortjis
+Michael Martin -> Benjamin Livshits -> Monica S. Lam
+Dirk Heuzeroth -> Thomas Holl -> Gustav H\"{o}gstr\"{o}m -> Welf L\"{o}we
+Kamran Sartipi
+Andrian Marcus -> Jonathan I. Maletic
+Arun Lakhotia -> Junwei Li  -> Andrew Walenstein -> Yun Yang
+S. Rugaber
+Peter Fritzson -> Tibor Gyimothy -> Mariam Kamkar -> Nahid Shahmehri
+Valerie Issarny -> Mauro Caporuscio -> Nikolaos Georgantas
+Matthew B. Dwyer -> John Hatcliff -> Robby Robby -> Corina S. Pasareanu -> Willem Visser
+Robert France -> Bernhard Rumpe
+Murray Woodside -> Greg Franks -> Dorina C. Petriu
+Keith H. Bennett -> V\'{a}clav T. Rajlich
+Ronald B. Finkbine, Ph.D.
+Gerardo CanforaHarman -> Massimiliano Di Penta
+Sarfraz Khurshid -> Yuk Lai Suen
+Antonia Bertolino
+Mary Jean Harrold
+Andreas Zeller
+Bruno Blanchet -> Patrick Cousot -> Radhia Cousot -> J\'{e}rome Feret -> Laurent Mauborgne -> Antoine Min\'{e} -> David Monniaux -> Xavier Rival
+David Binkley -> Mark Harman
+J. Rilling -> S. P. Mudur
+Thomas Ball -> Stephen G. Eick
+David Binkley -> Mark Harman -> Jens Krinke
+Mehdi Jazayeri
+Rúben Fonseca -> Daniela da Cruz -> Pedro Henriques -> Maria João Var -> a
+Josep Silva
+Andreas Zeller
+Scott R. Tilley -> Kenny Wong -> Margaret-Anne D. Storey -> Hausi A. M{\"u}ller
+Hausi A. M{\"u}ller -> Scott R. Tilley -> Mehmet A. Orgun -> B. D. Corrie -> Nazim H. Madhavji
+Patrick Finnigan -> Richard C. Holt -> Ivan Kallas -> Scott Kerr -> Kostas Kontogiannis -> Hausi A. M\"{u}ller -> John Mylopoulos -> Stephen G. Perelgut -> Martin Stanley -> Kerny Wong
+Norman Wilde -> Christopher Casey
+Bernd Bruegge -> Tim Gottschalk -> Bin Luo
+Timothhy S. Souder -> Spiros Mancoridis -> Maher Salah
+Philippe Kruchten
+Chen -> Skiena
+Microsoft
+Microsoft
+Stephen Johnson
+Ian F. Darwin
+GramaTech
+GramaTech
+Jesse Liberty
+Joshua Eichorn
+Daniel Woolston
+Janota,, Mikol\'{a}\v{s} -> Grigore,, Radu -> Moskal,, Michal
+Comuzzi,, Joseph J. -> Hart,, Johnson M.
+Chung,, I. S. -> Lee,, W. K. -> Yoon,, G. S. -> Kwon,, Y. R.
+Horwitz,, Susan -> Reps,, Thomas -> Binkley,, David
+Krueger,, Charles W.
+Maria Jo{\~a}o Frade -> Jorge Sousa Pinto
+Meyer,, Bertr -> 
+Filli\^{a}tre, Jean-Christophe -> March\'{e
+L. Burdy -> Y. Cheon -> D. Cok -> M. Ernst -> J. Kiniry -> G. Leavens -> K. Leino -> E. Poll
+Baudin, Patrick -> Filli\^{a}tre, Jean  C. -> Hubert, Thierry -> March\'{e
+C. A. R. Hoare
+E. W. Dijkstra
+Detlefs,, David -> Nelson,, Greg -> Saxe,, James B.
+Xu,, Baowen -> Qian,, Ju  -> Zhang,, Xiaofang -> Wu,, Zhongqiang -> Chen,, Lin
+Jeffrey Korn -> Yih-Farn Chen -> Eleftherios Koutsofios
+Tarja Syst\"{a} -> Kai Koskimies -> Hausi M\"{u}ller
+H. A. M\"{u}ller -> K. Klashinsky
+Atif Memon -> Ishan Banerjee -> Adithya Nagarajan
+J. Chen -> S. Subramaniam
+Daan Leijen
+R.~L{\"a}mmel -> E. Visser -> J. Visser
+Eelco Visser -> Zine-el-Abidine Benaissa -> Andrew Tolmach
+Ralf L{\"a}mmel -> Eelco Visser -> Joost Visser
+R.~L{\"a}mmel -> J.~Visser
+R.~L{\"a}mmel -> J.~Visser
+Paul Hudak -> Simon Peyton Jones -> Philip Wadler -> Brian Boutel -> Jon Fairbairn -> Joseph Fasel -> Mar\'{\i}a M. Guzm\'{a}n -> Kevin Hammond -> John Hughes -> Thomas Johnsson -> Dick Kieburtz -> Rishiyur Nikhil -> Will Partain -> John Peterson
+Zukowski,, John
+Walrath,, Kathy -> Campione,, Mary -> Huml,, Alison -> Zakhour,, Sharon
+Balmas F.
+Wang Tao -> Abhik Roychoudhury
+Hutchins,, Matthew -> Gallagher,, Keith
+Keith Gallagher -> Liam O'Brien
+Krinke,, Jens
+Xu,, Baowen -> Qian,, Ju  -> Zhang,, Xiaofang -> Wu,, Zhongqiang -> Chen,, Lin
+Thomas Ball -> Stephen G. Eick
+Balmas,, F.
+Gallagher,, Keith
+Sander,, Georg
+Antoniol,, Giuliano -> Fiutem,, Roberto -> Lutteri,, G. -> Tonella,, Paolo -> Zanfei,, S. -> Merlo,, Ettore
+Jackson,, Daniel -> Rollins,, Eugene J.
+Richardson,, Debra J. -> O'Malley,, T. Owen -> Moore,, Cynthia Tittle -> Aha,, Stephanie Leif
+David Evans -> David Larochelle
+David Larochelle -> David Evans
+Ali Almossawi -> Kelvin Lim -> Tanmay Sinha
+T. Henzinger -> R. Jhala -> R. Majumdar -> G. Sutre
+Beyer, Dirk -> Henzinger, Thomas -> Jhala, Ranjit -> Majumdar, Rupak

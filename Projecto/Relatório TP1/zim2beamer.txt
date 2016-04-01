@@ -1,0 +1,45 @@
+====== Home ======
+Created Tuesday 22 March 2016!
+This is a test!
+
+
+===== Header 2 =====
+Should be a new slide!!
+Next items should produce a **List in Bold** with three different bullets!
+
+* item 1
+* item 2
+* item 3
+      1. item 3
+            a. item 3a
+
+
+==== Header 3 ====
+Should be a new slide!!
+Now it should be appearing //check boxes in italic//
+=== head 4 ===
+Should not be a new __slide underlined__!!
+
+[ ] empty
+[*] checked wright
+        [*] sub checked wright
+        [ ] sub empty
+[x] checked wrong
+
+
+==== Header 3 ====
+Should be a new slide!!
+
+== head 5 ==
+Should not be a new slide!!
+
+Now an example of ~~strike through~~
+
+To finish this presentation an image must be shown!
+An import of an image!!!
+
+{{./atom.jpg}}
+
+
+====== End ======
+Now an example of verbatim working ''int main() {return(0);} in verbatim''!!!

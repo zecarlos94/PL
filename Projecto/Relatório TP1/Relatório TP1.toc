@@ -1,0 +1,66 @@
+\select@language {portuges}
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{2}
+\contentsline {chapter}{\numberline {2}An\'alise e Especifica\c c\~ao}{3}
+\contentsline {section}{\numberline {2.1}Descri\c c\~ao informal do problema}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {section}{\numberline {2.2}Especifica\c c\~ao do Requisitos}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {subsection}{\numberline {2.2.1}Dados}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {chapter}{\numberline {3}Concep\c c\~ao/desenho da Resolu\c c\~ao}{5}
+\contentsline {section}{\numberline {3.1}Estruturas de Dados}{5}
+\contentsline {subsection}{\numberline {3.1.1}Al\IeC {\'\i }nea a}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {subsection}{\numberline {3.1.2}Al\IeC {\'\i }nea b}{6}
+\contentsline {subsection}{\numberline {3.1.3}Al\IeC {\'\i }nea c}{7}
+\contentsline {chapter}{\numberline {4}Codifica\c c\~ao}{8}
+\contentsline {section}{\numberline {4.1}Alternativas, Decis\~oes e Problemas de Implementa\c c\~ao}{8}
+\contentsline {subsection}{\numberline {4.1.1}Al\IeC {\'\i }nea a}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{}{9}
+\contentsline {subsection}{\numberline {4.1.2}Al\IeC {\'\i }nea b}{10}
+\contentsline {subsection}{\numberline {4.1.3}Al\IeC {\'\i }nea c}{11}
+\contentsline {section}{\numberline {4.2}Testes realizados e Resultados}{12}
+\contentsline {subsection}{\numberline {4.2.1}Al\IeC {\'\i }nea a}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {subsection}{\numberline {4.2.2}Al\IeC {\'\i }nea b}{13}
+\contentsline {subsection}{\numberline {4.2.3}Al\IeC {\'\i }nea c}{14}
+\contentsline {chapter}{\numberline {5}Conclus\~ao}{15}
+\contentsline {chapter}{\numberline {A}C\'odigo do Programa}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {section}{\numberline {A.1}Al\IeC {\'\i }nea a}{17}
+\contentsline {paragraph}{}{17}
+\contentsline {paragraph}{}{17}
+\contentsline {paragraph}{}{18}
+\contentsline {paragraph}{}{18}
+\contentsline {paragraph}{}{19}
+\contentsline {paragraph}{}{19}
+\contentsline {paragraph}{}{21}
+\contentsline {paragraph}{}{21}
+\contentsline {section}{\numberline {A.2}Al\IeC {\'\i }nea b}{22}
+\contentsline {section}{\numberline {A.3}Al\IeC {\'\i }nea c}{23}
+\contentsline {section}{\numberline {A.4}Extra- Zim to Beamer}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{25}
+\contentsline {paragraph}{}{25}
+\contentsline {paragraph}{}{28}
+\contentsline {paragraph}{}{28}
+\contentsline {paragraph}{}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {paragraph}{}{31}
+\contentsline {paragraph}{}{31}
+\contentsline {paragraph}{}{31}

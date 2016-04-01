@@ -1,0 +1,18 @@
+%{
+
+
+
+%}
+
+%x AUTOR
+
+%%
+
+author[ ]*\=[ ]*[{"]			{BEGIN AUTOR;}
+<AUTOR>[ ]*\n?[ ]*and[ ]*\n?[ ]*	{printf(" -> ");}
+<AUTOR>([A-Z]\.?[a-z][ ]?)*		{printf("%s", yytext);}
+<AUTOR>[ ]*["}]\,			{putchar('\n'); BEGIN INITIAL;}
+.|\n					{}
+
+%%
+
