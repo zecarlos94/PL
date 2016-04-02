@@ -1,0 +1,76 @@
+%{
+
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "lista.h"
+
+char *author;
+GRAPH autores;
+GRAPH linha; 
+
+void printLinha(GRAPH linha);
+void printAutores();
+
+%}
+
+%x AUTOR
+
+%%
+
+			autores = insert(NULL, author); 
+author[ ]*\=[ ]*[{"] 	{linha = NULL; BEGIN AUTOR;}
+<AUTOR>[\t" "\n]+ 	{}
+<AUTOR>[^\t\n]*/"\}," 	{char *authorName = strdup(yytext); linha = insert(linha, authorName);}
+<AUTOR>"\},\n" 		{autores = getAutores(autores, linha, author); BEGIN INITIAL;}
+<AUTOR>[^\t\n]+ 	{char *authorName = strdup(yytext); linha = insert(linha, authorName);}
+.|\n                    {}
+<*><<EOF>>              {printAutores(); free(linha); free(autores); return 0;}
+
+%%
+
+void printAutores() {
+        FILE *fp = fopen("graph.dot", "w");
+        GRAPH aux = autores;
+        fprintf(fp, "digraph finite_state_machine {\n");
+        fprintf(fp, "   rankdir=LR;\n");
+        fprintf(fp, "   size=\"20,20\"\n");
+        while(aux != NULL) {
+                fprintf(fp, "node [shape = circle];");
+                fprintf(fp, " \"%s\" ", aux->author);
+                aux = aux->next;
+        }
+        aux = autores;
+        while(aux != NULL) {
+                if(strncmp(author, aux->author, strlen(author)) == 0) fprintf(fp, "\n\"%s\"", author);
+                else fprintf(fp, "\"%s\" -> \"%s\" [label = \"%d\"];", author, aux->author, aux->num);
+                aux = aux->next;
+        }
+        fprintf(fp, "\n}");
+        fclose(fp);
+}
+
+int main(int argc, char *argv[]) {
+	if(argc == 3) {
+		int s;
+		char *firstName = argv[1];
+		char *lastName = argv[2];
+		char *result = malloc(strlen(firstName) + strlen(lastName) + 2);
+		strcpy(result, firstName);
+		strcat(result, " ");
+		strcat(result, lastName);
+		author = strdup(result);
+		s=yylex();
+        	while(s) {
+			printf("%d",s);
+			s=yylex();
+		}
+		free(result);
+	}
+        return 0;
+}
+
+

@@ -1,2 +1,0 @@
-dot -Tpng plex3.dot > fig.png
-

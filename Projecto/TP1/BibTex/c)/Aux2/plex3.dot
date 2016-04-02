@@ -1,6 +1,0 @@
-digraph finite_state_machine {
-	rankdir=LR;
-	size="20,20"
-	node [shape = doublecircle]; "Tim Nicholson" node [shape = circle]; "Normann Foo"
-"Tim Nicholson" -> "Normann Foo" [ label = "1" ];
-}
