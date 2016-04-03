@@ -1,0 +1,6 @@
+digraph finite_state_machine {
+   rankdir=LR;
+   size="20,20"
+node [shape = circle]; "J. Almeida" node [shape = circle]; "L. Barbosa" node [shape = circle]; "J. Barros" node [shape = circle]; "P. Castro" node [shape = circle]; "F. Madeira" node [shape = circle]; "P. Henriques" node [shape = circle]; "F. Martins" 
+"J. Almeida""J. Almeida" -> "L. Barbosa" [label = "1"];"J. Almeida" -> "J. Barros" [label = "1"];"J. Almeida" -> "P. Castro" [label = "1"];"J. Almeida" -> "F. Madeira" [label = "1"];"J. Almeida" -> "P. Henriques" [label = "3"];"J. Almeida" -> "F. Martins" [label = "1"];
+}
