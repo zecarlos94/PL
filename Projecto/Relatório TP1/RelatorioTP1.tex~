@@ -397,11 +397,6 @@ o ficheiro inicial, sendo que o resultado desta tarefa revelou-se extremamente i
 na criação de um grafo de todos os autores que efetuaram publicações com um autor passado como argumento.
 
 \paragraph{}
-Para além destas tarefas, ainda optamos pela realização de mais uma tarefa (explicada em anexo), que consistiu na criação de \textit{slides}
-em \textit{Beamer}, utilizando para tal a ferramenta \textit{Zim-wiki}. Mais uma vez e, à semelhança da tarefa anterior, os resultados
-gerados foram bastante satisfatórios, o que nos deixa bastante satisfeitos.
-
-\paragraph{}
 Futuramente, pretendemos aperfeiçoar os nossos conhecimento acerca desta e de outras ferramentas de \textit{parsing} de documentos, a fim
 de estarmos habilitados a construir programas ainda mais sofisticados e de melhor qualidade. 
 
