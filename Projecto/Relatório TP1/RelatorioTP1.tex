@@ -142,6 +142,8 @@ reconhecimento dos padrões identificados e proceder à transformação pretendida, 
 \subsection{Dados}
 Os dados fornecidos são o ficheiro \VerbatimInput{lpbib.txt}, a ser abordado num capítulo posterior, a definição
 e utilização da ferramenta \textit{Flex} e a definição de um ficheiro \textit{BibTex}, isto é, as suas características.
+Para além destes, na alínea c) o ficheiro de \textit{input} utilizado é referente ao resultado da alínea b) e é tem o
+nome de \textit{graphTeste.txt}.
 \paragraph{}
 É também fornecido o nome de ferramentas de apoio á resolução do problema, sendo neste problema, a ferramenta
 \textit{GraphViz2}, que permitirá colocar graficamente a informação dos grafos criados, sendo que as interações entre 
@@ -172,6 +174,14 @@ no Anexo encontra-se o conteúdo integral da implementação desta estrutura de dad
 \newpage
 
 \subsection{Alínea c}
+Nesta alínea, optou-se pela utilização de duas listas ligadas, uma para guardar os autores que publicaram com o autor fornecido e outra para
+guardar os autores de uma publicação para, posteriormente, verificar se o autor principal lá estava contido e, em caso afirmativo, guardar-se na
+primeira estrutura os outros autores, sendo que, caso um autor já exista na estrutura principal, então incrementava um contador que indica quantas vezes
+esse autor fez publicações em conjunto com o principal.
+\paragraph{}
+O grupo optou por escolher esta estrutura de dados, uma vez que é bastante simples de implentar, tendo como uma das desvantagens a pouca eficiência na procura
+e inserção de informação. Contudo, como trabalhamos com pouca quantidade de dados (em termos computacionais), chegámos à conclusão que as desvantagens da lista
+ligada não se iriam fazer sentir na execução do programa. 
 
 \newpage
 \newpage
@@ -259,6 +269,44 @@ O objectivo desta é encontrar todos os padrões que estejam contidos entre os car
 \newpage
 
 \subsection{Alínea c}
+Inicialmente, o problema incidiu no pouco conhecimento do grupo acerca da linguagem \textit{Dot}, pelo que
+foi necessário efetuar um estudo aprofundado sobre a linguagem em questão. Posteriormente, houve uma grande 
+dificuldade em conseguir captar informação do ficheiro \VerbatimInput{lpbib.txt}, uma vez que alguns carateres 
+desapareciam e, obviamente, ao fazer depois a comparação com o autor principal, este nunca surgia e, como tal, o
+grafo resultante seria sempre incorreto. Mas, como o trabalho de filtrar os autores e mudar os seus nomes para o 
+formato "N. Apelido", já havia sido feito, então o grupo optou por receber como \texit{input} o resultado da alínea b), que
+foi guardado no ficheiro \VerbatimInput{graphTeste.txt}. Desta forma, como os autores estão todos no mesmo formato, sendo que anteriormente
+uns estavam no formato "Nome Apelido" e outros em "Apelido, Nome", foi mais fácil agora proceder à recolha dos mesmos,
+aproveitando o trabalho efetuado anteriormente. No Anexo encontra-se um exemplo de um ficheiro \textit{.dot} e o grafo 
+resultante do mesmo. Convém referir que, para proceder à execução desta alínea, deve-se exutar o comando \textit{make ARGS="N. Autor"}.
+Desta forma o programa irá executar uma \textit{Makefile}, que vai executar o programa com o argumento dado.
+\paragraph{}
+Iremos proceder, agora, a uma breve análise às expressões regulares utilizadas nesta alínea e respetivas ações.
+
+\begin{verbatim}
+i.	author[ ]*\=[ ]*[{"]	{linha = NULL; BEGIN AUTOR;}
+ii.	<AUTOR>[\t" "\n]+	{}
+iii.	<AUTOR>[^\t\n]*/"\},"	{char *authorName = strdup(yytext); linha = insert(linha, authorName);}
+iv.	<AUTOR>"\},\n"		{autores = getAutores(autores, linha, author); BEGIN INITIAL;}
+v.	<AUTOR>[^\t\n]+		{char *authorName = strdup(yytext); linha = insert(linha, authorName);}
+vi.	.|\n			{}
+vii.	<*><<EOF>>		{printAutores(); free(linha); free(autores); return 0;}
+\end{verbatim}
+
+\paragraph{}
+A primeira expressão corresponde à situação em que se encontra o campo "author" de um registo. O programa inicializa a estrutura de dados 
+referente aos autores encontrados num registo e entra no estado "AUTOR". A segunda expressão ocorre já dentro do estado "AUTOR" e serve apenas
+para limpar carateres que estejam a mais, ou seja, espaços, TAB's ou mudanças de linha. A terceira expressão apanha qualquer carater, exceto mudanças
+de linha e TAB's, eliminando as aspas, até encontrar uma chaveta para fechar o campo, apanhando assim o nome do autor (dado por \textit{yytext}) e, de seguida
+efetua a inserção do mesmo na estrutura \textit{linha}. A quarta expressão regular ocorre logo após a anterior e efetua a chamada da função \textit{getAutores}, que
+verifica se um autor existe na \textit{linha} e, em caso afirmativo, insere os restantes autores na estrutura principal (de nome \textit{autores}) e, de seguida,
+abandona o estado "AUTOR". A quinta expressão efetua o mesmo trabalho da terceira, mas serve para autores que não sejam os últimos da lista, tendo as mesmas ações.
+A sexta expressão serve para, quando no estado inicial, ignorar qualquer carater ou mudança de linha. Convém notar que, como esta expressão regular vem depois
+das anteriores, não serão ignorados os carateres importantes, nomeadamente, os presentes no campo "author". Por fim, a última expressão ocorre aquando do final do
+ficheiro, sendo que aí serão imprimidos os autores no ficheiro \VerbatimInput{graph.dot} e efetadas as devidas limpezas na memória, devido às estruturas criadas.
+\paragraph{}
+Após a criação do ficheiro \VerbatimInput{graph.dot}, será executado um comando que irá criar um ficheiro de imagem com
+o grafo resultante. Convém referir, mais uma vez, que todos os comandos importantes estão contidos numa \textit{Makefile}.
 
 \newpage
 \newpage
@@ -279,7 +327,7 @@ manipulação de texto.
 
 Os testes realizados passaram todos por correr a seguinte \textit{makefile}
 \paragraph{}
-\lstinputlisting{makefile} 
+\lstinputlisting{makefileA} 
 \paragraph{}
 E de seguida efetuar
 \begin{verbatim}
@@ -315,6 +363,25 @@ abrir o \VerbatimInput{indexA.html} com um \textit{browser} qualquer.
 \newpage
 
 \subsection{Alínea c}
+Para executar os vários testes à aplicação, foi corrida a seguinte \textit{Makefile}:
+
+\paragraph{}
+\lstinputlisting{makefileC}
+
+\paragraph{}
+E, de seguida, correr o seguinte comando:
+
+\begin{verbatim}
+make ARGS="J. Almeida"
+\end{verbatim}
+
+De seguida, seguem abaixo o ficheiro \textit{graph.dot} e o grafo respetivo:
+
+\paragraph{}
+\lstinputlisting{graph.dot}
+
+\paragraph{}
+\center\includeGraphics{fig.png}
 
 \newpage
 \newpage
@@ -387,6 +454,22 @@ está no ficheiro \textit{indexA.html}.
 \newpage
 
 \section{Alínea c}
+Ficheiro \textit{tp1C.fl}:
+
+\paragraph{}
+\lstinputlisting{tp1C.fl}
+
+\paragraph{}
+Ficheiro \textit{lista.c}:
+
+\paragraph{}
+\lstinputlisting{lista.c}
+
+\paragraph{}
+Ficheiro \textit{lista.h}:
+
+\paragraph{}
+\lstinputlisting{lista.h}
 
 \newpage
 \newpage
