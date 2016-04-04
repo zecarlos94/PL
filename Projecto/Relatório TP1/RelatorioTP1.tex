@@ -169,6 +169,31 @@ no Anexo encontra-se o conteúdo integral da implementação desta estrutura de dad
 \newpage
 
 \subsection{Alínea b}
+Neste problema só é preciso guardar dados para ordenar os campos de forma a colocar o campo \textit{author} em primeiro lugar, seguido do campo \textit{title} . Uma estrutura de dados simples como um array de \textit{strings} ou mais especificamente em contexto C um array de \textit{char*} seria o suficiente para ordenar os campos. No entanto, foi optado por utilizar duas \textit{structs} que contenham toda a informação de um registo para resolver o problema. Esta opção, para além de permitir um maior controlo na formatação final do registo também simplifica o código em flex.
+\paragraph{}
+As duas \textit{structs} estão definidas no ficheiro \textit{prettybibtex.h}. A struct \textit{registo} contém toda a informação de um registo. O campo \textit{categoria} é usado para guardar o nome da categoria, da mesma maneira o campo \textit{chave}guarda a chave. Apesar da informação dos autores ser considerada mais um campo de uma entrada \textit{BibTeX} (não confundir com campos da struct registo) foi guardada num array de \textit{strings} separando-se dos restantes campos. Esta distinção tem duas vantagens significativas, em primeiro lugar a divisão do conteúdo do campo \textit{author} num array de \textit{strings} permite guardar o nome formatado de cada autor numa string diferente, isto facilita bastante a tarefa de imprimir um autor em cada linha. A segunda vantagem é que facilita a função de ordenação dos campos, assim só é preciso colocar o campo \textit{title} em primeiro lugar do array de \textit{Campo}. Esta componente é um array de um apontador para a \textit{struct campo} que contém um par de \textit{strings} com o nome do campo a guardar e o seu respectivo conteúdo.
+
+\begin{verbatim}
+typedef struct registo{
+  char* categoria;
+  char* chave;
+  char** autores;
+  int iautores;
+  Campo* campos;
+  int r;
+}*Registo;
+
+typedef struct campo{
+  char* nome;
+  char* valor;
+}*Campo;
+\end{verbatim}
+
+\paragraph{}
+Esta estruturada de dados é reutilizada a cada leitura de uma entrada \textit{BibTeX} de modo a o programa não utilizar mais memória do que efetivamente necessita. É de notar que se a memória da estrutura não fosse devidamente libertada e/ou reutilizada, o programa para ficheiros \textit{BibTeX} de elevada dimensão ocuparia uma elevada quantidade de memória possivelmente capaz de ultrapassar a memória da heap atribuída pelo \textit{Sistema Operativo} e terminar interruptamente.         
+
+ 
+
 
 \newpage
 \newpage
@@ -264,6 +289,32 @@ O objectivo desta é encontrar todos os padrões que estejam contidos entre os car
 \newpage
 
 \subsection{Alínea b}
+A codificação deste programa acarretou alguns desafios. Inicialmente, o grande desafio foi filtrar os campos delimitados por chavetas e aspas, no entanto os dois problemas foram resolvidos de uma maneira simples e elegante. Outro grande desafio foi a leitura e formatação do conteúdo do campo \textit{author}, este provou-se ser um problema complexo e a sua solução não tão elegante e simples como as anteriores. Isto apenas porque o conteúdo do campo pode aparecer em 2 formatos distintos mais um conjunto de casos particulares.
+
+Para a resolução do problema foram criadas 6 variáveis de condição cujo propósito de cada uma será explicado ao longo da secção.
+
+%x AUT CHAVE CAMPOS NOMECAMPO VALORCAMPO VALORCAMPOT2 
+
+O estado \textit{INITIAL} tem como função identificar as entradas de \textit{BibTeX} com registos de interesse, estes são os que contêm referências bibliográficas. O \textit{BibTeX} para além das entradas de interesse contem 3 tipos de entradas \textit{@string}, \textit{@preamble} e \textit{@comment}. O ficheiro de dados deste trabalho  não contem as duas últimas entradas e, portanto, a gramática não precisou de regras para lidar com as mesmas. No entanto, para a gramática funcionar com as mesmas, basta adicionar duas regras que identifiquem as entradas e as imprimem. Essas regras e respetivas ações seriam quase identicas à primeira regra para identificar a entrada \textit{@string}. Por exemplo, para apanhar a entrada \textit{@preamble} bastaria adicionar a regra @[Pp][Rr][Ee][Aa][Mm][Bb][Ll][Ee]\{ com a ação \textit{ECHO}.
+Ignorando as entradas não relevantes para o objetivo do problema, temos todas as categorias restantes iniciadas também por '@' seguidas pelo nome da categoria contendo uma sequência de uma ou mais letras maiúsculas ou minúsculas [A-Za-z]+ finalizadas com o símbolo '{' . Dada a ocorrência desse padrão é inicializada a estrutura \textit{Registo} que conterá a informação da entrada, e é já adicionado à estrutura o nome da categoria.  
+Após lida a categoria, vem a leitura da chave no estado CHAVE.
+\begin{verbatim}
+<INITIAL>@[Ss][Tt][Rr][Ii][Nn][Gg]\{ { ECHO;}
+<INITIAL>@[A-Za-z]+\{ {
+registo = initRegisto();
+yytext[yyleng - 1] = '\0'; yytext+=1;
+registo->categoria = strdup(yytext);
+BEGIN CHAVE;}
+<INITIAL>.|\n { ECHO;}
+\end{verbatim}
+
+A chave está obrigatoriamente separada do próximo campo através do símpolo ',' e possivelmente contem espaços no início e fim. A regra .|\n limpa esses espaços e a regra [A-Za-z0-9:]+ filtra o id da chave. Sabe-se que a chave pode conter letras, números e o símbolo ':', no entanto, se essa informação fosse desconhecida ou a chave abrangesse um conjunto maior de símbolos, a expressão regular podia ser substituída por algo mais genérico, como por exemplo:[^ ]+/, .Esta expressão apanharia todos os símbolos excepto o espaço até apanhar o símbolo delimitador ',', não consumindo o mesmo, uma vez que não faz parte da chave. Gravada a chave na estrutura \textit{registo} é inicializado o estado CAMPOS.
+
+\begin{verbatim} 
+<CHAVE>[A-Za-z0-9:]+ {registo->chave = strdup(yytext);BEGIN CAMPOS;}
+<CHAVE>.|\n {}
+\end{verbatim}
+ 
 
 \newpage
 \newpage

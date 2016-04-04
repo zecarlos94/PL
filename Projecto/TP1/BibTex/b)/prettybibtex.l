@@ -65,10 +65,7 @@ BEGIN CHAVE;}
 <*><EOF> { return 0;}
 <CHAVE>[A-Za-z0-9:]+ {registo->chave = strdup(yytext);BEGIN CAMPOS;}
 <CHAVE>.|\n {}
-<CAMPOS>\} { printRegisto(registo); 
-BEGIN INITIAL;}
-<CAMPOS>[\n \t]* {}
-<CAMPOS>\,[\n \t]*\} { printRegisto(registo); BEGIN INITIAL;}
+<CAMPOS>(","?)[\n \t]*\} { printRegisto(registo); BEGIN INITIAL;}
 <CAMPOS>\,[\n \t]* {BEGIN NOMECAMPO;}
 <NOMECAMPO>[ ]*[Aa][Uu][Tt][Hh][Oo][Rr][ ]*=[ ]*["{][ ]*["}] {/* Lista de Autores vazia */
 registo->autores = NULL;
