@@ -1,14 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.14)  3 APR 2016 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.27)  5 APR 2016 21:32
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **RelatorioTP1.tex
 (./RelatorioTP1.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,103 +25,92 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/12/03 3.9h The Babel package
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2014/03/24 3.9k The Babel package
 
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 
-! Package babel Error: Unknown option `portuges'. Either you misspelled it
-(babel)                or the language definition file portuges.ldf was not fou
-nd.
-
-See the babel package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.296 \ProcessOptions*
-                      
-? 
-
-! Package babel Error: You haven't specified a language option.
-
-See the babel package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.329 ...ry to proceed from here, type x to quit.}
-                                                  
-? 
-) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/03/24 3.9k Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 145.
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2014/04/30 v1.2b Input encoding file
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-\lst@mode=\count88
+\lst@mode=\count89
 \lst@gtempboxa=\box26
 \lst@token=\toks17
-\lst@length=\count89
-\lst@currlwidth=\dimen103
-\lst@column=\count90
-\lst@pos=\count91
-\lst@lostspace=\dimen104
-\lst@width=\dimen105
-\lst@newlines=\count92
-\lst@lineno=\count93
-\lst@maxwidth=\dimen106
+\lst@length=\count90
+\lst@currlwidth=\dimen104
+\lst@column=\count91
+\lst@pos=\count92
+\lst@lostspace=\dimen105
+\lst@width=\dimen106
+\lst@newlines=\count93
+\lst@lineno=\count94
+\lst@maxwidth=\dimen107
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count94
-\lst@skipnumbers=\count95
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+\c@lstnumber=\count95
+\lst@skipnumbers=\count96
 \lst@framebox=\box27
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2013/08/26 1.5b listings configuration
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
-Package: listings 2013/08/26 1.5b (Carsten Heinz)
+Package: listings 2014/03/04 1.5c (Carsten Heinz)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count96
+\Gread@gobject=\count97
 ))
-\Gin@req@height=\dimen107
-\Gin@req@width=\dimen108
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
-) (./RelatorioTP1.aux)
+)
+(./RelatorioTP1.aux)
 \openout1 = `RelatorioTP1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -135,29 +125,30 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
-\c@lstlisting=\count97
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+\c@lstlisting=\count98
+
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count98
-\scratchdimen=\dimen109
+\scratchcounter=\count99
+\scratchdimen=\dimen110
 \scratchbox=\box28
-\nofMPsegments=\count99
-\nofMParguments=\count100
+\nofMPsegments=\count100
+\nofMParguments=\count101
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count101
-\MPscratchDim=\dimen110
-\MPnumerator=\count102
-\makeMPintoPDFobject=\count103
+\MPscratchCnt=\count102
+\MPscratchDim=\dimen111
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
 \everyMPtoPDFconversion=\toks19
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -166,22 +157,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -193,7 +184,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -208,26 +199,27 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1] (./RelatorioTP1.toc
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[1] (./RelatorioTP1.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
+(Font)              <5> on input line 4.
 )
 \tf@toc=\write3
 \openout3 = `RelatorioTP1.toc'.
 
-[1
+ [1
 
 ]
-Chapter 1.
+Cap\'{\i }tulo 1.
 [2
 
 ]
-Chapter 2.
+Cap\'{\i }tulo 2.
 (./enunciado.bib
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
@@ -236,7 +228,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 5.
 
 
-! Package inputenc Error: Keyboard character used is undefined
+./enunciado.bib:11: Package inputenc Error: Keyboard character used is undefine
+d
 (inputenc)                in inputencoding `latin1'.
 
 See the inputenc package documentation for explanation.
@@ -247,7 +240,8 @@ l.11 ... Technologies and Applications, CoRTAâ€™07
                                                   
 ? 
 
-! Package inputenc Error: Keyboard character used is undefined
+./enunciado.bib:11: Package inputenc Error: Keyboard character used is undefine
+d
 (inputenc)                in inputencoding `latin1'.
 
 See the inputenc package documentation for explanation.
@@ -258,7 +252,7 @@ l.11 ... Technologies and Applications, CoRTAâ€™07
                                                   
 ? 
 )
-! Undefined control sequence.
+./RelatorioTP1.tex:114: Undefined control sequence.
 l.114 ...ias presentes no documento \VerbatimInput
                                                   {lpbib.txt}, explicado num...
 
@@ -266,14 +260,14 @@ l.114 ...ias presentes no documento \VerbatimInput
 [3
 
 ]
-! Undefined control sequence.
+./RelatorioTP1.tex:143: Undefined control sequence.
 l.143 ... fornecidos são o ficheiro \VerbatimInput
                                                   {lpbib.txt}, a ser abordad...
 
 ? 
 [4]
-Chapter 3.
-! Undefined control sequence.
+Cap\'{\i }tulo 3.
+./RelatorioTP1.tex:157: Undefined control sequence.
 l.157 ...ando um padrão no ficheiro \VerbatimInput
                                                   {lpbib.txt}, ou seja, a acção
 
@@ -281,114 +275,180 @@ l.157 ...ando um padrão no ficheiro \VerbatimInput
 [5
 
 ] [6] [7]
-Chapter 4.
-! Undefined control sequence.
-l.193 ...análise do documento fonte \VerbatimInput
+Cap\'{\i }tulo 4.
+./RelatorioTP1.tex:218: Undefined control sequence.
+l.218 ...análise do documento fonte \VerbatimInput
                                                   {lpbib.txt}
 ? 
-! Undefined control sequence.
-l.211 ...t{HTML} produzido chama-se \VerbatimInput
+./RelatorioTP1.tex:236: Undefined control sequence.
+l.236 ...t{HTML} produzido chama-se \VerbatimInput
                                                   {indexA.html} e pode ser
 ? 
-! Undefined control sequence.
-l.233 ...rias presentes no ficheiro \VerbatimInput
+./RelatorioTP1.tex:258: Undefined control sequence.
+l.258 ...rias presentes no ficheiro \VerbatimInput
                                                   {lpbib.txt}, que contem mu...
 
 ? 
 [8
 
 ]
-! Undefined control sequence.
-l.257 ... chegar ao fim do ficheiro \VerbatimInput
+./RelatorioTP1.tex:282: Undefined control sequence.
+l.282 ... chegar ao fim do ficheiro \VerbatimInput
                                                   {lpbib.txt} e
 ? 
-! Undefined control sequence.
-l.258 ... \textit{main} do ficheiro \VerbatimInput
+./RelatorioTP1.tex:283: Undefined control sequence.
+l.283 ... \textit{main} do ficheiro \VerbatimInput
                                                   {tp1A.l} recorreu-se á cha...
 
 ? 
-[9] [10]
-! Undefined control sequence.
-l.274 ...tar informação do ficheiro \VerbatimInput
+[9]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 299.
+
+./RelatorioTP1.tex:313: Undefined control sequence.
+l.313 ...tem espaços no início e fim. A regra .|\n
+                                                   limpa esses espaços e a r...
+
+? 
+./RelatorioTP1.tex:327: Undefined control sequence.
+l.327 ...finalização pode aparecer os símbolos '\n
+                                                  ' e ' '. No final da entra...
+
+? 
+[10]
+./RelatorioTP1.tex:365: Too many }'s.
+l.365 ...nal do campo através do padrão '",' ou '}
+                                                  ,'. Uma vez que o símbolo ...
+
+? 
+./RelatorioTP1.tex:365: Too many }'s.
+l.365 ...ão '",' ou '},'. Uma vez que o símbolo '}
+                                                  ' não é um bom delimitador...
+
+? 
+[11]
+Overfull \hbox (186.09431pt too wide) in paragraph at lines 405--405
+[]  []\OT1/cmtt/m/n/10 E lido o ^^Sultimo nome ou apelido do registo e ^^Se inv
+ocada a fun^^Xc~ao formatAuthor que lida com o nome conforme as vari^^Saveis de
+ controlo[] 
+ []
+
+
+Overfull \hbox (96.8451pt too wide) in paragraph at lines 405--405
+[]  []\OT1/cmtt/m/n/10 E lido um nome ou apelido e ^^Se invocada a fun^^Xc~ao f
+ormatAuthor que lida com o nome conforme as vari^^Saveis de controlo[] 
+ []
+
+
+Overfull \hbox (322.59312pt too wide) in paragraph at lines 405--405
+[]  \OT1/cmtt/m/n/10 Na situa^^Xc~ao do formato2 e o nome do autor n~ao estar c
+ompleto(ter 2 nomes), identifica o nome como primeiro nome e guarda o. Coloca a
+ flag nomeCompleto ativa.[] 
+ []
+
+
+Overfull \hbox (96.8451pt too wide) in paragraph at lines 405--405
+[]  \OT1/cmtt/m/n/10 Na situa^^Xc~ao formato1 e primeiro nome n~ao lido, guarda
+ o nome como primeiro nome e ativa flag 'primeiroNomeParsed'.[] 
+ []
+
+
+Overfull \hbox (522.09138pt too wide) in paragraph at lines 405--405
+[]  \OT1/cmtt/m/n/10 Na situa^^Xc~ao formato1 e primeiro nome lido, guarda o no
+me como apelido. []E de notar que guarda o nome sempre na mesma vari^^Savel, po
+rtanto o ^^Sultimo nome a ser guardado vai ser efetivamente o apelido.[] 
+ []
+
+[12]
+./RelatorioTP1.tex:416: Undefined control sequence.
+l.416 ...tar informação do ficheiro \VerbatimInput
                                                   {lpbib.txt}, uma vez que a...
 
 ? 
-! Undefined control sequence.
-l.277 ...tão o grupo optou por receber como \texit
+./RelatorioTP1.tex:419: Undefined control sequence.
+l.419 ...tão o grupo optou por receber como \texit
                                                   {input} o resultado da alí...
 
 ? 
-! Undefined control sequence.
-l.278 foi guardado no ficheiro \VerbatimInput
+./RelatorioTP1.tex:420: Undefined control sequence.
+l.420 foi guardado no ficheiro \VerbatimInput
                                              {graphTeste.txt}. Desta forma, ...
 
 ? 
 
-Overfull \hbox (2.34592pt too wide) in paragraph at lines 294--294
+Overfull \hbox (2.34592pt too wide) in paragraph at lines 436--436
 []\OT1/cmtt/m/n/10 iii. <AUTOR>[^\t\n]*/"\}," {char *authorName = strdup(yytext
 ); linha = insert(linha, authorName);}[] 
  []
 
-! Undefined control sequence.
-l.306 ...dos os autores no ficheiro \VerbatimInput
+./RelatorioTP1.tex:448: Undefined control sequence.
+l.448 ...dos os autores no ficheiro \VerbatimInput
                                                   {graph.dot} e efetadas as ...
 
 ? 
-! Undefined control sequence.
-l.308 Após a criação do ficheiro \VerbatimInput
+./RelatorioTP1.tex:450: Undefined control sequence.
+l.450 Após a criação do ficheiro \VerbatimInput
                                                {graph.dot}, será executado u...
 
 ? 
-[11]
-! Undefined control sequence.
-l.318 \VerbatimInput
+[13]
+./RelatorioTP1.tex:460: Undefined control sequence.
+l.460 \VerbatimInput
                     {lpbib.txt} nas diferentes alíneas deste problema.
 ? 
 (./makefileA)
-! Undefined control sequence.
-l.344 ficheiro fonte \VerbatimInput
+./RelatorioTP1.tex:486: Undefined control sequence.
+l.486 ficheiro fonte \VerbatimInput
                                    {lpbib.txt} apenas ocorre cinco vezes, ma...
 
 ? 
-! Undefined control sequence.
-l.352 ...ificada abrindo o ficheiro \VerbatimInput
+./RelatorioTP1.tex:494: Undefined control sequence.
+l.494 ...ificada abrindo o ficheiro \VerbatimInput
                                                   {lpbib.txt} e procurando
 ? 
-! Undefined control sequence.
-l.355 abrir o \VerbatimInput
+./RelatorioTP1.tex:497: Undefined control sequence.
+l.497 abrir o \VerbatimInput
                             {indexA.html} com um \textit{browser} qualquer.
 ? 
-[12] [13] (./makefileC
+[14]
+./RelatorioTP1.tex:504: Undefined control sequence.
+l.504 ...ores com aspas e chavetas, campos com '\n
+                                                  ', último campo terminado ...
+
+? 
+[15] (./makefileC
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 10.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 10.
 )
-! Missing $ inserted.
+./RelatorioTP1.tex:516: Missing $ inserted.
 <inserted text> 
                 $
-l.369 \lstinputlisting{makefileC}
+l.516 \lstinputlisting{makefileC}
                                  
 ? 
-(./graph.dot) <fig.png, id=61, 356.33125pt x 910.40125pt>
+(./graph.dot) <fig.png, id=68, 356.33125pt x 910.40125pt>
 File: fig.png Graphic file (type png)
  <use fig.png>
-Package pdftex.def Info: fig.png used on input line 383.
+Package pdftex.def Info: fig.png used on input line 530.
 (pdftex.def)             Requested size: 256.0748pt x 654.27983pt.
 
-[14] [15 <./fig.png>]
-Chapter 5.
-[16
+[16] [17 <./fig.png>]
+Cap\'{\i }tulo 5.
+[18
 
 ]
-Appendix A.
-(./lpbibShort.txt) [17
+Ap\^endice A.
+(./lpbibShort.txt) [19
 
-] (./tp1A.l) [18] (./hashtable.h) [19] (./hashtable.c
-[20]) [21] (./indexA.html) [22] [23] (./tp1C.fl [24]) (./lista.c [25])
-(./lista.h) [26] (./zim2beamer.txt) [27] (./zim2beamer.l
+] (./tp1A.l) [20] (./hashtable.h) [21] (./hashtable.c
+[22]) [23] (./indexA.html) [24] (./ppFUNCIOONAL.l [25] [26]) [27]
+(./prettybibtex.l [28] [29]) [30] (./prettybibtex.c [31]) [32]
+(./prettybibtex.h) [33] (./saveGraphV2.l [34]) [35] (./tp1C.fl [36]) (./lista.c
+[37]) (./lista.h) [38] (./zim2beamer.txt) [39] (./zim2beamer.l
 Overfull \hbox (425.8035pt too wide) in paragraph at lines 19--20
 [][][][][] 
  []
@@ -398,7 +458,7 @@ Overfull \hbox (440.25348pt too wide) in paragraph at lines 19--20
 []  
  []
 
-[28]
+[40]
 Overfull \hbox (425.8035pt too wide) in paragraph at lines 31--32
 [][][][][] 
  []
@@ -418,60 +478,56 @@ Overfull \hbox (440.25348pt too wide) in paragraph at lines 43--44
 []  
  []
 
-[29]) [30] (./zim2beamer.tex [31]) [32]
-<itemize.png, id=127, 307.1475pt x 233.87375pt>
+[41]) [42] (./zim2beamer.tex [43]) [44]
+<itemize.png, id=166, 307.1475pt x 233.87375pt>
 File: itemize.png Graphic file (type png)
  <use itemize.png>
-Package pdftex.def Info: itemize.png used on input line 531.
+Package pdftex.def Info: itemize.png used on input line 719.
 (pdftex.def)             Requested size: 307.14674pt x 233.87315pt.
 
-<images.png, id=128, 319.1925pt x 241.90375pt>
+<images.png, id=167, 319.1925pt x 241.90375pt>
 File: images.png Graphic file (type png)
  <use images.png>
-Package pdftex.def Info: images.png used on input line 535.
+Package pdftex.def Info: images.png used on input line 723.
 (pdftex.def)             Requested size: 319.19171pt x 241.90315pt.
- [33 <./itemize.png> <./images.png>] <checkBoxes.png, id=134, 340.77313pt x 253
+ [45 <./itemize.png> <./images.png>] <checkBoxes.png, id=173, 340.77313pt x 253
 .94875pt>
 File: checkBoxes.png Graphic file (type png)
 
 <use checkBoxes.png>
-Package pdftex.def Info: checkBoxes.png used on input line 539.
+Package pdftex.def Info: checkBoxes.png used on input line 727.
 (pdftex.def)             Requested size: 340.7723pt x 253.94812pt.
- [34 <./checkBoxes.png>] [35
+ [46 <./checkBoxes.png>] [47
 
-] (./RelatorioTP1.aux) )
-(\end occurred inside a group at level 3)
-
-### simple group (level 3) entered at line 248 ({)
-### simple group (level 2) entered at line 236 ({)
-### simple group (level 1) entered at line 204 ({)
-### bottom level 
+] (./RelatorioTP1.aux) ) 
 Here is how much of TeX's memory you used:
- 3487 strings out of 495028
- 47634 string characters out of 6181497
- 301935 words of memory out of 5000000
- 6606 multiletter control sequences out of 15000+600000
+ 3859 strings out of 493117
+ 52723 string characters out of 6135433
+ 317454 words of memory out of 5000000
+ 7213 multiletter control sequences out of 15000+600000
  12456 words of font info for 43 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 37i,7n,32p,333b,1734s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmu10.p
-fb>
-Output written on RelatorioTP1.pdf (37 pages, 559058 bytes).
+ 1141 hyphenation exceptions out of 8191
+ 37i,7n,32p,1135b,1600s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbxti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
+.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
+pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmu10.pfb
+>
+Output written on RelatorioTP1.pdf (49 pages, 582241 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 233 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

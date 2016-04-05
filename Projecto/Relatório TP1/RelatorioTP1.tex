@@ -310,7 +310,12 @@ BEGIN CHAVE;}
 \end{verbatim}
 
 \paragraph{}
-A chave está obrigatoriamente separada do próximo campo através do símpolo ',' e possivelmente contem espaços no início e fim. A regra .|\n limpa esses espaços e a regra [A-Za-z0-9:]+ filtra o id da chave. Sabe-se que a chave pode conter letras, números e o símbolo ':', no entanto, se essa informação fosse desconhecida ou a chave abrangesse um conjunto maior de símbolos, a expressão regular podia ser substituída por algo mais genérico, como por exemplo:[^ ]+/, .Esta expressão apanharia todos os símbolos excepto o espaço até apanhar o símbolo delimitador ',', não consumindo o mesmo, uma vez que não faz parte da chave. Gravada a chave na estrutura \textit{registo} é inicializado o estado CAMPOS.
+A chave está obrigatoriamente separada do próximo campo através do símpolo ',' e possivelmente contem espaços no início e fim. A regra .|\n limpa esses espaços e a regra [A-Za-z0-9:]+ filtra o id da chave. Sabe-se que a chave pode conter letras, números e o símbolo ':', no entanto, se essa informação fosse desconhecida ou a chave abrangesse um conjunto maior de símbolos, a expressão regular podia ser substituída por algo mais genérico, como por exemplo:
+\begin{verbatim}
+[^ ]+/, 
+\end{verbatim}
+Esta expressão apanharia todos os símbolos excepto o espaço até apanhar o símbolo delimitador ',', não consumindo o mesmo, uma vez que não faz parte da chave. 
+Gravada a chave na estrutura \textit{registo} é inicializado o estado CAMPOS.
 
 \begin{verbatim} 
 <CHAVE>[A-Za-z0-9:]+ {registo->chave = strdup(yytext);BEGIN CAMPOS;}
@@ -342,7 +347,10 @@ O campo \textit{author} é tratado de maneira diferente, uma vez que um dos objet
 
 \paragraph{}
 O conteúdo do campo está sempre delimitado por aspas ou chavetas, com a exceção no caso do conteúdo ser um número ou uma única palavra. Esse caso é tratado pela expressão [a-z][A-Z][0-9]+.
-Se o campo estiver delimitado por aspas o conteúdo do campo pode conter todos os símbolos possíveis. O delimitador '"' pode aparecer também no próprio campo, no entanto este tem de ser precedido pelo símbolo '\', aparecendo sempre '\"'. Devido à elevada quantidade de símbolos possíveis o problema só pode ser resolvido através da negação do conjunto de símbolos não permitidos. Portanto, o conteúdo do campo é tudo excepto o delimitador '"' com a exceção do aparecimento do símbolo '\"' que resulta na expressão regular \"([^"]("\\\""?))*\".
+Se o campo estiver delimitado por aspas o conteúdo do campo pode conter todos os símbolos possíveis. O delimitador '"' pode aparecer também no próprio campo, no entanto este tem de ser precedido pelo símbolo '\', aparecendo sempre '\"'. Devido à elevada quantidade de símbolos possíveis o problema só pode ser resolvido através da negação do conjunto de símbolos não permitidos. Portanto, o conteúdo do campo é tudo excepto o delimitador '"' com a exceção do aparecimento do símbolo '\"' que resulta na expressão regular 
+\begin{verbatim}
+\"([^"]("\\\""?))*\"
+\end{verbatim}
 Quando o campo está delimitado por chavetas a mesma técnica não pode ser utilizada uma vez que o delimitador final '}' pode aparecer livremente no conteúdo. A única restrição é que sempre que é aberta uma chaveta tem de aparecer outra a fechar. O estado identifica o delimitador '{' e dá início à variavel de condição VALORCAMPOT2. O problema é resolvido nesse estado através de um contador de chavetas abertas. Esse estado finaliza quando encontrar o símbolo '}' e o número de chavetas abertas ser 1, o que significa que o símbolo '}' está a fechar a chaveta inicial do campo. 
 Finalizada a leitura do conteúdo do campo é invocado o estado CAMPOS para verificar se há mais campos no registo ou se o registo acabou.
 
@@ -603,6 +611,47 @@ está no ficheiro \textit{indexA.html}.
 \newpage
 \newpage
 \section{Alínea b}
+Ficheiro \textit{ppFUNCIOONAL.l}:
+
+\paragraph{}
+\lstinputlisting{ppFUNCIOONAL.l}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{prettybibtex.l}:
+
+\paragraph{}
+\lstinputlisting{prettybibtex.l}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{prettybibtex.c}:
+
+\paragraph{}
+\lstinputlisting{prettybibtex.c}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{prettybibtex.h}:
+
+\paragraph{}
+\lstinputlisting{prettybibtex.h}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{saveGraphV2.l}:
+
+\paragraph{}
+\lstinputlisting{saveGraphV2.l}
+
 
 \newpage
 \newpage

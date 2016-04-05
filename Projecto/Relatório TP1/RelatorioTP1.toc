@@ -1,3 +1,4 @@
+\select@language {portuges}
 \contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{2}
 \contentsline {chapter}{\numberline {2}An\'alise e Especifica\c c\~ao}{3}
 \contentsline {section}{\numberline {2.1}Descri\c c\~ao informal do problema}{3}
@@ -14,6 +15,8 @@
 \contentsline {subsection}{\numberline {3.1.1}Al\IeC {\'\i }nea a}{5}
 \contentsline {paragraph}{}{5}
 \contentsline {subsection}{\numberline {3.1.2}Al\IeC {\'\i }nea b}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
 \contentsline {subsection}{\numberline {3.1.3}Al\IeC {\'\i }nea c}{7}
 \contentsline {paragraph}{}{7}
 \contentsline {chapter}{\numberline {4}Codifica\c c\~ao}{8}
@@ -26,55 +29,70 @@
 \contentsline {paragraph}{}{9}
 \contentsline {paragraph}{}{9}
 \contentsline {subsection}{\numberline {4.1.2}Al\IeC {\'\i }nea b}{10}
-\contentsline {subsection}{\numberline {4.1.3}Al\IeC {\'\i }nea c}{11}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
 \contentsline {paragraph}{}{11}
 \contentsline {paragraph}{}{11}
 \contentsline {paragraph}{}{11}
-\contentsline {section}{\numberline {4.2}Testes realizados e Resultados}{12}
-\contentsline {subsection}{\numberline {4.2.1}Al\IeC {\'\i }nea a}{12}
-\contentsline {paragraph}{}{12}
-\contentsline {paragraph}{}{12}
-\contentsline {paragraph}{}{12}
-\contentsline {subsection}{\numberline {4.2.2}Al\IeC {\'\i }nea b}{13}
-\contentsline {subsection}{\numberline {4.2.3}Al\IeC {\'\i }nea c}{14}
+\contentsline {subsection}{\numberline {4.1.3}Al\IeC {\'\i }nea c}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {section}{\numberline {4.2}Testes realizados e Resultados}{14}
+\contentsline {subsection}{\numberline {4.2.1}Al\IeC {\'\i }nea a}{14}
 \contentsline {paragraph}{}{14}
 \contentsline {paragraph}{}{14}
 \contentsline {paragraph}{}{14}
-\contentsline {chapter}{\numberline {5}Conclus\~ao}{16}
+\contentsline {subsection}{\numberline {4.2.2}Al\IeC {\'\i }nea b}{15}
+\contentsline {subsection}{\numberline {4.2.3}Al\IeC {\'\i }nea c}{16}
 \contentsline {paragraph}{}{16}
 \contentsline {paragraph}{}{16}
 \contentsline {paragraph}{}{16}
-\contentsline {chapter}{\numberline {A}C\'odigo do Programa}{17}
-\contentsline {paragraph}{}{17}
-\contentsline {paragraph}{}{17}
-\contentsline {section}{\numberline {A.1}Al\IeC {\'\i }nea a}{18}
+\contentsline {chapter}{\numberline {5}Conclus\~ao}{18}
 \contentsline {paragraph}{}{18}
 \contentsline {paragraph}{}{18}
+\contentsline {paragraph}{}{18}
+\contentsline {chapter}{\numberline {A}C\'odigo do Programa}{19}
 \contentsline {paragraph}{}{19}
 \contentsline {paragraph}{}{19}
+\contentsline {section}{\numberline {A.1}Al\IeC {\'\i }nea a}{20}
 \contentsline {paragraph}{}{20}
 \contentsline {paragraph}{}{20}
+\contentsline {paragraph}{}{21}
+\contentsline {paragraph}{}{21}
 \contentsline {paragraph}{}{22}
 \contentsline {paragraph}{}{22}
-\contentsline {section}{\numberline {A.2}Al\IeC {\'\i }nea b}{23}
-\contentsline {section}{\numberline {A.3}Al\IeC {\'\i }nea c}{24}
 \contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {section}{\numberline {A.2}Al\IeC {\'\i }nea b}{25}
 \contentsline {paragraph}{}{25}
-\contentsline {paragraph}{}{25}
-\contentsline {paragraph}{}{26}
-\contentsline {paragraph}{}{26}
-\contentsline {section}{\numberline {A.4}Extra- Zim to Beamer}{27}
-\contentsline {paragraph}{}{27}
-\contentsline {paragraph}{}{27}
 \contentsline {paragraph}{}{28}
 \contentsline {paragraph}{}{28}
 \contentsline {paragraph}{}{31}
 \contentsline {paragraph}{}{31}
 \contentsline {paragraph}{}{33}
 \contentsline {paragraph}{}{33}
-\contentsline {paragraph}{}{33}
-\contentsline {paragraph}{}{33}
-\contentsline {paragraph}{}{33}
 \contentsline {paragraph}{}{34}
 \contentsline {paragraph}{}{34}
-\contentsline {paragraph}{}{34}
+\contentsline {section}{\numberline {A.3}Al\IeC {\'\i }nea c}{36}
+\contentsline {paragraph}{}{36}
+\contentsline {paragraph}{}{37}
+\contentsline {paragraph}{}{37}
+\contentsline {paragraph}{}{38}
+\contentsline {paragraph}{}{38}
+\contentsline {section}{\numberline {A.4}Extra- Zim to Beamer}{39}
+\contentsline {paragraph}{}{39}
+\contentsline {paragraph}{}{39}
+\contentsline {paragraph}{}{40}
+\contentsline {paragraph}{}{40}
+\contentsline {paragraph}{}{43}
+\contentsline {paragraph}{}{43}
+\contentsline {paragraph}{}{45}
+\contentsline {paragraph}{}{45}
+\contentsline {paragraph}{}{45}
+\contentsline {paragraph}{}{45}
+\contentsline {paragraph}{}{45}
+\contentsline {paragraph}{}{46}
+\contentsline {paragraph}{}{46}
+\contentsline {paragraph}{}{46}
