@@ -45,7 +45,7 @@ nomeCompleto = 1; // Apelido vem primeiro
 //	Parsing possivel apelido
 	temApelido = 1;
 	strcpy(apelido,yytext); apelido[yyleng] = '\0'; 
-	if(apelido[yyleng-1] == '}') apelido[yyleng-1] = '\0';
+//	if(apelido[yyleng-1] == '}') apelido[yyleng-1] = '\0';
    }	
  }
 }
