@@ -169,6 +169,31 @@ no Anexo encontra-se o conteúdo integral da implementação desta estrutura de dad
 \newpage
 
 \subsection{Alínea b}
+Neste problema só é preciso guardar dados para ordenar os campos de forma a colocar o campo \textit{author} em primeiro lugar, seguido do campo \textit{title} . Uma estrutura de dados simples como um array de \textit{strings} ou mais especificamente em contexto C um array de \textit{char*} seria o suficiente para ordenar os campos. No entanto, foi optado por utilizar duas \textit{structs} que contenham toda a informação de um registo para resolver o problema. Esta opção, para além de permitir um maior controlo na formatação final do registo também simplifica o código em flex.
+\paragraph{}
+As duas \textit{structs} estão definidas no ficheiro \textit{prettybibtex.h}. A struct \textit{registo} contém toda a informação de um registo. O campo \textit{categoria} é usado para guardar o nome da categoria, da mesma maneira o campo \textit{chave}guarda a chave. Apesar da informação dos autores ser considerada mais um campo de uma entrada \textit{BibTeX} (não confundir com campos da struct registo) foi guardada num array de \textit{strings} separando-se dos restantes campos. Esta distinção tem duas vantagens significativas, em primeiro lugar a divisão do conteúdo do campo \textit{author} num array de \textit{strings} permite guardar o nome formatado de cada autor numa string diferente, isto facilita bastante a tarefa de imprimir um autor em cada linha. A segunda vantagem é que facilita a função de ordenação dos campos, assim só é preciso colocar o campo \textit{title} em primeiro lugar do array de \textit{Campo}. Esta componente é um array de um apontador para a \textit{struct campo} que contém um par de \textit{strings} com o nome do campo a guardar e o seu respectivo conteúdo.
+
+\begin{verbatim}
+typedef struct registo{
+  char* categoria;
+  char* chave;
+  char** autores;
+  int iautores;
+  Campo* campos;
+  int r;
+}*Registo;
+
+typedef struct campo{
+  char* nome;
+  char* valor;
+}*Campo;
+\end{verbatim}
+
+\paragraph{}
+Esta estruturada de dados é reutilizada a cada leitura de uma entrada \textit{BibTeX} de modo a o programa não utilizar mais memória do que efetivamente necessita. É de notar que se a memória da estrutura não fosse devidamente libertada e/ou reutilizada, o programa para ficheiros \textit{BibTeX} de elevada dimensão ocuparia uma elevada quantidade de memória possivelmente capaz de ultrapassar a memória da heap atribuída pelo \textit{Sistema Operativo} e terminar interruptamente.         
+
+ 
+
 
 \newpage
 \newpage
@@ -264,9 +289,126 @@ O objectivo desta é encontrar todos os padrões que estejam contidos entre os car
 \newpage
 
 \subsection{Alínea b}
+A codificação deste programa acarretou alguns desafios. Inicialmente, o grande desafio foi filtrar os campos delimitados por chavetas e aspas, no entanto os dois problemas foram resolvidos de uma maneira simples e elegante. Outro grande desafio foi a leitura e formatação do conteúdo do campo \textit{author}, este provou-se ser um problema complexo e a sua solução não tão elegante e simples como as anteriores. Isto apenas porque o conteúdo do campo pode aparecer em 2 formatos distintos mais um conjunto de casos particulares.
+
+Para a resolução do problema foram criadas 6 variáveis de condição cujo propósito de cada uma será explicado ao longo da secção.
+
+%x AUT CHAVE CAMPOS NOMECAMPO VALORCAMPO VALORCAMPOT2 
+
+\paragraph{}
+O estado \textit{INITIAL} tem como função identificar as entradas de \textit{BibTeX} com registos de interesse, estes são os que contêm referências bibliográficas. O \textit{BibTeX} para além das entradas de interesse contem 3 tipos de entradas \textit{@string}, \textit{@preamble} e \textit{@comment}. O ficheiro de dados deste trabalho  não contem as duas últimas entradas e, portanto, a gramática não precisou de regras para lidar com as mesmas. No entanto, para a gramática funcionar com as mesmas, basta adicionar duas regras que identifiquem as entradas e as imprimem. Essas regras e respetivas ações seriam quase identicas à primeira regra para identificar a entrada \textit{@string}. Por exemplo, para apanhar a entrada \textit{@preamble} bastaria adicionar a regra @[Pp][Rr][Ee][Aa][Mm][Bb][Ll][Ee]\{ com a ação \textit{ECHO}.
+Ignorando as entradas não relevantes para o objetivo do problema, temos todas as categorias restantes iniciadas também por '@' seguidas pelo nome da categoria contendo uma sequência de uma ou mais letras maiúsculas ou minúsculas [A-Za-z]+ finalizadas com o símbolo '{' . Dada a ocorrência desse padrão é inicializada a estrutura \textit{Registo} que conterá a informação da entrada, e é já adicionado à estrutura o nome da categoria.  
+Após lida a categoria, vem a leitura da chave no estado CHAVE.
+\begin{verbatim}
+<INITIAL>@[Ss][Tt][Rr][Ii][Nn][Gg]\{ { ECHO;}
+<INITIAL>@[A-Za-z]+\{ {
+registo = initRegisto();
+yytext[yyleng - 1] = '\0'; yytext+=1;
+registo->categoria = strdup(yytext);
+BEGIN CHAVE;}
+<INITIAL>.|\n { ECHO;}
+\end{verbatim}
+
+\paragraph{}
+A chave está obrigatoriamente separada do próximo campo através do símpolo ',' e possivelmente contem espaços no início e fim. A regra .|\n limpa esses espaços e a regra [A-Za-z0-9:]+ filtra o id da chave. Sabe-se que a chave pode conter letras, números e o símbolo ':', no entanto, se essa informação fosse desconhecida ou a chave abrangesse um conjunto maior de símbolos, a expressão regular podia ser substituída por algo mais genérico, como por exemplo:
+\begin{verbatim}
+[^ ]+/, 
+\end{verbatim}
+Esta expressão apanharia todos os símbolos excepto o espaço até apanhar o símbolo delimitador ',', não consumindo o mesmo, uma vez que não faz parte da chave. 
+Gravada a chave na estrutura \textit{registo} é inicializado o estado CAMPOS.
+
+\begin{verbatim} 
+<CHAVE>[A-Za-z0-9:]+ {registo->chave = strdup(yytext);BEGIN CAMPOS;}
+<CHAVE>.|\n {}
+\end{verbatim}
+
+\paragraph{}
+O estado campos tem uma função apenas que é identificar se o registo acabou ou se há mais campos. 
+O registo acaba se aparecer depois do último campo o símbolo '}',o último campo pode ser finalizado com uma ',' ou não. Entre a ',' opcional e a '}' de finalização pode aparecer os símbolos '\n' e ' '. No final da entrada, é invocada a função 'printRegisto' para imprimir a \textit{struct registo} com a informação da entrada na sua totalidade, a função também liberta a memória alocada.
+Caso a chaveta de finalização não apareça significa que há mais campos e dá-se a leitura do nome do próximo campo no estado \textit{NOMECAMPO}.  
+
+\begin{verbatim} 
+<CAMPOS>(","?)[\n \t]*\} { printRegisto(registo); BEGIN INITIAL;}
+<CAMPOS>\,[\n \t]* {BEGIN NOMECAMPO;}
+\end{verbatim}
+
+\paragraph{}
+O nome do campo pode conter letras e o símbolo '-' e é obtido pela ER [a-zA-Z]+ . O separador entre o nome do campo e o seu conteúdo é o símbolo '=' , quando este é filtrado dá-se início à leitura do conteúdo do campo no estado \textit{VALORCAMPO}.
+O campo \textit{author} é tratado de maneira diferente, uma vez que um dos objetivos do trabalho é formatar nomes. Este estado identifica o campo author e dá ininício ao estado AUT que irá processar o conteúdo do campo de forma diferente dos restantes. Para além disso, o estado aproveita para facilitar o trabalho do estado AUT, cobrindo o caso do conteúdo do campo \textit{author} estar vazio e o caso do campo conter apenas um único nome.
+
+\begin{verbatim}
+<NOMECAMPO>[ ]*=[ ]* { BEGIN VALORCAMPO;}
+<NOMECAMPO>[a-zA-Z-]+
+
+<NOMECAMPO>[ ]*[Aa][Uu][Tt][Hh][Oo][Rr][ ]*=[ ]*["{][ ]*["}] // Caso vazio
+<NOMECAMPO>[ ]*[Aa][Uu][Tt][Hh][Oo][Rr][ ]*=[ ]*["{]  //Dá inicio a AUT
+<NOMECAMPO>[ ]*[Aa][Uu][Tt][Hh][Oo][Rr][ ]*=[ ]*["{][ ]*[^ ]+[ ]*["}]/, //Único nome
+\end{verbatim}
+
+\paragraph{}
+O conteúdo do campo está sempre delimitado por aspas ou chavetas, com a exceção no caso do conteúdo ser um número ou uma única palavra. Esse caso é tratado pela expressão [a-z][A-Z][0-9]+.
+Se o campo estiver delimitado por aspas o conteúdo do campo pode conter todos os símbolos possíveis. O delimitador '"' pode aparecer também no próprio campo, no entanto este tem de ser precedido pelo símbolo '\', aparecendo sempre '\"'. Devido à elevada quantidade de símbolos possíveis o problema só pode ser resolvido através da negação do conjunto de símbolos não permitidos. Portanto, o conteúdo do campo é tudo excepto o delimitador '"' com a exceção do aparecimento do símbolo '\"' que resulta na expressão regular 
+\begin{verbatim}
+\"([^"]("\\\""?))*\"
+\end{verbatim}
+Quando o campo está delimitado por chavetas a mesma técnica não pode ser utilizada uma vez que o delimitador final '}' pode aparecer livremente no conteúdo. A única restrição é que sempre que é aberta uma chaveta tem de aparecer outra a fechar. O estado identifica o delimitador '{' e dá início à variavel de condição VALORCAMPOT2. O problema é resolvido nesse estado através de um contador de chavetas abertas. Esse estado finaliza quando encontrar o símbolo '}' e o número de chavetas abertas ser 1, o que significa que o símbolo '}' está a fechar a chaveta inicial do campo. 
+Finalizada a leitura do conteúdo do campo é invocado o estado CAMPOS para verificar se há mais campos no registo ou se o registo acabou.
+
+\begin{verbatim}
+<VALORCAMPO>[a-zA-Z0-9]+
+<VALORCAMPO>\"([^"]("\\\""?))*\"
+<VALORCAMPO>\{ 
+\end{verbatim}
+
+\paragraph{}
+Este estado tem como função filtrar os nomes individuais dos autores para formatar os nomes no formato "N. Apelido". Para entender a solução é necessário conhecer as formatações dos nomes dos autores. A formatação 1 consiste nos nomes completos ou primeiro e ultimo nome de cada autor separados por "and", por exemplo "Nome Nome Apelido and Nome Apelido". Na formatação 2 os nomes dos autores também são separados por "and", no entanto o apelido do autor vem sempre em primeiro lugar, separado com uma "," do primeiro e restantes nomes, por exemplo "Apelido, Nome Nome".
+O estado identifica o final do campo através do padrão '",' ou '},'. Uma vez que o símbolo '}' não é um bom delimitador, visto que os nomes podem conter chavetas o que obrigaria à contagem de chavetas abertas como feito nos outros campos. Todavia tal método aumentaria significativamente a complexidade da solução.
+ A solução do problema encontra-se explicada detalhadamente de seguida, cada regra contém uma pequena explicação e a sua ação é explicada.
+
+\begin{verbatim}
+// Regra identifica o final do nome completo de um autor
+<AUT>[ ]+[Aa]nd[ ]+ {
+  guarda o nome e o apelido do autor 
+  reinicializa as variaveis de controlo
+temApelido = 0; nomeCompleto = 0; primeiroNomeParsed = 0;
+}
+// Identifica o final do campo
+<AUT>["}],[ ]*\n { 
+  guarda o nome e o apelido do último autor e salta para o estado CAMPOS
+}
+// Apanha o último nome do campo e não deixa consumir o padrão de saída do estado
+<AUT>([^ ,"\n]("\\\""?))+/"}," {
+  É lido o último nome ou apelido do registo e é invocada a função formatAuthor que lida com o nome conforme as variáveis de controlo 
+  formatAuthor(); // explicado no final
+}
+// Identifica a formatação 2 através do padrão "Apelido,"
+<AUT>([^ ,"\n]("\\\""?))+/, { 
+  identifica o formato 2
+  guarda o apelido
+}
+// Apanha os restantes nomes
+<AUT>([^ ,"\n]("\\\""?))+ {
+  É lido um nome ou apelido e é invocada a função formatAuthor que lida com o nome conforme as variáveis de controlo 
+        formatAuthor();
+}
+<AUT>.|\n {
+  limpa espaços, e vírgulas no caso da formatação 2 */ 
+}
+
+formatAuthor(){
+  Dado um nome e o estado das variáveis de controlo, comporta-se de 3 maneiras diferentes.
+  Na situação do formato2 e o nome do autor não estar completo(ter 2 nomes), identifica o nome como primeiro nome e guarda o. Coloca a flag nomeCompleto ativa.
+  Na situação formato1 e primeiro nome não lido, guarda o nome como primeiro nome e ativa flag 'primeiroNomeParsed'.
+  Na situação formato1 e primeiro nome lido, guarda o nome como apelido. É de notar que guarda o nome sempre na mesma variável, portanto o último nome a ser guardado vai ser efetivamente o apelido. 
+}
+
+\end{verbatim}
+
 
 \newpage
 \newpage
+
+
 
 \subsection{Alínea c}
 Inicialmente, o problema incidiu no pouco conhecimento do grupo acerca da linguagem \textit{Dot}, pelo que
@@ -359,6 +501,11 @@ abrir o \VerbatimInput{indexA.html} com um \textit{browser} qualquer.
 
 \subsection{Alínea b}
 
+Para testar o programa, para além de sucessivas análises gerais do output a processar o ficheiro \textit{lpbib.txt}, foi criado um ficheiro de dimensões mais reduzidas denominado \textit{bugs.txt} com entradas \textit{BibTeX} com particularidades diferentes umas das outras. Esse ficheiro contém as várias possibilidades de formatação no campo dos autores, nomes de autores com aspas e chavetas, campos com '\n', último campo terminado com ou sem vírgula e mais.
+Foi também criada uma gramática extra que filtrou com sucesso os nomes de todos os autores do ficheiro \textit{lpbib.txt} já formatado pelo programa desenvolvido.  
+ 
+
+
 \newpage
 \newpage
 
@@ -395,6 +542,11 @@ sentidas em alguns momentos. Conseguimos, numa primeira fase, proceder à contage
 \textit{BibTex} e, de seguida, efetuar a normalização dos campos e desenvolver uma ferramenta de \textit{pretty-printing}, que embelezou
 o ficheiro inicial, sendo que o resultado desta tarefa revelou-se extremamente importante para a realização da última fase, que consistiu,
 na criação de um grafo de todos os autores que efetuaram publicações com um autor passado como argumento.
+
+\paragraph{}
+Para além destas tarefas, ainda optamos pela realização de mais uma tarefa (explicada em anexo), que consistiu na criação de \textit{slides}
+em \textit{Beamer}, utilizando para tal a ferramenta \textit{Zim-wiki}. Mais uma vez e, à semelhança da tarefa anterior, os resultados
+gerados foram bastante satisfatórios, o que nos deixa bastante satisfeitos.
 
 \paragraph{}
 Futuramente, pretendemos aperfeiçoar os nossos conhecimento acerca desta e de outras ferramentas de \textit{parsing} de documentos, a fim
@@ -459,6 +611,53 @@ está no ficheiro \textit{indexA.html}.
 \newpage
 \newpage
 \section{Alínea b}
+Ficheiro \textit{ppFUNCIOONAL.l}:
+
+\paragraph{}
+\lstinputlisting{ppFUNCIOONAL.l}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{prettybibtex.l}:
+
+\paragraph{}
+\lstinputlisting{prettybibtex.l}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{prettybibtex.c}:
+
+\paragraph{}
+\lstinputlisting{prettybibtex.c}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{prettybibtex.h}:
+
+\paragraph{}
+\lstinputlisting{prettybibtex.h}
+
+\newpage
+\newpage
+
+\paragraph{}
+Ficheiro \textit{saveGraphV2.l}:
+
+\paragraph{}
+\lstinputlisting{saveGraphV2.l}
+
+\paragraph{}
+Ficheiro \textit{bugs.txt}
+
+\paragraph{}
+\lstinputlisting{bugs.txt}
+
 
 \newpage
 \newpage
