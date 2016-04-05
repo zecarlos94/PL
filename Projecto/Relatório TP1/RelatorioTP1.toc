@@ -69,30 +69,26 @@
 \contentsline {paragraph}{}{25}
 \contentsline {paragraph}{}{28}
 \contentsline {paragraph}{}{28}
-\contentsline {paragraph}{}{31}
+\contentsline {paragraph}{}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {section}{\numberline {A.3}Al\IeC {\'\i }nea c}{31}
 \contentsline {paragraph}{}{31}
 \contentsline {paragraph}{}{33}
 \contentsline {paragraph}{}{33}
 \contentsline {paragraph}{}{34}
 \contentsline {paragraph}{}{34}
-\contentsline {section}{\numberline {A.3}Al\IeC {\'\i }nea c}{36}
+\contentsline {section}{\numberline {A.4}Extra- Zim to Beamer}{35}
+\contentsline {paragraph}{}{35}
+\contentsline {paragraph}{}{35}
 \contentsline {paragraph}{}{36}
-\contentsline {paragraph}{}{37}
-\contentsline {paragraph}{}{37}
-\contentsline {paragraph}{}{38}
-\contentsline {paragraph}{}{38}
-\contentsline {section}{\numberline {A.4}Extra- Zim to Beamer}{39}
+\contentsline {paragraph}{}{36}
 \contentsline {paragraph}{}{39}
 \contentsline {paragraph}{}{39}
-\contentsline {paragraph}{}{40}
-\contentsline {paragraph}{}{40}
-\contentsline {paragraph}{}{43}
-\contentsline {paragraph}{}{43}
-\contentsline {paragraph}{}{45}
-\contentsline {paragraph}{}{45}
-\contentsline {paragraph}{}{45}
-\contentsline {paragraph}{}{45}
-\contentsline {paragraph}{}{45}
-\contentsline {paragraph}{}{46}
-\contentsline {paragraph}{}{46}
-\contentsline {paragraph}{}{46}
+\contentsline {paragraph}{}{41}
+\contentsline {paragraph}{}{41}
+\contentsline {paragraph}{}{41}
+\contentsline {paragraph}{}{41}
+\contentsline {paragraph}{}{41}
+\contentsline {paragraph}{}{42}
+\contentsline {paragraph}{}{42}
+\contentsline {paragraph}{}{42}
