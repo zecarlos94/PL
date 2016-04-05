@@ -7,7 +7,7 @@ compileTree:
 	gcc lex.yy.c lista.c -ll -o tp1C
 
 execTree:
-	./tp1C < graphTeste.txt $(ARGS)
+	./tp1C < resultado.txt $(ARGS)
 
 createGraph:
 	dot -Tpng graph.dot > fig.png
