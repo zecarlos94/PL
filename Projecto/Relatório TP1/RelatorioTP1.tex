@@ -171,7 +171,7 @@ no Anexo encontra-se o conteúdo integral da implementação desta estrutura de dad
 \subsection{Alínea b}
 Neste problema só é preciso guardar dados para ordenar os campos de forma a colocar o campo \textit{author} em primeiro lugar, seguido do campo \textit{title} . Uma estrutura de dados simples como um array de \textit{strings} ou mais especificamente em contexto C um array de \textit{char*} seria o suficiente para ordenar os campos. No entanto, foi optado por utilizar duas \textit{structs} que contenham toda a informação de um registo para resolver o problema. Esta opção, para além de permitir um maior controlo na formatação final do registo também simplifica o código em flex.
 \paragraph{}
-As duas \textit{structs} estão definidas no ficheiro \textit{prettybibtex.h}. A struct \textit{registo} contém toda a informação de um registo. O campo \textit{categoria} é usado para guardar o nome da categoria, da mesma maneira o campo \textit{chave}guarda a chave. Apesar da informação dos autores ser considerada mais um campo de uma entrada \textit{BibTeX} (não confundir com campos da struct registo) foi guardada num array de \textit{strings} separando-se dos restantes campos. Esta distinção tem duas vantagens significativas, em primeiro lugar a divisão do conteúdo do campo \textit{author} num array de \textit{strings} permite guardar o nome formatado de cada autor numa string diferente, isto facilita bastante a tarefa de imprimir um autor em cada linha. A segunda vantagem é que facilita a função de ordenação dos campos, assim só é preciso colocar o campo \textit{title} em primeiro lugar do array de \textit{Campo}. Esta componente é um array de um apontador para a \textit{struct campo} que contém um par de \textit{strings} com o nome do campo a guardar e o seu respectivo conteúdo.
+As duas \textit{structs} estão definidas no ficheiro \textit{prettybibtex.h}. A struct \textit{registo} contém toda a informação de um registo. O campo \textit{categoria} é usado para guardar o nome da categoria, da mesma maneira o campo \textit{chave} guarda a chave. Apesar da informação dos autores ser considerada mais um campo de uma entrada \textit{BibTeX} (não confundir com campos da struct registo) foi guardada num array de \textit{strings} separando-se dos restantes campos. Esta distinção tem duas vantagens significativas, em primeiro lugar a divisão do conteúdo do campo \textit{author} num array de \textit{strings} permite guardar o nome formatado de cada autor numa string diferente, isto facilita bastante a tarefa de imprimir um autor em cada linha. A segunda vantagem é que facilita a função de ordenação dos campos, assim só é preciso colocar o campo \textit{title} em primeiro lugar do array de \textit{Campo}. Esta componente é um array de um apontador para a \textit{struct campo} que contém um par de \textit{strings} com o nome do campo a guardar e o seu respectivo conteúdo.
 
 \begin{verbatim}
 typedef struct registo{
@@ -204,7 +204,7 @@ guardar os autores de uma publicação para, posteriormente, verificar se o autor 
 primeira estrutura os outros autores, sendo que, caso um autor já exista na estrutura principal, então incrementava um contador que indica quantas vezes
 esse autor fez publicações em conjunto com o principal.
 \paragraph{}
-O grupo optou por escolher esta estrutura de dados, uma vez que é bastante simples de implentar, tendo como uma das desvantagens a pouca eficiência na procura
+O grupo optou por escolher esta estrutura de dados, uma vez que é bastante simples de implementar, tendo como uma das desvantagens a pouca eficiência na procura
 e inserção de informação. Contudo, como trabalhamos com pouca quantidade de dados (em termos computacionais), chegámos à conclusão que as desvantagens da lista
 ligada não se iriam fazer sentir na execução do programa. 
 
@@ -291,7 +291,7 @@ O objectivo desta é encontrar todos os padrões que estejam contidos entre os car
 \subsection{Alínea b}
 A codificação deste programa acarretou alguns desafios. Inicialmente, o grande desafio foi filtrar os campos delimitados por chavetas e aspas, no entanto os dois problemas foram resolvidos de uma maneira simples e elegante. Outro grande desafio foi a leitura e formatação do conteúdo do campo \textit{author}, este provou-se ser um problema complexo e a sua solução não tão elegante e simples como as anteriores. Isto apenas porque o conteúdo do campo pode aparecer em 2 formatos distintos mais um conjunto de casos particulares.
 
-Para a resolução do problema foram criadas 6 variáveis de condição cujo propósito de cada uma será explicado ao longo da secção.
+Para a resolução do problema foram criadas 6 variáveis de contexto cujo propósito de cada uma será explicado ao longo da secção.
 
 %x AUT CHAVE CAMPOS NOMECAMPO VALORCAMPO VALORCAMPOT2 
 
@@ -647,7 +647,24 @@ Ficheiro \textit{prettybibtex.h}:
 \newpage
 
 \paragraph{}
+<<<<<<< Updated upstream
 Ficheiro \textit{saveGraphV2.l}:
+=======
+<<<<<<< HEAD
+Ficheiro \textit{bugs.txt}:
+
+\paragraph{}
+\lstinputlisting{bugs.txt}
+
+\newpage
+\newpage
+
+\section{Alínea c}
+Ficheiro \textit{tp1C.fl}:
+=======
+Ficheiro \textit{saveGraphV2.l}:
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 
 \paragraph{}
 \lstinputlisting{saveGraphV2.l}
