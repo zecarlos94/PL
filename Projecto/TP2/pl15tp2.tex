@@ -1,0 +1,137 @@
+
+\documentclass[portuges,a4paper]{article}
+%% \RequirePackage[a4paper,top=2cm,left=2.5cm,right=2.5cm,bottom=1.5cm,nohead,nofoot]{geometry}
+\usepackage[portuges]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+
+\setlength{\oddsidemargin}{-1cm}
+\setlength{\textwidth}{18cm}
+\setlength{\headsep}{-1cm}
+\setlength{\textheight}{23cm}
+
+\parindent 0pt
+\parskip 2pt
+
+\def\lpis{\textsf{LPIS}}
+\def\liss{\textsf{LISS}}
+\def\lissn{\textsf{LISS-v2}}
+\def\lgliss{\textsf{LogoLISS}}
+\def\logo{\textsf{Logo}}
+\def\nu{\textsf{NuWeb}}
+\def\vm{\textsf{VM}}
+\def\ass{\textsf{Assembly}}
+\def\yacc{\textsf{Yacc}}
+\def\lex{\textsf{Flex}}
+\def\antlr{\textsf{AnTLR}}
+\def\java{\textsf{Java}}
+
+\def\GIC{\textsf{GIC}}
+\def\GA{\textsf{GA}}
+\def\gic{gramática independente de contexto}
+\def\ga{gramática de atributos}
+\def\gas{gramáticas de atributos}
+\def\gt{\emph{gramática tradutora}}
+\def\gts{\emph{gramáticas tradutoras}}
+\def\TDS{\textsf{TDS}}
+\def\TDSem{\textsf{TDSem}}
+\def\tds{tradução dirigida pela sintaxe}
+\def\tdsem{tradução dirigida pela semântica}
+\def\lp{\emph{literate programming}}
+
+\begin{document}
+
+\title{Processamento de Linguagens\\ MiEI (3ºano)}
+\author{Trabalho Prático nº 2 (Yacc)}
+\date{Ano lectivo 15/16}
+
+\maketitle
+
+%--------------------------------------------------------------------------
+\section{Objectivos e Organização}
+Este trabalho prático tem como principais {\bf objectivos}:
+\begin{itemize}
+\item (genericamente) aumentar a experiência em \emph{engenharia de
+linguagens} e em \emph{programação generativa (gramatical)};
+\item
+(especificamente) desenvolver processadores de linguagens segundo
+o método da \emph{\tds}, suportado numa \emph{\gt};
+\item
+(especificamente) desenvolver um \textbf{compilador} gerando código para uma \textbf{máquina de stack virtual};
+\item
+(especificamente) utilizar  \emph{geradores de compiladores} baseados em \gts, concretamente o \yacc.
+\end{itemize}
+e como {\bf objectivos} secundários:
+\begin{itemize}
+\item
+aumentar a experiência de uso do ambiente \textsf{Linux}, da linguagem
+imperativa \textsf{C} (para codificação das estruturas de dados e respectivos algoritmos de manipulação), 
+e de algumas ferramentas de apoio à programação;
+\item
+rever e aumentar a capacidade de escrever \emph{gramáticas independentes de contexto} que satisfaçam a condição LR()
+usando BNF-puro.
+%\item
+%criar o hábito de escrever a documentação (os relatórios dos trabalhos práticos e projectos)
+%em \emph{literate programming}, recorrendo a um \emph{extractor} do tipo \nu.
+\end{itemize}
+
+Para o efeito, esta folha contém apenas 1 enunciado.\\
+O programa desenvolvido será apresentado aos membros da equipa docente, totalmente pronto
+e  a funcionar (acompanhado do respectivo relatório de desenvolvimento)
+e será defendido por todos os elementos do grupo,
+numa semana de Junho, em dia a combinar.\\
+%
+O \textbf{relatório} a elaborar, deve ser claro
+e, além do respectivo enunciado, da descrição do problema, das decisões que lideraram
+o desenho da linguagem/gramática e as regras de tradução para \ass\ da \vm\ (incluir as especificações \yacc),
+deverá conter exemplos de utilização (programas-fonte diversos e respectivo código produzido).
+Como é de tradição, o relatório  será escrito em \LaTeX.\\
+O relatório será submetido através do sistema de submissão próprio, até à data de fim de prazo:
+\textbf{Sábado, 28 de Maio}.
+%
+%--------------------------------------------------------------------------
+\section{Enunciado}
+Pretende-se que comece por definir uma linguagem de programação imperativa simples (\lpis),  a seu gosto.\\
+Apenas deve ter em consideração que a \lpis\ terá de permitir:
+\begin{itemize}
+\item \emph{declarar e manusear} variáveis atómicas do tipo \emph{inteiro},
+com os quais se podem realizar as habituais operações aritméticas, relacionais e lógicas.
+\item \emph{declarar e manusear} variáveis estruturadas do tipo \emph{array (a 1 ou 2 dimensões) de inteiros},
+em relação aos quais é apenas permitida a operação de indexação (índice inteiro).
+\item \emph{efetuar} instruções algorítmicas básicas como a \emph{atribuição de expressões a variáveis}.
+\item \emph{ler} do \emph{standard input} e \emph{escrever} no \emph{standard output}.
+\item \emph{efetuar} instruções para controlo do fluxo de execução---\emph{condicional} e \emph{cíclica}---que possam ser aninhadas.
+\item \emph{definir e invocar subprogramas} sem parâmetros mas que possam retornar um resultado atómico (opcional).
+\end{itemize}
+Como é da praxe neste tipo de linguagens, as variáveis deverão ser declaradas no início do
+programa e não pode haver re-declarações, nem utilizações sem declaração prévia.
+Se nada for explicitado, o valor da variável após a declaração é 0 (zero).
+
+\textbf{Nota:} o desenho da \lpis\ tem de ser validado com o docente antes de avançar para a fase seguinte.\\
+
+Desenvolva, então, um compilador para \lpis, com base na \GIC\ criada acima
+e recurso ao Gerador \yacc / \lex.\\
+O compilador de \lpis\ deve gerar \textbf{pseudo-código}, \ass\ da Máquina Virtual \vm\
+cuja documentação completa está disponibilizada no \textsf{Bb}.\\
+
+\underline{Muito Importante}:\\
+Para a entrega do TP deve preparar um conjunto de testes (programas-fonte escritos na sua linguagem) 
+e mostrar o código \ass\ gerado bem como o programa a correr na máquina virtual \vm.
+Esse conjunto terá de conter, no mínimo, os 6 exemplos que se seguem:
+\begin{itemize}
+  \item lidos 3 números, escrever o  maior deles.
+  \item ler N (valor dado) números e calcular e imprimir o seu somatório.
+  \item contar e imprimir os números pares de uma sequência de N números dados.
+  \item ler e armazenar os elementos de um vetor de comprimento N; imprimir os valores por ordem
+  crescente após fazer a ordenação do array por trocas diretas.
+  \item ler e armazenar os elementos de uma matriz NxM; calcular e imprimir a média e máximo dessa matriz.
+  \item invocar e usar num programa seu uma função 'potencia(Base,Exp)' cujo código \ass\ lhe será fornecido.
+\end{itemize}
+%--------------------------------------------------------------------------
+
+
+
+\end{document}
