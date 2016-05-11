@@ -1,0 +1,67 @@
+lpis -> declarations functions
+
+functions -> function
+           | functions function 
+
+function -> type NAME '(' input ')' '{' program '}'
+
+input -> inputs
+       | EMPTY
+
+inputs -> type NAME
+        | inputs ',' type NAME 
+
+program -> declaration body 'return' value
+
+declaration -> declarations ';'
+             | EMPTY
+
+declarations -> type NAME
+              | declarations ';' type NAME  
+
+body -> body atribution 
+      | body flowControl 
+      | EMPTY
+
+atribution -> NAME '=' expression ';' 
+            | NAME '[' NUMBER ']' '=' expression ';'
+            | NAME '[' NUMBER ']' '[' NUMBER ']' '=' expression ';'
+
+flowControl -> 'while' '(' booleanExpression ')' '{' body '}'
+             | 'if' '(' booleanExpression ')' '{' body '}' 'else' '{' body '}'
+
+expression -> value
+            | expression '+' value 
+            | expression '-' value
+            | expression '*' value 
+            | expression '/' value 
+
+booleanExpression -> value booleanSignal value
+                   | booleanExpression '&&' value booleanSignal value 
+                   | booleanExpression '||' value booleanSignal value
+		    | ‘!’ ‘(‘ booleanExpression ‘)’
+
+booleanSignal -> '=='
+               | '!='
+               | '<'
+               | '>'
+               | '<='
+               | '>='
+
+values -> moreValues
+        | EMPTY
+
+moreValues -> value 
+            | moreValues ',' value 
+
+value -> NAME
+       | NUMBER
+       | NAME '(' values ')'
+       | NAME '[' NUMBER ']'
+       | NAME '[' NUMBER ']' '[' NUMBER ']'
+
+type -> 'int' subtype
+
+subtype -> '[]'
+         | '[][]'
+         | EMPTY
