@@ -1,0 +1,1656 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.10)  5 JUN 2015 16:29
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**pl14TP2Gr25.tex
+(./pl14TP2Gr25.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/applemac.def
+File: applemac.def 2008/03/30 v1.1d Input encoding file
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/05/16 v3.9f The Babel package
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/05/16 v3.9f Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 145.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/listings/listings.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\lst@mode=\count89
+\lst@gtempboxa=\box26
+\lst@token=\toks17
+\lst@length=\count90
+\lst@currlwidth=\dimen104
+\lst@column=\count91
+\lst@pos=\count92
+\lst@lostspace=\dimen105
+\lst@width=\dimen106
+\lst@newlines=\count93
+\lst@lineno=\count94
+\lst@maxwidth=\dimen107
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count95
+\lst@skipnumbers=\count96
+\lst@framebox=\box27
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks18
+\verbatim@line=\toks19
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/moreverb/moreverb.sty
+Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
+\tab@position=\count97
+\tab@size=\count98
+\listing@line=\count99
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count100
+\calc@Bcount=\count101
+\calc@Adimen=\dimen108
+\calc@Bdimen=\dimen109
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count102
+\calc@Cskip=\skip45
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count103
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen110
+\Gin@req@width=\dimen111
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box28
+\AM@toc@title=\toks20
+\c@AM@survey=\count104
+\AM@templatesizebox=\box29
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks21
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box30
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks22
+\pgfkeys@temptoks=\toks23
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks24
+))
+\pgf@x=\dimen112
+\pgf@y=\dimen113
+\pgf@xa=\dimen114
+\pgf@ya=\dimen115
+\pgf@xb=\dimen116
+\pgf@yb=\dimen117
+\pgf@xc=\dimen118
+\pgf@yc=\dimen119
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count105
+\c@pgf@countb=\count106
+\c@pgf@countc=\count107
+\c@pgf@countd=\count108
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count109
+\pgfsyssoftpath@bigbuffer@items=\count110
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen120
+\pgfmath@count=\count111
+\pgfmath@box=\box31
+\pgfmath@toks=\toks25
+\pgfmath@stack@operand=\toks26
+\pgfmath@stack@operation=\toks27
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count112
+))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen121
+\pgf@picmaxx=\dimen122
+\pgf@picminy=\dimen123
+\pgf@picmaxy=\dimen124
+\pgf@pathminx=\dimen125
+\pgf@pathmaxx=\dimen126
+\pgf@pathminy=\dimen127
+\pgf@pathmaxy=\dimen128
+\pgf@xx=\dimen129
+\pgf@xy=\dimen130
+\pgf@yx=\dimen131
+\pgf@yy=\dimen132
+\pgf@zx=\dimen133
+\pgf@zy=\dimen134
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen135
+\pgf@path@lasty=\dimen136
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen137
+\pgf@shorten@start@additional=\dimen138
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count113
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen139
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen140
+\pgf@pt@y=\dimen141
+\pgf@pt@temp=\dimen142
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen143
+\pgf@sys@shading@range@num=\count114
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box35
+))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box36
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen144
+\pgf@nodesepend=\dimen145
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen146
+\pgffor@skip=\dimen147
+\pgffor@stack=\toks28
+\pgffor@toks=\toks29
+))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count115
+\pgfplotmarksize=\dimen148
+)
+\tikz@lastx=\dimen149
+\tikz@lasty=\dimen150
+\tikz@lastxsaved=\dimen151
+\tikz@lastysaved=\dimen152
+\tikzleveldistance=\dimen153
+\tikzsiblingdistance=\dimen154
+\tikz@figbox=\box37
+\tikz@tempbox=\box38
+\tikztreelevel=\count116
+\tikznumberofchildren=\count117
+\tikznumberofcurrentchild=\count118
+\tikz@fig@count=\count119
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count120
+\pgfmatrixcurrentcolumn=\count121
+\pgf@matrix@numberofcolumns=\count122
+)
+\tikz@expandcount=\count123
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2008/07/14 v2.10 (rcs-revision 1.3)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box39
+\pgfnodeparttwobox=\box40
+\pgfnodepartthreebox=\box41
+\pgfnodepartfourbox=\box42
+\pgfnodeparttwentybox=\box43
+\pgfnodepartnineteenbox=\box44
+\pgfnodeparteighteenbox=\box45
+\pgfnodepartseventeenbox=\box46
+\pgfnodepartsixteenbox=\box47
+\pgfnodepartfifteenbox=\box48
+\pgfnodepartfourteenbox=\box49
+\pgfnodepartthirteenbox=\box50
+\pgfnodeparttwelvebox=\box51
+\pgfnodepartelevenbox=\box52
+\pgfnodeparttenbox=\box53
+\pgfnodepartninebox=\box54
+\pgfnodeparteightbox=\box55
+\pgfnodepartsevenbox=\box56
+\pgfnodepartsixbox=\box57
+\pgfnodepartfivebox=\box58
+)))
+(/usr/local/texlive/2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+(./pl14TP2Gr25.aux)
+\openout1 = `pl14TP2Gr25.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+\c@lstlisting=\count124
+\AtBeginShipoutBox=\box59
+
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count125
+\scratchdimen=\dimen155
+\scratchbox=\box60
+\nofMPsegments=\count126
+\nofMParguments=\count127
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen156
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
+\everyMPtoPDFconversion=\toks31
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 34.
+ [1
+
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+[1] (./pl14TP2Gr25.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+)
+\tf@toc=\write4
+\openout4 = `pl14TP2Gr25.toc'.
+
+ [1
+
+]
+Cap\'{\i }tulo 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+[2
+
+]
+Cap\'{\i }tulo 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+[3
+
+]
+Overfull \hbox (1.63538pt too wide) in paragraph at lines 90--91
+[]\T1/cmr/m/n/10 Então, seja G a gra-má-tica para a lin-gua-gem in-pe-ra-tiva s
+im-ples: G = <T,N,S,P>,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+[5]
+Cap\'{\i }tulo 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 156.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+[8]
+Cap\'{\i }tulo 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+[9
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+[10] [11] [12] [13] [14] [15] [16] [17]
+Cap\'{\i }tulo 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 628--629
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--631
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
+
+ []
+
+[18
+
+]
+Ap\^endice A.
+[19
+
+]
+Overfull \hbox (32.90771pt too wide) in paragraph at lines 709--709
+[]            \T1/cmtt/m/n/10 listaVariaveis = insertVariavel(auxVariavel,lista
+Variaveis);[] 
+ []
+
+
+Overfull \hbox (80.14618pt too wide) in paragraph at lines 710--710
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"PUSHI 
+0",listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (85.3949pt too wide) in paragraph at lines 716--716
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' já decla
+rada\n",yylineno,$1);[] 
+ []
+
+[20]
+Overfull \hbox (32.90771pt too wide) in paragraph at lines 729--729
+[]            \T1/cmtt/m/n/10 listaVariaveis = insertVariavel(auxVariavel,lista
+Variaveis);[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 732--732
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (85.3949pt too wide) in paragraph at lines 738--738
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' já decla
+rada\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (85.3949pt too wide) in paragraph at lines 757--757
+[]      \T1/cmtt/m/n/10 | ';' { listaInstrucoes = insertInstrucao(iAddr++,"NOP"
+,listaInstrucoes);  }[] 
+ []
+
+[21]
+Overfull \hbox (90.64362pt too wide) in paragraph at lines 765--765
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não decl
+arada\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 767--767
+[]          \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($1,listaVariaveis),"int
+eiro") != 0)[] 
+ []
+
+
+Overfull \hbox (106.38977pt too wide) in paragraph at lines 770--770
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um
+ escalar\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 777--777
+[]            \T1/cmtt/m/n/10 sprintf(buf,"STOREG %d",enderecoVariavel($1,lista
+Variaveis));[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 778--778
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (90.64362pt too wide) in paragraph at lines 788--788
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não decl
+arada\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 790--790
+[]          \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($1,listaVariaveis),"arr
+ay") != 0)[] 
+ []
+
+
+Overfull \hbox (101.14105pt too wide) in paragraph at lines 793--793
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um
+ vector\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (32.90771pt too wide) in paragraph at lines 800--800
+[]            \T1/cmtt/m/n/10 sprintf(buf,"PUSHI %d",enderecoVariavel($1,listaV
+ariaveis));[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 801--801
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (64.40002pt too wide) in paragraph at lines 806--806
+[]          \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"STOREN",
+listaInstrucoes);[] 
+ []
+
+[22]
+Overfull \hbox (90.64362pt too wide) in paragraph at lines 814--814
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não decl
+arada\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 816--816
+[]          \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($1,listaVariaveis),"int
+eiro") != 0)[] 
+ []
+
+
+Overfull \hbox (106.38977pt too wide) in paragraph at lines 819--819
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um
+ escalar\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (32.90771pt too wide) in paragraph at lines 830--830
+[]            \T1/cmtt/m/n/10 sprintf(buf,"PUSHG %d",enderecoVariavel($1,listaV
+ariaveis));[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 831--831
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (80.14618pt too wide) in paragraph at lines 832--832
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"PUSHI 
+1",listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 835--835
+[]              \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"ADD"
+,listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (80.14618pt too wide) in paragraph at lines 837--837
+[]                \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"SU
+B",listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 839--839
+[]            \T1/cmtt/m/n/10 sprintf(buf,"STOREG %d",enderecoVariavel($1,lista
+Variaveis));[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 840--840
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (90.64362pt too wide) in paragraph at lines 849--849
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não decl
+arada\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 851--851
+[]          \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($1,listaVariaveis),"int
+eiro") != 0)[] 
+ []
+
+
+Overfull \hbox (106.38977pt too wide) in paragraph at lines 854--854
+[]            \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um
+ escalar\n",yylineno,$1);[] 
+ []
+
+[23]
+Overfull \hbox (43.40515pt too wide) in paragraph at lines 867--867
+[]              \T1/cmtt/m/n/10 sprintf(buf,"PUSHG %d",enderecoVariavel($1,list
+aVariaveis));[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 868--868
+[]            \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 874--874
+[]              \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"ADD"
+,listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 876--876
+[]              \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"SUB"
+,listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 878--878
+[]              \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"MUL"
+,listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 880--880
+[]              \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"DIV"
+,listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 882--882
+[]              \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"MOD"
+,listaInstrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 885--885
+[]            \T1/cmtt/m/n/10 sprintf(buf,"STOREG %d",enderecoVariavel($1,lista
+Variaveis));[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 886--886
+[]          \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (80.14618pt too wide) in paragraph at lines 895--895
+[]          \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não declar
+ada\n",yylineno,$2);[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 897--897
+[]        \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($2,listaVariaveis),"intei
+ro") != 0)[] 
+ []
+
+
+Overfull \hbox (95.89233pt too wide) in paragraph at lines 900--900
+[]          \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um e
+scalar\n",yylineno,$2);[] 
+ []
+
+[24]
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 908--908
+[]          \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (53.90259pt too wide) in paragraph at lines 909--909
+[]          \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"ATOI",li
+staInstrucoes);[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 911--911
+[]          \T1/cmtt/m/n/10 sprintf(buf,"STOREG %d",enderecoVariavel($2,listaVa
+riaveis));[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 912--912
+[]          \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (80.14618pt too wide) in paragraph at lines 921--921
+[]          \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não declar
+ada\n",yylineno,$2);[] 
+ []
+
+
+Overfull \hbox (17.16156pt too wide) in paragraph at lines 923--923
+[]        \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($2,listaVariaveis),"array
+") != 0)[] 
+ []
+
+
+Overfull \hbox (90.64362pt too wide) in paragraph at lines 926--926
+[]          \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um v
+ector\n",yylineno,$2);[] 
+ []
+
+
+Overfull \hbox (22.41028pt too wide) in paragraph at lines 933--933
+[]          \T1/cmtt/m/n/10 sprintf(buf,"PUSHI %d",enderecoVariavel($2,listaVar
+iaveis));[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 934--934
+[]          \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 941--941
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,listaIn
+strucoes);[] 
+ []
+
+
+Overfull \hbox (43.40515pt too wide) in paragraph at lines 942--942
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"ATOI",list
+aInstrucoes);[] 
+ []
+
+
+Overfull \hbox (53.90259pt too wide) in paragraph at lines 943--943
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"STOREN",li
+staInstrucoes);[] 
+ []
+
+[25]
+Overfull \hbox (53.90259pt too wide) in paragraph at lines 950--950
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"WRITEI",li
+staInstrucoes);[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 957--957
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,listaIn
+strucoes);[] 
+ []
+
+
+Overfull \hbox (53.90259pt too wide) in paragraph at lines 958--958
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"WRITES",li
+staInstrucoes);[] 
+ []
+
+
+Overfull \hbox (43.40515pt too wide) in paragraph at lines 966--966
+[]          \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"if",list
+aInstrucoes);[] 
+ []
+
+
+Overfull \hbox (32.90771pt too wide) in paragraph at lines 979--979
+[]      \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"else",listaI
+nstrucoes);[] 
+ []
+
+[26]
+Overfull \hbox (27.659pt too wide) in paragraph at lines 995--995
+[]        \T1/cmtt/m/n/10 pilhaWhileAddr = pushWhileAddr(iAddr,whileAddr,pilhaW
+hileAddr);[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 996--996
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"while",lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (17.16156pt too wide) in paragraph at lines 1000--1000
+[]        \T1/cmtt/m/n/10 int jump = whileJump(iAddr+1,pilhaWhileAddr,listaInst
+rucoes);[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 1005--1005
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,listaIn
+strucoes);[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 1012--1012
+[]      \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"NOT",listaIn
+strucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1018--1018
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"SUP",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1020--1020
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"INF",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 1026--1026
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"SUPEQ",lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 1028--1028
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"INFEQ",lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 1030--1030
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"EQUAL",lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (48.65387pt too wide) in paragraph at lines 1033--1033
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"EQUAL",lis
+taInstrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1034--1034
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"NOT",lista
+Instrucoes);[] 
+ []
+
+[27]
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1041--1041
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"MUL",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1043--1043
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"ADD",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1049--1049
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"ADD",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1051--1051
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"SUB",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1057--1057
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"MUL",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1059--1059
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"DIV",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1061--1061
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"MOD",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 1069--1069
+[]        \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não declarad
+a\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (17.16156pt too wide) in paragraph at lines 1071--1071
+[]      \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($1,listaVariaveis),"inteiro
+") != 0)[] 
+ []
+
+
+Overfull \hbox (85.3949pt too wide) in paragraph at lines 1074--1074
+[]        \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um esc
+alar\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (111.63849pt too wide) in paragraph at lines 1079--1079
+[]        \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não está ini
+cializada\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (11.91284pt too wide) in paragraph at lines 1084--1084
+[]        \T1/cmtt/m/n/10 sprintf(buf,"PUSHG %d",enderecoVariavel($1,listaVaria
+veis));[] 
+ []
+
+[28]
+Overfull \hbox (27.659pt too wide) in paragraph at lines 1085--1085
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,listaIn
+strucoes);[] 
+ []
+
+
+Overfull \hbox (69.64874pt too wide) in paragraph at lines 1094--1094
+[]        \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não declarad
+a\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (6.66412pt too wide) in paragraph at lines 1096--1096
+[]      \T1/cmtt/m/n/10 else if(strcmp(tipoVariavel($1,listaVariaveis),"array")
+ != 0)[] 
+ []
+
+
+Overfull \hbox (80.14618pt too wide) in paragraph at lines 1099--1099
+[]        \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não é um vec
+tor\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (111.63849pt too wide) in paragraph at lines 1104--1104
+[]        \T1/cmtt/m/n/10 fprintf(stderr,"l.%d erro: variável '%s' não está ini
+cializada\n",yylineno,$1);[] 
+ []
+
+
+Overfull \hbox (11.91284pt too wide) in paragraph at lines 1109--1109
+[]        \T1/cmtt/m/n/10 sprintf(buf,"PUSHI %d",enderecoVariavel($1,listaVaria
+veis));[] 
+ []
+
+
+Overfull \hbox (27.659pt too wide) in paragraph at lines 1110--1110
+[]        \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,listaIn
+strucoes);[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1115--1115
+[]      \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,"LOADN",lista
+Instrucoes);[] 
+ []
+
+
+Overfull \hbox (17.16156pt too wide) in paragraph at lines 1122--1122
+[]      \T1/cmtt/m/n/10 listaInstrucoes = insertInstrucao(iAddr++,buf,listaInst
+rucoes);[] 
+ []
+
+[29]
+Overfull \hbox (11.91284pt too wide) in paragraph at lines 1141--1141
+[]    \T1/cmtt/m/n/10 printf("Introduzir ficheiro para compilação como argument
+o!\n");[] 
+ []
+
+
+Overfull \hbox (106.38977pt too wide) in paragraph at lines 1158--1158
+[]        \T1/cmtt/m/n/10 fprintf(f,"_%06d: %s\n",listaInstrucoes->endereco,lis
+taInstrucoes->instrucao);[] 
+ []
+
+
+Overfull \hbox (101.14105pt too wide) in paragraph at lines 1159--1159
+[]        \T1/cmtt/m/n/10 //printf("_%06d: %s\n",listaInstrucoes->endereco,list
+aInstrucoes->instrucao);[] 
+ []
+
+[30] [31]
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1226--1226
+[]          \T1/cmtt/m/n/10 yylval.string[strchr(yylval.string,'\n')-yylval.str
+ing] = '\0';[] 
+ []
+
+
+Overfull \hbox (43.40515pt too wide) in paragraph at lines 1232--1232
+[]            \T1/cmtt/m/n/10 yylval.string[strchr(yylval.string,'"')-yylval.st
+ring] = '\0';[] 
+ []
+
+[32]
+Overfull \hbox (6.66412pt too wide) in paragraph at lines 1291--1291
+[]\T1/cmtt/m/n/10 int existeVariavel(char *variavel, struct variavel *listaVari
+aveis)[] 
+ []
+
+
+Overfull \hbox (17.16156pt too wide) in paragraph at lines 1306--1306
+[]\T1/cmtt/m/n/10 int enderecoVariavel(char *variavel, struct variavel *listaVa
+riaveis)[] 
+ []
+
+[33]
+Overfull \hbox (6.66412pt too wide) in paragraph at lines 1321--1321
+[]\T1/cmtt/m/n/10 char* tipoVariavel(char *variavel, struct variavel *listaVari
+aveis)[] 
+ []
+
+
+Overfull \hbox (32.90771pt too wide) in paragraph at lines 1336--1336
+[]\T1/cmtt/m/n/10 void inicializaVariavel(char *variavel, struct variavel *list
+aVariaveis)[] 
+ []
+
+
+Overfull \hbox (38.15643pt too wide) in paragraph at lines 1348--1348
+[]\T1/cmtt/m/n/10 int variavelInicializada(char *variavel, struct variavel *lis
+taVariaveis)[] 
+ []
+
+[34]
+Overfull \hbox (6.66412pt too wide) in paragraph at lines 1392--1392
+[]\T1/cmtt/m/n/10 struct ifAddr* pushIfAddr(int endereco, struct ifAddr *pilhaI
+fAddr)[] 
+ []
+
+[35]
+Overfull \hbox (127.38464pt too wide) in paragraph at lines 1420--1420
+[]\T1/cmtt/m/n/10 void elseJump(int endereco, struct ifAddr *pilhaIfAddr, struc
+t instrucao *listaInstrucoes)[] 
+ []
+
+[36] [37]
+Overfull \hbox (11.91284pt too wide) in paragraph at lines 1507--1507
+[]\T1/cmtt/m/n/10 int existeVariavel(char *variavel, struct variavel *listaVari
+aveis);[] 
+ []
+
+
+Overfull \hbox (22.41028pt too wide) in paragraph at lines 1508--1508
+[]\T1/cmtt/m/n/10 int enderecoVariavel(char *variavel, struct variavel *listaVa
+riaveis);[] 
+ []
+
+
+Overfull \hbox (11.91284pt too wide) in paragraph at lines 1509--1509
+[]\T1/cmtt/m/n/10 char* tipoVariavel(char *variavel, struct variavel *listaVari
+aveis);[] 
+ []
+
+
+Overfull \hbox (11.91284pt too wide) in paragraph at lines 1514--1514
+[]\T1/cmtt/m/n/10 struct ifAddr* pushIfAddr(int endereco, struct ifAddr *pilhaI
+fAddr);[] 
+ []
+
+[38] (./pl14TP2Gr25.aux) ) 
+Here is how much of TeX's memory you used:
+ 13482 strings out of 493315
+ 251874 string characters out of 6137903
+ 314758 words of memory out of 5000000
+ 16636 multiletter control sequences out of 15000+600000
+ 18320 words of font info for 41 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 56i,6n,55p,438b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/c
+m-super/cm-super-t1.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/
+sfbx1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sf
+bx1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx
+1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx17
+28.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx2074
+.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx2488.p
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on pl14TP2Gr25.pdf (40 pages, 283226 bytes).
+PDF statistics:
+ 207 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

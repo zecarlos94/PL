@@ -1,0 +1,131 @@
+
+//--- Processamento de Linguagens TP2 ---//
+
+//--- Links ---//
+Gramáticas Independentes de Contexto: http://en.wikipedia.org/wiki/Context-free_grammar
+
+USAR BOTTOM UP
+Notação BNF-puro: http://en.wikipedia.org/wiki/Backus–Naur_Form
+Bottom-Up LR: http://en.wikipedia.org/wiki/LR_parser
+
+Notação BNF-extended: http://en.wikipedia.org/wiki/Extended_Backus–Naur_Form
+Top-Down LL(k): http://en.wikipedia.org/wiki/LL_parser
+
+//--- Requisitos ---//
+
+-- Criar um compilador para uma linguagem de programção iterativa; Utilizar Yacc/Flex; O compilador gera pseudo-código Assembly para controlo de uma stack;
+
+-- Variáveis que a linguagem reconhece/manipula: inteiros e arrays de inteiros; As variáveis são declaradas no início e não podem ser redeclaradas nem utilizadas sem serem declaradas; Se não for atribuído nenhum valor na declaração, tem valor indefinido;
+
+-- Instruções básicas: atribuição (=); ler do stdin(?); escrever no sdout(!);
+-- Instruções de controlo de fluxo: 
+	Condicionais: if; 
+	Cíclicas: while; for; do while; switch;
+
+-- Operações aritméticas: + - * / %;
+-- Operações lógicas (OpLog): > < >= <= == != && || !;
+-- Operação de indexação sobre arrays: a[i] ou *(a+i);
+-- Operação de agregação: ( )
+
+
+//--- Gramática Independente de Contexto ---//
+
+G = <T,N,S,P>
+
+T = { '+', '-', '*', '/', '%', '>', '<', '>=', '<=', '==', '!=', '&&', '||', '!', '(', ')', '{', '}', '[', ']', ';', '##', num, var, string, if, else, while }
+
+N = { Fonte, Cabeca, Corpo, ... }
+
+S = { Fonte }
+
+P = { 	Fonte --> Cabeca Corpo 									{ var }
+		
+		Cabeca --> ListaDeclaracoes  							{ var }
+
+		ListaDeclaracoes --> &									{ ';' }
+				| var ListaDeclaracoes2							{ var }
+		ListaDeclaracoes2 --> DeclaracaoNum ListaDeclaracoes 	{ ';' , '=' }
+				| DeclaracaoArray ListaDeclaracoes 				{ '[' }
+
+		DeclaracaoNum --> ';' 									{ ';' }
+				| '=' Expressao ';'								{ '=' }
+
+		DeclaracaoArray --> '[' Expressao ']' DeclaracaoArray2  { '[' }
+		DeclaracaoArray2 --> ';'								{ ';' }
+				| '=' '{' ListaNum '}' ';'						{ '=' }
+				
+		ListaNum -> &											{ '}' }		
+				| num ListaNum2 								{ num }
+		ListaNum2 -> &											{ '}' }
+				| ',' num ListaNum 								{ ',' }
+
+		Corpo --> &												{ '$' }
+				| ## Codigo										{ ## }
+		Codigo --> & 											{ '$' }
+				| Instrucao ';' Codigo 							{ 'var' }
+				| Condicional Codigo 							{ 'if' }
+				| Ciclo Codigo				 					{ 'while' }
+
+		Condicional --> if '(' ListaCondicao ')' '{' Codigo '}' Else { if }
+		Else --> & 												{ '$', var, if, while }
+				| else '{' Codigo '}' 							{ else }
+
+		Ciclo --> while '(' ListaCondicao ')' '{' Codigo '}'    { while }
+
+		Instrucao --> Atribuicao 								{ var }
+				| Leitura 										{ '?' }
+				| Escrita 										{ '!' }
+
+		Atribuicao --> var '=' Expressao 						{ var }
+		Leitura --> '?' Expressao 								{ '?' }
+		Escrita --> '!' Escrita2 								{ '!' }
+		Escrita2 --> Expressao 									{ '+', '-', '*', '/', '(', num, var }
+				| string										{ '"' }
+
+		ListaCondicao --> Condicao ListaCondicao2 				{ '(', num, var }
+		ListaCondicao2 --> & 									{ ')', ']', ';' }
+						|  && Condicao ListaCondicao 			{ && }
+						|  || Condicao ListaCondicao 			{ || }
+
+		Condicao -> Expressao OpLog Expressao 					{ '(', num, var }
+
+		Expressao --> M Expressao2 								{ '(', num, var }
+		Expressao2 --> & 										{ ')', ']', ';' }
+					| '+' Expressao 							{ '+' }
+					| '-' Expressao 							{ '-' }
+
+		M --> P M2 												{ '' }
+		M2 --> & 												{ ')', ']', ';', '+', '-' }
+			| '*' M 											{ '*' }
+			| '/' M 											{ '/' }
+
+		P --> '(' Expressao ')' 								{ '(' }
+			| num  												{ num }
+			| var P2 											{ var }
+
+		P2 --> & 												{ ')', ']', ';' }
+			|  '[' Expressao ']' 								{ '[' }
+
+		OpLog --> '>' 											{ '>' }
+			| '<' 												{ '<' }
+			| '>=' 												{ '>=' }
+			| '<=' 												{ '<=' }
+			| '==' 												{ '==' }
+			| '!=' 												{ '!=' }
+			| '&&' 												{ '&&' }
+			| '||' 												{ '||' }
+			| '!'												{ '!' }
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+

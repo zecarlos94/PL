@@ -1,0 +1,104 @@
+VARS
+
+a;
+b;
+c[4];
+d[3];
+
+START
+
+a = 3+4;
+b = 7;
+a = (3+7/b); 
+PRINT (4-7-2);
+PRINT (6+7-2/(1+3));
+b = (1/7+2/(4+4));
+b = (2*7*2/(5-3));
+b = (4/7*2/(6<3));
+b = (5<7*2/(7>=3));
+b = (5 > 10);
+b = 5 < 10;
+b = 5 >= 10;
+b = 5 <= 10;
+b = 5 == 10;
+b = !10;
+
+PRINT a;
+PRINT b;
+PRINT "Bom dia";
+
+SCAN a;
+
+;
+
+if(b == a) 
+{
+	PRINT "a é igual a b";
+	a = 1;
+	if(b > 7)
+	{
+		if(a < 3)
+		{
+			PRINT "if2";
+		}
+		PRINT "aninhado";
+	}
+	else
+	{
+		a = 7%3;
+	}
+	b = b + 1;
+}
+else 
+{
+	PRINT "a é diferente a b";
+}
+
+
+
+a = 0;
+b = 5;
+while(a<10)
+{
+	a = a + 1;
+	b = b - 1;
+
+	while(a == 0)
+	{
+		b = a * 2;
+	}
+
+	PRINT a;
+	PRINT b;
+}
+
+d[a+1] = (4+1)/2;
+SCAN c[a-1];
+
+b = c[4] - 1;
+
+
+a = (1+3/4)*35 < 10 && b != 50 || a == 1;
+
+a = a + 1;
+a++;
+
+b--;
+b = b - 1;
+
+a += (1+3/4)*b < 10;
+b -= 5;
+a *= 10;
+b /= 2;
+b %= 3;
+
+c[2]++;
+
+END
+
+
+
+
+
+
+
