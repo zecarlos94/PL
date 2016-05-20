@@ -21,80 +21,91 @@ int yyerror(char *);
 %token START END WHILE IF READ PRINT ELSE AND OR
 
 /* Non-terminal symbols */
-%type <str> declarations body statement args moreArgs value variable prints else expression parcel factor booleanExpression booleanFactor
+%type <str> Declarations Body Statement Args MoreArgs Value Variable Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
 
 %%
 
-program : declarations START '{' body '}' END
+Program : Declarations START '%%' Body '%%' END
         ;
 
-declarations : /* EMPTY */
-             | declarations variable ';'
-             | declarations variable '=' atributions ';'
+Declarations : /* EMPTY */
+             | Declarations Declaration 
              ;
 
-body : /* EMPTY */
-     | body statement
+Declaration : Variable ';'
+            | NAME '['NUMBER']' '=' '{'InitArray1 '}'
+	    | NAME '['NUMBER']''['NUMBER']' '=' '{'InitArray2'}'
+            | Variable '=' Expression ';'
+
+InitArray2 : '{' InitArray1 '}'
+	   | InitArray2 ',' '{'InitArray1'}'
+
+InitArray1 : NUMBER
+           | InitArray1 ',' NUMBER
+
+Body : /* EMPTY */
+     | Body Statement
      ;
 
-statement : variable '=' expression ';'
-          | variable '=' NAME '(' args ')' ';'
-          | WHILE '(' booleanExpression ')' '{' body '}'
-          | IF '(' booleanExpression ')' '{' body '}' else  
-          | READ '(' variable ')' ';'
-          | PRINT '(' prints ')' ';'
+Statement : Variable '=' Expression ';'
+          | Variable '=' NAME '(' Args ')' ';'
+          | NAME '(' Args ')' ';'	{/*program call with no return*/}
+          | WHILE '(' BooleanExpression ')' '{' Body '}'
+          | IF '(' BooleanExpression ')' '{' Body '}' Else  
+          | READ '(' Variable ')' ';'
+          | PRINT '(' Prints ')' ';'
           ;
 
-args : /* EMPTY */ 
-     | moreArgs
+Args : /* EMPTY */ 
+     | MoreArgs
      ;
 
-moreArgs : value 
-         | moreArgs ',' value 
+MoreArgs : Value 
+         | MoreArgs ',' Value 
          ;
 
-value : NUMBER
-      | variable
+Value : NUMBER
+      | Variable
       ;
 
-variable : NAME
-         | NAME '[' expression ']'
-         | NAME '[' expression ']' '[' expression ']'
+Variable : NAME
+         | NAME '[' Expression ']'
+         | NAME '[' Expression ']' '[' Expression ']'
          ;
 
-prints : value
+Prints : Value
        | TEXT 
        ;
 
-else : /* EMPTY */
-     | ELSE '{' body '}'
+Else : /* EMPTY */
+     | ELSE '{' Body '}'
      ;
 
-expression : parcel
-           | expression '+' parcel 
-           | expression '-' parcel
+Expression : Parcel
+           | Expression '+' Parcel 
+           | Expression '-' Parcel
            ;
 
-parcel : parcel '*' factor
-       | parcel '/' factor
-       | parcel '%' factor
-       | factor
+Parcel : Parcel '*' Factor
+       | Parcel '/' Factor
+       | Parcel '%' Factor
+       | Factor
        ;
 
-factor : value
-       | '(' expression ')'
+Factor : Value
+       | '(' Expression ')'
        ;
 
-booleanExpression : booleanExpression AND booleanFactor
-                  | booleanExpression OR booleanFactor
-                  | booleanFactor
+BooleanExpression : BooleanExpression AND BooleanFactor
+                  | BooleanExpression OR BooleanFactor
+                  | BooleanFactor
                   ;
 
-booleanFactor : expression '=' expression
-              | expression '!' expression
-              | expression '<' expression
-              | expression '>' expression
-              | '(' booleanExpression ')'
+BooleanFactor : Expression '==' Expression
+              | Expression '!=' Expression
+              | Expression '<' Expression
+              | Expression '>' Expression
+              | '(' BooleanExpression ')'
               ;
 
 %%
