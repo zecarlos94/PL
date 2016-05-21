@@ -18,14 +18,14 @@ int yyerror(char *);
 /* Terminal symbols */
 %token <num> NUMBER
 %token <str> NAME TEXT
-%token START END WHILE IF READ PRINT ELSE AND OR
+%token START END WHILE IF READ PRINT ELSE AND OR %% && || == !=
 
 /* Non-terminal symbols */
-%type <str> Declarations Body Statement Args MoreArgs Value Variable Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
+%type <str> Declarations Declaration InitArray InitMatrix Body Statement Args MoreArgs Value Variable Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
 
 %%
 
-Program : Declarations START '%%' Body '%%' END
+Program : Declarations START %% Body %% END
         ;
 
 Declarations : /* EMPTY */
@@ -33,15 +33,18 @@ Declarations : /* EMPTY */
              ;
 
 Declaration : Variable ';'
-            | NAME '['NUMBER']' '=' '{'InitArray1 '}'
-	    | NAME '['NUMBER']''['NUMBER']' '=' '{'InitArray2'}'
+            | NAME '[' Expression ']' '=' '{' InitArray '}'
+	    | NAME '[' Expression ']' '[' Expression ']' '=' '{' InitMatrix '}'
             | Variable '=' Expression ';'
+            ;
 
-InitArray2 : '{' InitArray1 '}'
-	   | InitArray2 ',' '{'InitArray1'}'
+InitArray  : NUMBER
+           | InitArray ',' NUMBER
+           ;
 
-InitArray1 : NUMBER
-           | InitArray1 ',' NUMBER
+InitMatrix : '{' InitArray '}'
+	   | InitMatrix ',' '{' InitArray '}'
+           ;
 
 Body : /* EMPTY */
      | Body Statement
@@ -49,7 +52,7 @@ Body : /* EMPTY */
 
 Statement : Variable '=' Expression ';'
           | Variable '=' NAME '(' Args ')' ';'
-          | NAME '(' Args ')' ';'	{/*program call with no return*/}
+          | NAME '(' Args ')' ';'	
           | WHILE '(' BooleanExpression ')' '{' Body '}'
           | IF '(' BooleanExpression ')' '{' Body '}' Else  
           | READ '(' Variable ')' ';'
@@ -62,15 +65,6 @@ Args : /* EMPTY */
 
 MoreArgs : Value 
          | MoreArgs ',' Value 
-         ;
-
-Value : NUMBER
-      | Variable
-      ;
-
-Variable : NAME
-         | NAME '[' Expression ']'
-         | NAME '[' Expression ']' '[' Expression ']'
          ;
 
 Prints : Value
@@ -96,13 +90,22 @@ Factor : Value
        | '(' Expression ')'
        ;
 
-BooleanExpression : BooleanExpression AND BooleanFactor
-                  | BooleanExpression OR BooleanFactor
+Value : NUMBER
+      | Variable
+      ;
+
+Variable : NAME
+         | NAME '[' Expression ']'
+         | NAME '[' Expression ']' '[' Expression ']'
+         ;
+
+BooleanExpression : BooleanExpression && BooleanFactor
+                  | BooleanExpression || BooleanFactor
                   | BooleanFactor
                   ;
 
-BooleanFactor : Expression '==' Expression
-              | Expression '!=' Expression
+BooleanFactor : Expression == Expression
+              | Expression != Expression
               | Expression '<' Expression
               | Expression '>' Expression
               | '(' BooleanExpression ')'
