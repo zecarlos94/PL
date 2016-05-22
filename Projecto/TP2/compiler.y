@@ -1,6 +1,7 @@
 %{
 
 #define _GNU_SOURCE
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,16 +17,18 @@ int yyerror(char *);
 }
 
 /* Terminal symbols */
-%token <num> NUMBER
-%token <str> NAME TEXT
-%token START END WHILE IF READ PRINT ELSE AND OR %% && || == !=
+%token /*<num>*/ NUMBER
+%token /*<str>*/ NAME TEXT AND OR EQLS DIFF SMEQ GTEQ
+%token START END WHILE IF READ PRINT ELSE
+
+/* AND -> "&&" | OR -> "||" | EQLS -> "==" | DIFF -> "!=" | SMEQ -> "<=" | GTEQ -> ">=" */
 
 /* Non-terminal symbols */
-%type <str> Declarations Declaration InitArray InitMatrix Body Statement Args MoreArgs Value Variable Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
+//%type <str> Declarations Declaration InitArray InitMatrix Body Statement Args MoreArgs Value Variable Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
 
 %%
 
-Program : Declarations START %% Body %% END
+Program : Declarations START Body END
         ;
 
 Declarations : /* EMPTY */
@@ -35,7 +38,7 @@ Declarations : /* EMPTY */
 Declaration : Variable ';'
             | NAME '[' Expression ']' '=' '{' InitArray '}'
 	    | NAME '[' Expression ']' '[' Expression ']' '=' '{' InitMatrix '}'
-            | Variable '=' Expression ';'
+            | NAME '=' Expression ';'
             ;
 
 InitArray  : NUMBER
@@ -52,7 +55,7 @@ Body : /* EMPTY */
 
 Statement : Variable '=' Expression ';'
           | Variable '=' NAME '(' Args ')' ';'
-          | NAME '(' Args ')' ';'	
+      /** | NAME '(' Args ')' ';' */	
           | WHILE '(' BooleanExpression ')' '{' Body '}'
           | IF '(' BooleanExpression ')' '{' Body '}' Else  
           | READ '(' Variable ')' ';'
@@ -99,15 +102,17 @@ Variable : NAME
          | NAME '[' Expression ']' '[' Expression ']'
          ;
 
-BooleanExpression : BooleanExpression && BooleanFactor
-                  | BooleanExpression || BooleanFactor
+BooleanExpression : BooleanExpression AND BooleanFactor
+                  | BooleanExpression OR BooleanFactor
                   | BooleanFactor
                   ;
 
-BooleanFactor : Expression == Expression
-              | Expression != Expression
+BooleanFactor : Expression EQLS Expression
+              | Expression DIFF Expression
               | Expression '<' Expression
               | Expression '>' Expression
+	      | Expression SMEQ Expression
+              | Expression GTEQ Expression
               | '(' BooleanExpression ')'
               ;
 
@@ -116,7 +121,7 @@ BooleanFactor : Expression == Expression
 #include "lex.yy.c"
 
 int yyerror(char *s) {
-	fprintf(stderr, "Erro sintatico: %s (%d)\n", s, yylineno);
+	fprintf(stderr, "%s (line %d)\n", s, yylineno);
 	return 0;
 }
 

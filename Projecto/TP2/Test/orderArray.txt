@@ -1,0 +1,63 @@
+i = 0; 
+j;
+x; 
+n = 10; 
+pos; 
+swap;
+array [n];
+
+START
+
+PRINT ("Insert the numbers of the array:\n");
+
+WHILE (i < n) {
+
+	PRINT ("Insert next number: ");
+	READ (x);
+
+	array [i] = x;
+
+	i = i + 1;
+}
+
+i = 0;
+
+WHILE (i < n) {
+
+	pos = i;
+
+	j = i + 1;
+	
+	WHILE (j < n) {
+		
+		IF (array [pos] > array [j]) {
+		
+			pos = j;
+
+		}
+	}
+
+	IF (pos != i) {
+
+		swap = array [i];
+		array [i] = array [pos];
+		array [pos] = swap;
+
+	}
+}
+
+i = 0;
+
+WHILE (i < n) {
+
+	PRINT (array [i]);
+	IF (i != n - 1) {
+		
+		PRINT (" ,");
+
+	}
+
+	i = i + 1;
+}
+
+END 

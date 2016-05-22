@@ -1,0 +1,32 @@
+x; y; z;
+
+START
+
+PRINT ("Insert the first number: ");
+READ (x);
+
+PRINT ("Insert the second number: ");
+READ (y);
+
+PRINT ("Insert the third number: ");
+READ (z);
+
+
+IF (x >= y) {
+	IF (x >= z) {
+		PRINT (x);
+	}
+	ELSE {
+		PRINT (z);
+	}
+}
+ELSE {
+	IF (y >= z) {
+		PRINT (y);
+	}
+ 	ELSE {
+		PRINT (z);
+	}
+}
+
+END
