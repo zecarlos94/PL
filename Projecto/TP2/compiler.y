@@ -2,12 +2,22 @@
 
 #define _GNU_SOURCE
 
+#define NO  0
+#define COL 1
+#define LIN 2
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "hashtable.h"
 
 int yylex();
 int yyerror(char *);
+
+HashTable ht;			// Id table
+List ins = NULL;		// Instruction list
+int sp = 0;			// Stack pointer
+int addr = 0;			// Number of instruction index
 
 %}
 
@@ -17,50 +27,178 @@ int yyerror(char *);
 }
 
 /* Terminal symbols */
-%token /*<num>*/ NUMBER
-%token /*<str>*/ NAME TEXT AND OR EQLS DIFF SMEQ GTEQ
+%token <num> NUMBER
+%token <str> NAME TEXT 
+%token AND OR EQLS DIFF SMEQ GTEQ
 %token START END WHILE IF READ PRINT ELSE
 
-/* AND -> "&&" | OR -> "||" | EQLS -> "==" | DIFF -> "!=" | SMEQ -> "<=" | GTEQ -> ">=" */
-
 /* Non-terminal symbols */
-//%type <str> Declarations Declaration InitArray InitMatrix Body Statement Args MoreArgs Value Variable Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
+/*%type <str> Declarations Body Statement Args MoreArgs Value Prints Else Parcel Factor BooleanExpression BooleanFactor
+%type <num> Expression*/
 
 %%
 
-Program : Declarations START Body END
+Program : Declarations {ins = addInstruction(ins, sp, "start");} START Body {ins = addInstruction(ins, sp, "stop");} END {printInstructions(ins);}
         ;
 
-Declarations : /* EMPTY */
-             | Declarations Declaration 
+Declarations : /* EMPTY */						{ht = initializeTable(ht);}										
+             | Declarations NAME ';'					{
+										char *var = strdup($2);
+										char *type = strdup("int");
+										if(retrieveTable(ht, var) != 0) {
+											char *error;
+											sprintf(error, "variable %s already exists", $2);
+											yyerror(error);
+										}
+										else {
+											char buf[50];
+											ht = insertTable(ht, var, type, 0, 1, sp);
+											sprintf(buf, "pushi 0\n");		
+											ins = addInstruction(ins, addr++, buf);
+										}
+									}
+	     | Declarations NAME '[' NUMBER ']'	';'			{
+										char *var = strdup($2);
+										char *type = strdup("array");
+										if(retrieveTable(ht, var) != 0) {
+											char *error;
+											sprintf(error, "variable %s already exists", $2);
+											yyerror(error);
+										}
+										else {
+											char buf[50];
+											ht = insertTable(ht, var, type, 0, $4, sp);
+											sprintf(buf, "pushn %d\n", $4);		
+											ins = addInstruction(ins, addr++, buf);
+											sp += $4;
+										}
+									}
+             | Declarations NAME '[' NUMBER ']' '[' NUMBER ']' ';'	{
+										char *var = strdup($2);
+										char *type = strdup("matrix");
+										if(retrieveTable(ht, var) != 0) {
+											char *error;
+											sprintf(error, "variable %s already exists", $2);
+											yyerror(error);
+										}
+										else {
+											char buf[50];
+											ht = insertTable(ht, var, type, $4, $7, sp);
+											sprintf(buf, "pushn %d\n", $4 * $7);		
+											ins = addInstruction(ins, addr++, buf);
+											sp += $4 * $7;
+										}
+									}						
              ;
 
-Declaration : Variable ';'
-            | NAME '[' Expression ']' '=' '{' InitArray '}'
-	    | NAME '[' Expression ']' '[' Expression ']' '=' '{' InitMatrix '}'
-            | NAME '=' Expression ';'
-            ;
-
-InitArray  : NUMBER
-           | InitArray ',' NUMBER
-           ;
-
-InitMatrix : '{' InitArray '}'
-	   | InitMatrix ',' '{' InitArray '}'
-           ;
-
-Body : /* EMPTY */
-     | Body Statement
+Body : /* EMPTY */								
+     | Body Statement								
      ;
 
-Statement : Variable '=' Expression ';'
-          | Variable '=' NAME '(' Args ')' ';'
-      /** | NAME '(' Args ')' ';' */	
-          | WHILE '(' BooleanExpression ')' '{' Body '}'
-          | IF '(' BooleanExpression ')' '{' Body '}' Else  
-          | READ '(' Variable ')' ';'
-          | PRINT '(' Prints ')' ';'
+Statement : NAME '=' Expression ';'						{
+											char *var = strdup($1);
+											if(retrieveTable(ht, var) != 0) {
+												char *type = getType(var);
+												if(strcmp(type, "int") != 0) {
+													char buf[50];
+													int varIndex = getVarIndex(ht, var);
+													sprintf(buf, "storeg %d", varIndex);
+													ins = addInstruction(ins, addr++, buf);
+												}
+												else {
+													char *error;
+													sprintf(error, "variable %s is not an integer", var);
+													yyerror(error);
+												}
+											}
+											else {
+												char *error;
+												sprintf(error, "variable %s is not declared", var);
+												yyerror(error);
+											}
+										}
+          | NAME '[' Expression ']' '=' Expression ';'				
+          | NAME '[' Expression ']' '[' Expression ']' '=' Expression ';'
+          | WHILE '(' BooleanExpression ')' '{' Body '}'			
+          | IF '(' BooleanExpression ')' '{' Body '}' Else  	
+          | READ '(' Value ')' ';'				
+          | PRINT '(' Prints ')' ';'				
           ;
+
+Prints : Value	
+       | TEXT 	
+       ;
+
+Else : /* EMPTY */		
+     | ELSE '{' Body '}'	
+     ;
+
+Expression : Parcel			
+           | Expression '+' Parcel 	{
+						char buf[50];
+						sprintf(buf, "add\n");
+						ins = addInstruction(ins, addr++, buf);
+					}
+           | Expression '-' Parcel	{
+						char buf[50];
+						sprintf(buf, "sub\n");
+						ins = addInstruction(ins, addr++, buf);
+					}
+           ;
+
+Parcel : Parcel '*' Factor		{
+						char buf[50];
+						sprintf(buf, "mul\n");
+						ins = addInstruction(ins, addr++, buf);
+					}
+       | Parcel '/' Factor		{
+						char buf[50];
+						sprintf(buf, "div\n");
+						ins = addInstruction(ins, addr++, buf);
+					}
+       | Parcel '%' Factor		{
+						char buf[50];
+						sprintf(buf, "mod\n");
+						ins = addInstruction(ins, addr++, buf);
+					}
+       | Factor
+       ;
+
+Factor : NUMBER				{
+						char buf[50];
+						sprintf(buf, "pushi %d\n", $1);
+						ins = addInstruction(ins, addr++, buf);
+					}
+       | Value
+       | NAME '(' Args ')'
+       | '(' Expression ')'
+       ;
+
+Value : NAME						{
+								char *var = strdup($1);
+								if(retrieveTable(ht, var) != 0) {
+									char *type = getType(var);
+									if(strcmp(type, "int") == 0) {
+										char buf[50];
+										int varIndex = getVarIndex(ht, var);
+										sprintf(buf, "pushg %d", varIndex);
+										ins = addInstruction(ins, addr++, buf);
+									}
+									else {
+										char *error;
+										sprintf(error, "variable %s is not an integer", var);
+										yyerror(error);
+									}
+								}
+								else {
+									char *error;
+									sprintf(error, "variable %s is not declared", var);
+									yyerror(error);
+								}
+							}										     				
+      | NAME '[' Expression ']'															
+      | NAME '[' Expression ']' '[' Expression ']'												
+      ;
 
 Args : /* EMPTY */ 
      | MoreArgs
@@ -68,38 +206,6 @@ Args : /* EMPTY */
 
 MoreArgs : Value 
          | MoreArgs ',' Value 
-         ;
-
-Prints : Value
-       | TEXT 
-       ;
-
-Else : /* EMPTY */
-     | ELSE '{' Body '}'
-     ;
-
-Expression : Parcel
-           | Expression '+' Parcel 
-           | Expression '-' Parcel
-           ;
-
-Parcel : Parcel '*' Factor
-       | Parcel '/' Factor
-       | Parcel '%' Factor
-       | Factor
-       ;
-
-Factor : Value
-       | '(' Expression ')'
-       ;
-
-Value : NUMBER
-      | Variable
-      ;
-
-Variable : NAME
-         | NAME '[' Expression ']'
-         | NAME '[' Expression ']' '[' Expression ']'
          ;
 
 BooleanExpression : BooleanExpression AND BooleanFactor
@@ -125,7 +231,7 @@ int yyerror(char *s) {
 	return 0;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 	yyparse();
 	return 0;
 }

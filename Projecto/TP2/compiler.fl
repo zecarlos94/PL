@@ -1,11 +1,28 @@
+%{
+
+#include "y.tab.h"
+
+%}
+
 %option noyywrap
 %option yylineno
 
+inteiro		[0-9]+	
+name		[a-z]+
+text		\"[^\"]*\"
+and		\&\&
+or		\|\|
+equals		\=\=
+different	\!\=
+smallerEqual	\<\=
+greaterEqual	\>\=
+symbols		[;\[\]={},\(\)\+\-*\/%<>]
+
 %%
 
-[0-9]+				{yylval.str = strdup(yytext); return NUMBER;}
-[a-z]+				{yylval.str = strdup(yytext); return NAME;}
-\"[^\"]*\"			{yylval.str = strdup(yytext); return TEXT;}
+{inteiro}			{yylval.num = atoi(yytext); return NUMBER;}
+{name}				{yylval.str = strdup(yytext); return NAME;}
+{text}				{yylval.str = strdup(yytext); return TEXT;}
 
 START				{return START;}
 END				{return END;}
@@ -15,14 +32,14 @@ READ				{return READ;}
 PRINT				{return PRINT;}
 ELSE				{return ELSE;}
 
-\&\&				{yylval.str = strdup(yytext); return AND;}
-\|\|				{yylval.str = strdup(yytext); return OR;}
-\=\=				{yylval.str = strdup(yytext); return EQLS;}
-\!\=				{yylval.str = strdup(yytext); return DIFF;}
-\<\=				{yylval.str = strdup(yytext); return SMEQ;}
-\>\=				{yylval.str = strdup(yytext); return GTEQ;}
+{and}				{yylval.str = strdup(yytext); return AND;}
+{or}				{yylval.str = strdup(yytext); return OR;}
+{equals}			{yylval.str = strdup(yytext); return EQLS;}
+{different}			{yylval.str = strdup(yytext); return DIFF;}
+{smallerEqual}			{yylval.str = strdup(yytext); return SMEQ;}
+{greaterEqual}			{yylval.str = strdup(yytext); return GTEQ;}
 
-[;\[\]={},\(\)\+\-*\/%<>]	{return(yytext[0]);}
+{symbols}			{return(yytext[0]);}
 [ \n\t]				{}
 .				{yyerror("Unknown character");}
 
