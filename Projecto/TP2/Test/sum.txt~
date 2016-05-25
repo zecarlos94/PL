@@ -1,4 +1,4 @@
-i; n; x; sum;
+i = 0; n; x; sum = 0;
 
 START
 
@@ -6,7 +6,6 @@ PRINT ("How many numbers you want to read? ");
 READ (n);
 
 WHILE (i < n) {
-
 	PRINT ("Insert next number: ");
 	READ (x);
 

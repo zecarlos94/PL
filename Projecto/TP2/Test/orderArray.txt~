@@ -1,10 +1,18 @@
-i; j; x; n; pos; swap; array [5];
+i = 0; 
+j;
+x; 
+n = 10; 
+pos; 
+swap;
+array [n];
 
 START
 
+PRINT ("Insert the numbers of the array:\n");
+
 WHILE (i < n) {
 
-	PRINT ("Insert number: ");
+	PRINT ("Insert next number: ");
 	READ (x);
 
 	array [i] = x;
@@ -43,7 +51,6 @@ i = 0;
 WHILE (i < n) {
 
 	PRINT (array [i]);
-
 	IF (i != n - 1) {
 		
 		PRINT (" ,");

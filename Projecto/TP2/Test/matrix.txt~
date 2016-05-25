@@ -1,9 +1,18 @@
-i; j; max; soma; med; x;
-matrix [5][4]; 
+i = 0;
+j;
+max = 0;
+soma = 0;
+med;
+x;
+n = 5;
+m = 5;
+matrix [n][m]; 
 
 START
 
-WHILE (i < n) {	
+WHILE (i < n) {
+	
+	j = 0;	
 
 	WHILE (j < n) {
 

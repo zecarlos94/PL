@@ -13,31 +13,20 @@ READ (z);
 
 
 IF (x >= y) {
-
 	IF (x >= z) {
-
 		PRINT (x);
 	}
-
 	ELSE {
-
 		PRINT (z);
-
 	}
 }
 ELSE {
-
 	IF (y >= z) {
-
 		PRINT (y);
-
 	}
  	ELSE {
-
 		PRINT (z);
-
 	}
-
 }
 
 END

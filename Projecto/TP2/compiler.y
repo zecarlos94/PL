@@ -1,23 +1,18 @@
 %{
 
 #define _GNU_SOURCE
-
-#define NO  0
-#define COL 1
-#define LIN 2
+#define DEC 0
+#define ATR 1
 
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "hashtable.h"
 
 int yylex();
 int yyerror(char *);
 
-HashTable ht;			// Id table
-List ins = NULL;		// Instruction list
-int sp = 0;			// Stack pointer
-int addr = 0;			// Number of instruction index
+FILE *fp = fopen("test.vm", "w");	// File where instructions will be saved
+int sp = 0;				// Stack pointer
 
 %}
 
@@ -28,176 +23,390 @@ int addr = 0;			// Number of instruction index
 
 /* Terminal symbols */
 %token <num> NUMBER
-%token <str> NAME TEXT 
 %token AND OR EQLS DIFF SMEQ GTEQ
+%token <str> NAME TEXT 
 %token START END WHILE IF READ PRINT ELSE
 
 /* Non-terminal symbols */
-/*%type <str> Declarations Body Statement Args MoreArgs Value Prints Else Parcel Factor BooleanExpression BooleanFactor
-%type <num> Expression*/
+//%type <str> Declarations Declaration InitArray InitMatrix Body Statement Args MoreArgs Value Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
 
 %%
 
-Program : Declarations {ins = addInstruction(ins, sp, "start");} START Body {ins = addInstruction(ins, sp, "stop");} END {printInstructions(ins);}
+Program : Declarations {
+
+		fprintf(fp, "start\n");
+
+        } START Body END {
+
+		fprintf(fp, "     end\n");
+		fclose(fp);
+
+	} 
         ;
 
-Declarations : /* EMPTY */						{ht = initializeTable(ht);}										
-             | Declarations NAME ';'					{
-										char *var = strdup($2);
-										char *type = strdup("int");
-										if(retrieveTable(ht, var) != 0) {
-											char *error;
-											sprintf(error, "variable %s already exists", $2);
-											yyerror(error);
-										}
-										else {
-											char buf[50];
-											ht = insertTable(ht, var, type, 0, 1, sp);
-											sprintf(buf, "pushi 0\n");		
-											ins = addInstruction(ins, addr++, buf);
-										}
-									}
-	     | Declarations NAME '[' NUMBER ']'	';'			{
-										char *var = strdup($2);
-										char *type = strdup("array");
-										if(retrieveTable(ht, var) != 0) {
-											char *error;
-											sprintf(error, "variable %s already exists", $2);
-											yyerror(error);
-										}
-										else {
-											char buf[50];
-											ht = insertTable(ht, var, type, 0, $4, sp);
-											sprintf(buf, "pushn %d\n", $4);		
-											ins = addInstruction(ins, addr++, buf);
-											sp += $4;
-										}
-									}
-             | Declarations NAME '[' NUMBER ']' '[' NUMBER ']' ';'	{
-										char *var = strdup($2);
-										char *type = strdup("matrix");
-										if(retrieveTable(ht, var) != 0) {
-											char *error;
-											sprintf(error, "variable %s already exists", $2);
-											yyerror(error);
-										}
-										else {
-											char buf[50];
-											ht = insertTable(ht, var, type, $4, $7, sp);
-											sprintf(buf, "pushn %d\n", $4 * $7);		
-											ins = addInstruction(ins, addr++, buf);
-											sp += $4 * $7;
-										}
-									}						
+Declarations : /* EMPTY */																				
+             | Declarations NAME ';' {
+			
+			if(/* exists $2 on tableId */) {
+				char buf[50];
+				sprintf(buf, "variable %s already declared", $2);
+				yyerror(buf);
+			}
+			else {
+				/* save $2 on tableId ($2, sp, lines = 0, columns = 0) */
+				fprintf(fp, "     pushi 0\n");
+				sp++;
+			}
+
+             }
+	     | Declarations NAME '[' NUMBER ']'	';' {
+
+			if(/* exists $2 on tableId */) {
+				char buf[50];
+				sprintf(buf, "variable %s already declared", $2);
+				yyerror(buf);
+			}
+			else {
+				/* save $2 on tableId ($2, sp, lines = 0, columns = $4) */
+				fprintf(fp, "     pushn %d\n", $4);
+				sp += $4;
+			}
+
+	     }			
+             | Declarations NAME '[' NUMBER ']' '[' NUMBER ']' ';' {
+
+			if(/* exists $2 on tableId */) {
+				char buf[50];
+				sprintf(buf, "variable %s already declared", $2);
+				yyerror(buf);
+			}
+			else {
+				/* save $2 on tableId ($2, sp, line = $4, column = $7) */
+				fprintf(fp, "     pushn %d\n", $4 * $7);
+				sp += $4 * $7;
+			}
+   
+             }							
              ;
 
-Body : /* EMPTY */								
-     | Body Statement								
+Body : /* EMPTY */
+     | Body Statement
      ;
 
-Statement : NAME '=' Expression ';'						{
-											char *var = strdup($1);
-											if(retrieveTable(ht, var) != 0) {
-												char *type = getType(var);
-												if(strcmp(type, "int") != 0) {
-													char buf[50];
-													int varIndex = getVarIndex(ht, var);
-													sprintf(buf, "storeg %d", varIndex);
-													ins = addInstruction(ins, addr++, buf);
-												}
-												else {
-													char *error;
-													sprintf(error, "variable %s is not an integer", var);
-													yyerror(error);
-												}
-											}
-											else {
-												char *error;
-												sprintf(error, "variable %s is not declared", var);
-												yyerror(error);
-											}
-										}
-          | NAME '[' Expression ']' '=' Expression ';'				
-          | NAME '[' Expression ']' '[' Expression ']' '=' Expression ';'
-          | WHILE '(' BooleanExpression ')' '{' Body '}'			
-          | IF '(' BooleanExpression ')' '{' Body '}' Else  	
-          | READ '(' Value ')' ';'				
-          | PRINT '(' Prints ')' ';'				
+Statement : NAME '=' Expression ';' {
+
+			if(/* exists $1 on tableId */) {
+				if(/* type of $1 is integer */) {
+					/* int varIndex = getVarIndex($1) */
+					fprintf(fp, "     storeg %d\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $1);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $1);
+				yyerror(buf);
+			}
+          
+	  }									
+          | NAME {
+
+			if(/* exists $1 on tableId */) {
+				if(/* type of $1 is array */) {
+					/* int varIndex = getVarIndex($1) */
+					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $1);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $1);
+				yyerror(buf);
+			}
+          
+	  } '[' Expression ']' '=' Expression ';' {
+
+			fprintf(fp, "     storen\n");	
+
+          }				
+          | NAME {
+
+			if(/* exists $1 on tableId */) {
+				if(/* type of $1 is matrix */) {
+					/* int varIndex = getVarIndex($1) */
+					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $1);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $1);
+				yyerror(buf);
+			}
+          
+	  } '[' Expression ']' {
+
+			/* int numCols = getNumCols($1) */
+			fprintf(fp, "     pushi %d\n     mul\n", numCols);
+
+          } '[' Expression ']' {
+
+			fprintf(fp, "     add\n");
+
+          } '=' Expression ';' {
+
+			fprintf(fp, "     storen\n");	
+
+          }	
+          | WHILE {
+
+			fprintf(fp, "ciclo:\n");
+
+          } '(' BooleanExpression ')' {
+
+			fprintf(fp, "     jz fim:\n");
+
+          } '{' Body '}' {
+
+			fprintf(fp, "     jump ciclo\nfim:\n");
+
+          }	
+          | IF '(' BooleanExpression ')' {
+
+			fprintf(fp, "     jz else\n");
+
+          } '{' Body '}' Else  
+          | READ '(' NAME ')' ';' {
+
+			if(/* exists $3 on tableId */) {
+				if(/* type of $3 is integer */) {
+					/* int varIndex = getVarIndex($3) */
+					fprintf(fp, "     read\n      atoi\n     storeg %d\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $3);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $3);
+				yyerror(buf);
+			}
+          
+	  }
+ 	  | READ '(' NAME {
+
+			if(/* exists $3 on tableId */) {
+				if(/* type of $3 is array */) {
+					/* int varIndex = getVarIndex($3) */
+					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $3);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $3);
+				yyerror(buf);
+			}
+          
+	  } '[' Expression ']' ')' ';' {
+
+			fprintf(fp, "     read\n      atoi\n     storen\n");
+
+          }
+          | READ '(' NAME {
+
+			if(/* exists $3 on tableId */) {
+				if(/* type of $3 is matrix */) {
+					/* int varIndex = getVarIndex($3) */
+					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $3);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $1);
+				yyerror(buf);
+			}
+          
+	  } '[' Expression ']' {
+
+			/* int numCols = getNumCols($3) */
+			fprintf(fp, "     pushi %d\n     mul\n", numCols);
+
+          } '[' Expression ']' ')' ';' {
+
+			fprintf(fp, "     add\n     read\n      atoi\n     storen\n");
+
+          }					
+          | PRINT '(' Prints ')' ';'
           ;
 
-Prints : Value	
-       | TEXT 	
+Prints : Value {
+
+			fprintf(fp, "     writei\n");
+
+       }
+       | TEXT {
+
+    			fprintf(fp, "     pushs %s\n     writes\n", $1);
+
+       }
        ;
 
-Else : /* EMPTY */		
-     | ELSE '{' Body '}'	
+Else : /* EMPTY */ {
+
+   			fprintf(fp, "else:\n");
+
+     }
+     | ELSE {
+
+			fprintf(fp, "     jump fim\nelse:\n");
+
+     } '{' Body '}' {
+
+			fprintf(fp, "fim:\n");
+
+     }
      ;
 
-Expression : Parcel			
-           | Expression '+' Parcel 	{
-						char buf[50];
-						sprintf(buf, "add\n");
-						ins = addInstruction(ins, addr++, buf);
-					}
-           | Expression '-' Parcel	{
-						char buf[50];
-						sprintf(buf, "sub\n");
-						ins = addInstruction(ins, addr++, buf);
-					}
+Expression : Parcel
+           | Expression '+' Parcel {
+
+   			fprintf(fp, "     add\n");
+
+           }
+           | Expression '-' Parcel {
+
+   			fprintf(fp, "     sub\n");
+
+           }	
            ;
 
-Parcel : Parcel '*' Factor		{
-						char buf[50];
-						sprintf(buf, "mul\n");
-						ins = addInstruction(ins, addr++, buf);
-					}
-       | Parcel '/' Factor		{
-						char buf[50];
-						sprintf(buf, "div\n");
-						ins = addInstruction(ins, addr++, buf);
-					}
-       | Parcel '%' Factor		{
-						char buf[50];
-						sprintf(buf, "mod\n");
-						ins = addInstruction(ins, addr++, buf);
-					}
+Parcel : Parcel '*' Factor {
+
+   			fprintf(fp, "     mul\n");
+
+       }	
+       | Parcel '/' Factor {
+
+   			fprintf(fp, "     div\n");
+
+       }	
+       | Parcel '%' Factor {
+
+   			fprintf(fp, "     mod\n");
+
+       }	
        | Factor
        ;
 
-Factor : NUMBER				{
-						char buf[50];
-						sprintf(buf, "pushi %d\n", $1);
-						ins = addInstruction(ins, addr++, buf);
-					}
+Factor : NUMBER	{
+
+   			fprintf(fp, "     pushi %d\n", $1);
+
+       }		
        | Value
-       | NAME '(' Args ')'
+       | NAME '(' Args ')' /* loading information... */
        | '(' Expression ')'
        ;
 
-Value : NAME						{
-								char *var = strdup($1);
-								if(retrieveTable(ht, var) != 0) {
-									char *type = getType(var);
-									if(strcmp(type, "int") == 0) {
-										char buf[50];
-										int varIndex = getVarIndex(ht, var);
-										sprintf(buf, "pushg %d", varIndex);
-										ins = addInstruction(ins, addr++, buf);
-									}
-									else {
-										char *error;
-										sprintf(error, "variable %s is not an integer", var);
-										yyerror(error);
-									}
-								}
-								else {
-									char *error;
-									sprintf(error, "variable %s is not declared", var);
-									yyerror(error);
-								}
-							}										     				
-      | NAME '[' Expression ']'															
-      | NAME '[' Expression ']' '[' Expression ']'												
+Value : NAME {
+
+			if(/* exists $1 on tableId */) {
+				if(/* type of $1 is integer */) {
+					/* int varIndex = getVarIndex($1) */
+					fprintf(fp, "     pushg %d\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $1);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $1);
+				yyerror(buf);
+			}
+          
+      }											     				
+      | NAME {
+
+			if(/* exists $1 on tableId */) {
+				if(/* type of $1 is array */) {
+					/* int varIndex = getVarIndex($1) */
+					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $1);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $1);
+				yyerror(buf);
+			}
+          
+      } '[' Expression ']' {
+
+			/* int numCols = getNumCols($1) */
+			fprintf(fp, "     loadn\n");
+
+      }															
+      | NAME {
+
+			if(/* exists $1 on tableId */) {
+				if(/* type of $1 is matrix */) {
+					/* int varIndex = getVarIndex($1) */
+					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+				}
+				else {
+					char buf[50];
+					sprintf(buf, "variable %s has another type", $1);
+					yyerror(buf);
+				}
+			}
+			else {
+				char buf[50];
+				sprintf(buf, "variable %s is not declared", $1);
+				yyerror(buf);
+			}
+          
+      } '[' Expression ']' {
+
+			/* int numCols = getNumCols($1) */
+			fprintf(fp, "     pushi %d\n     mul\n", numCols);
+
+      } '[' Expression ']' {
+
+			fprintf(fp, "     add\n     loadn\n");
+
+      }												
       ;
 
 Args : /* EMPTY */ 
@@ -208,17 +417,41 @@ MoreArgs : Value
          | MoreArgs ',' Value 
          ;
 
-BooleanExpression : BooleanExpression AND BooleanFactor
-                  | BooleanExpression OR BooleanFactor
+BooleanExpression : BooleanExpression AND BooleanFactor /* loading information... */
+                  | BooleanExpression OR BooleanFactor /* loading information... */
                   | BooleanFactor
                   ;
 
-BooleanFactor : Expression EQLS Expression
-              | Expression DIFF Expression
-              | Expression '<' Expression
-              | Expression '>' Expression
-	      | Expression SMEQ Expression
-              | Expression GTEQ Expression
+BooleanFactor : Expression EQLS Expression {
+
+   			fprintf(fp, "     not\n");
+
+              }
+              | Expression DIFF Expression {
+
+   			fprintf(fp, "     equal\n");
+
+              }
+              | Expression '<' Expression {
+
+   			fprintf(fp, "     supeq\n");
+
+              }
+              | Expression '>' Expression {
+
+   			fprintf(fp, "     infeq\n");
+
+              }
+	      | Expression SMEQ Expression {
+
+   			fprintf(fp, "     sup\n");
+
+              }
+              | Expression GTEQ Expression {
+
+   			fprintf(fp, "     inf\n");
+
+              }
               | '(' BooleanExpression ')'
               ;
 
