@@ -3,6 +3,9 @@
 #define _GNU_SOURCE
 #define NO  0
 #define YES 1
+#define INTEGER 0
+#define ARRAY   1
+#define MATRIX  2
 
 #include <string.h>
 #include <stdio.h>
@@ -10,7 +13,7 @@
 
 typedef struct idtable {
 	char *var;		// Variable name
-  	char *type; 		// Variable type
+  	int type; 		// Variable type
   	int index;		// Variable index on stack
 	int lines;		// Number of lines (for integer and array is 1)
 	int columns;		// Number of columns (for integer is 1)
@@ -19,14 +22,28 @@ typedef struct idtable {
 
 typedef struct idtable *IdTable;
 
+typedef struct listwhiles {
+	int numWhile;
+	struct listwhiles *next;
+} LWH;
+
+typedef struct listwhiles *ListWhiles;
+
+typedef struct listifs {
+	int numIf;
+	struct listifs *next;
+} LIF;
+
+typedef struct listifs *ListIfs;
+
 int yylex();
 int yyerror(char *);
 
-IdTable insertVar(IdTable t, char *var, char *type, int index, int lines, int columns) {
+IdTable insertVar(IdTable t, char *var, int type, int index, int lines, int columns) {
 	if(t == NULL) {
 		t = (IdTable) malloc(sizeof(struct idtable));
 		t->var = strdup(var);
-		t->type = strdup(type);
+		t->type = type;
 		t->index = index;
 		t->lines = lines;
 		t->columns = columns;
@@ -42,8 +59,8 @@ int existVar(IdTable t, char *var) {
 	else return existVar(t->next, var);
 }
 
-char *getTypeVar(IdTable t, char *var) {
-	if(t == NULL) return NULL;
+int getTypeVar(IdTable t, char *var) {
+	if(t == NULL) return -1;
 	else if(strcmp(var, t->var) == 0) return t->type;
 	else return getTypeVar(t->next, var);
 }
@@ -61,9 +78,16 @@ int getNumCols(IdTable t, char *var) {
 }
 
 FILE *fp;		// File where instructions will be saved
-int sp = 0;		// Stack pointer
-int counterFim = 0;	
+
+int sp = 0;		// Stack pointer	
+int addr = 0;		// Instruction index
+int endAddr = 0;	// Index of the last flow control ending instruction
+int numWhile = 0;	// Number of whiles
+int numIf = 0;		// Number of ifs
+
 IdTable t = NULL;
+ListWhiles listWhiles = NULL;
+ListIfs listIfs = NULL;
 
 %}
 
@@ -86,10 +110,12 @@ IdTable t = NULL;
 Program : Declarations {
 
 		fprintf(fp, "start\n");
+		addr++;
 
         } START Body END {
 
-		fprintf(fp, "     end\n");
+		if(addr == endAddr + 1) fprintf(fp, "     nop\n     end\n");
+		else fprintf(fp, "     end\n");
 		fclose(fp);
 
 	} 
@@ -104,9 +130,10 @@ Declarations : /* EMPTY */
 				yyerror(buf);
 			}
 			else {
-				t = insertVar(t, $2, "integer", sp, 1, 1);
+				t = insertVar(t, $2, INTEGER, sp, 1, 1);
 				fprintf(fp, "     pushi 0\n");
 				sp++;
+				addr++;
 			}
 
              }
@@ -118,9 +145,10 @@ Declarations : /* EMPTY */
 				yyerror(buf);
 			}
 			else {
-				t = insertVar(t, $2, "array", sp, 1, $4);
+				t = insertVar(t, $2, ARRAY, sp, 1, $4);
 				fprintf(fp, "     pushn %d\n", $4);
 				sp += $4;
+				addr++;
 			}
 
 	     }			
@@ -132,9 +160,10 @@ Declarations : /* EMPTY */
 				yyerror(buf);
 			}
 			else {
-				t = insertVar(t, $2, "matrix", sp, $4, $7);
+				t = insertVar(t, $2, MATRIX, sp, $4, $7);
 				fprintf(fp, "     pushn %d\n", $4 * $7);
 				sp += $4 * $7;
+				addr++;
 			}
    
              }							
@@ -147,9 +176,10 @@ Body : /* EMPTY */
 Statement : NAME '=' Expression ';' {
 
 			if(existVar(t, $1) == YES) {
-				if(strcmp(getTypeVar(t, $1), "integer") == 0) {
+				if(getTypeVar(t, $1) == INTEGER) {
 					int varIndex = getVarIndex(t, $1);
 					fprintf(fp, "     storeg %d\n", varIndex);
+					addr++;
 				}
 				else {
 					char buf[50];
@@ -167,9 +197,10 @@ Statement : NAME '=' Expression ';' {
           | NAME {
 
 			if(existVar(t, $1) == YES) {
-				if(strcmp(getTypeVar(t, $1), "array") == 0) {
+				if(getTypeVar(t, $1) == ARRAY) {
 					int varIndex = getVarIndex(t, $1);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+					addr += 3;
 				}
 				else {
 					char buf[50];
@@ -186,14 +217,16 @@ Statement : NAME '=' Expression ';' {
 	  } '[' Expression ']' '=' Expression ';' {
 
 			fprintf(fp, "     storen\n");	
+			addr++;
 
           }				
           | NAME {
 
 			if(existVar(t, $1) == YES) {
-				if(strcmp(getTypeVar(t, $1), "matrix") == 0) {
+				if(getTypeVar(t, $1) == MATRIX) {
 					int varIndex = getVarIndex(t, $1);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+					addr += 3;
 				}
 				else {
 					char buf[50];
@@ -211,40 +244,65 @@ Statement : NAME '=' Expression ';' {
 
 			int numCols = getNumCols(t, $1);
 			fprintf(fp, "     pushi %d\n     mul\n", numCols);
+			addr += 2;
 
-          } '[' Expression ']' {
+          } '[' Expression ']' '=' {
 
 			fprintf(fp, "     add\n");
+			addr++;
 
-          } '=' Expression ';' {
+          } Expression ';' {
 
 			fprintf(fp, "     storen\n");	
+			addr++;
 
           }	
           | WHILE {
-
-			fprintf(fp, "ciclo:\n");
+	
+			numWhile++;
+			ListWhiles aux = (ListWhiles) malloc(sizeof(struct listwhiles));
+			aux->numWhile = numWhile;
+			aux->next = listWhiles;
+			listWhiles = aux;
+			fprintf(fp, "while%d:\n", numWhile);
+			addr++;
 
           } '(' BooleanExpression ')' {
 
-			fprintf(fp, "     jz fim\n");
+			fprintf(fp, "     jz endWhile%d\n", numWhile);
+			addr++;
 
           } '{' Body '}' {
 
-			fprintf(fp, "     jump ciclo\nfim:\n");
+			fprintf(fp, "     jump while%d\n", listWhiles->numWhile);
+			addr++;
+			if(endAddr == addr - 1) {
+				fprintf(fp, "     nop\nendWhile%d:\n", listWhiles->numWhile);
+				addr++;
+			}		
+			else fprintf(fp, "endWhile%d:\n", listWhiles->numWhile);
+			endAddr = addr;
+			listWhiles = listWhiles->next;
 
           }	
           | IF '(' BooleanExpression ')' {
 
-			fprintf(fp, "     jz else\n");
+			numIf++;
+			ListIfs aux = (ListIfs) malloc(sizeof(struct listifs));
+			aux->numIf = numIf;
+			aux->next = listIfs;
+			listIfs = aux;
+			fprintf(fp, "     jz else%d\n", numIf);
+			addr++;
 
           } '{' Body '}' Else  
           | READ '(' NAME ')' ';' {
 
 			if(existVar(t, $3) == YES) {
-				if(strcmp(getTypeVar(t, $3), "integer") == 0) {
+				if(getTypeVar(t, $3) == INTEGER) {
 					int varIndex = getVarIndex(t, $3);
 					fprintf(fp, "     read\n     atoi\n     storeg %d\n", varIndex);
+					addr += 3;
 				}
 				else {
 					char buf[50];
@@ -262,9 +320,10 @@ Statement : NAME '=' Expression ';' {
  	  | READ '(' NAME {
 
 			if(existVar(t, $3) == YES) {
-				if(strcmp(getTypeVar(t, $3), "array") == 0) {
+				if(getTypeVar(t, $3) == ARRAY) {
 					int varIndex = getVarIndex(t, $3);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+					addr += 3;
 				}
 				else {
 					char buf[50];
@@ -281,14 +340,16 @@ Statement : NAME '=' Expression ';' {
 	  } '[' Expression ']' ')' ';' {
 
 			fprintf(fp, "     read\n     atoi\n     storen\n");
+			addr += 3;
 
           }
           | READ '(' NAME {
 
 			if(existVar(t, $3) == YES) {
-				if(strcmp(getTypeVar(t, $3), "matrix") == 0) {
+				if(getTypeVar(t, $3) == MATRIX) {
 					int varIndex = getVarIndex(t, $3);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+					addr += 3;
 				}
 				else {
 					char buf[50];
@@ -306,10 +367,12 @@ Statement : NAME '=' Expression ';' {
 
 			int numCols = getNumCols(t, $3);
 			fprintf(fp, "     pushi %d\n     mul\n", numCols);
+			addr += 2;
 
           } '[' Expression ']' ')' ';' {
 
 			fprintf(fp, "     add\n     read\n     atoi\n     storen\n");
+			addr += 4;
 
           }					
           | PRINT '(' Prints ')' ';'
@@ -318,27 +381,49 @@ Statement : NAME '=' Expression ';' {
 Prints : Value {
 
 			fprintf(fp, "     writei\n");
+			addr++;
 
        }
        | TEXT {
 
     			fprintf(fp, "     pushs %s\n     writes\n", $1);
+			addr += 2;
 
        }
        ;
 
 Else : /* EMPTY */ {
 
-   			fprintf(fp, "else:\n");
+   			if(endAddr == addr - 1) {
+				fprintf(fp, "     nop\nelse%d:\n", listIfs->numIf);
+				addr++;
+			}
+			else fprintf(fp, "else%d:\n", listIfs->numIf);
+			listIfs = listIfs->next;
+			endAddr = addr;
+			addr++;
 
      }
      | ELSE {
 
-			fprintf(fp, "     jump fim\nelse:\n");
+			if(endAddr == addr - 1) {
+				fprintf(fp, "     nop\n     jump endif%d\nelse%d:\n", listIfs->numIf, listIfs->numIf);
+ 				addr++;
+			}
+			else fprintf(fp, "     jump endif%d\nelse%d:\n", listIfs->numIf, listIfs->numIf);
+			endAddr = addr;
+			addr++;
 
      } '{' Body '}' {
 
-			fprintf(fp, "fim:\n");
+			if(endAddr == addr - 1) {
+				fprintf(fp, "     nop\nendif%d:\n", listIfs->numIf);
+				addr++;
+			}
+			else fprintf(fp, "endif%d:\n", listIfs->numIf);
+			listIfs = listIfs->next;
+			endAddr = addr;
+			addr++;
 
      }
      ;
@@ -347,11 +432,13 @@ Expression : Parcel
            | Expression '+' Parcel {
 
    			fprintf(fp, "     add\n");
+			addr++;
 
            }
            | Expression '-' Parcel {
 
    			fprintf(fp, "     sub\n");
+			addr++;
 
            }	
            ;
@@ -359,16 +446,19 @@ Expression : Parcel
 Parcel : Parcel '*' Factor {
 
    			fprintf(fp, "     mul\n");
+			addr++;
 
        }	
        | Parcel '/' Factor {
 
    			fprintf(fp, "     div\n");
+			addr++;
 
        }	
        | Parcel '%' Factor {
 
    			fprintf(fp, "     mod\n");
+			addr++;
 
        }	
        | Factor
@@ -377,6 +467,7 @@ Parcel : Parcel '*' Factor {
 Factor : NUMBER	{
 
    			fprintf(fp, "     pushi %d\n", $1);
+			addr++;
 
        }		
        | Value
@@ -387,9 +478,10 @@ Factor : NUMBER	{
 Value : NAME {
 
 			if(existVar(t, $1) == YES) {
-				if(strcmp(getTypeVar(t, $1), "integer") == 0) {
+				if(getTypeVar(t, $1) == INTEGER) {
 					int varIndex = getVarIndex(t, $1);
 					fprintf(fp, "     pushg %d\n", varIndex);
+					addr++;
 				}
 				else {
 					char buf[50];
@@ -407,9 +499,10 @@ Value : NAME {
       | NAME {
 
 			if(existVar(t, $1) == YES) {
-				if(strcmp(getTypeVar(t, $1), "array") == 0) {
+				if(getTypeVar(t, $1) == ARRAY) {
 					int varIndex = getVarIndex(t, $1);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+					addr += 3;
 				}
 				else {
 					char buf[50];
@@ -426,14 +519,16 @@ Value : NAME {
       } '[' Expression ']' {
 
 			fprintf(fp, "     loadn\n");
+			addr++;
 
       }															
       | NAME {
 
 			if(existVar(t, $1) == YES) {
-				if(strcmp(getTypeVar(t, $1), "matrix") == 0) {
+				if(getTypeVar(t, $1) == MATRIX) {
 					int varIndex = getVarIndex(t, $1);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
+					addr += 3;
 				}
 				else {
 					char buf[50];
@@ -451,10 +546,12 @@ Value : NAME {
 
 			int numCols = getNumCols(t, $1);
 			fprintf(fp, "     pushi %d\n     mul\n", numCols);
+			addr += 2;
 
       } '[' Expression ']' {
 
 			fprintf(fp, "     add\n     loadn\n");
+			addr += 2;
 
       }												
       ;
@@ -475,31 +572,37 @@ BooleanExpression : BooleanExpression AND BooleanFactor /* loading information..
 BooleanFactor : Expression EQLS Expression {
 
    			fprintf(fp, "     equal\n");
+			addr++;
 
               }
               | Expression DIFF Expression {
 
    			fprintf(fp, "     not\n");
+			addr++;
 
               }
               | Expression '<' Expression {
 
    			fprintf(fp, "     inf\n");
+			addr++;
 
               }
               | Expression '>' Expression {
 
    			fprintf(fp, "     sup\n");
+			addr++;
 
               }
 	      | Expression SMEQ Expression {
 
    			fprintf(fp, "     infeq\n");
+			addr++;
 
               }
               | Expression GTEQ Expression {
 
    			fprintf(fp, "     supeq\n");
+			addr++;
 
               }
               | '(' BooleanExpression ')'

@@ -2,13 +2,10 @@ x; y; z;
 
 START
 
-PRINT ("Insert the first number: ");
 READ (x);
 
-PRINT ("Insert the second number: ");
 READ (y);
 
-PRINT ("Insert the third number: ");
 READ (z);
 
 
@@ -16,11 +13,13 @@ IF (x >= y) {
 
 	IF (x >= z) {
 
+		PRINT ("Resultado: ");
 		PRINT (x);
 	}
 
 	ELSE {
 
+		PRINT ("Resultado: ");
 		PRINT (z);
 
 	}
@@ -29,11 +28,13 @@ ELSE {
 
 	IF (y >= z) {
 
+		PRINT ("Resultado: ");
 		PRINT (y);
 
 	}
  	ELSE {
 
+		PRINT ("Resultado: ");
 		PRINT (z);
 
 	}
