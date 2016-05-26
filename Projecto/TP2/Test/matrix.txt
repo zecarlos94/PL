@@ -1,16 +1,20 @@
-i; j; max; soma; med; x;
-matrix [5][4]; 
+i; j; max; soma; med; x; n; m; D2 matrix [2][2]; 
 
 START
 
+n = 2;
+m = 2;
+
 WHILE (i < n) {	
 
-	WHILE (j < n) {
+	j = 0;
+
+	WHILE (j < m) {
 
 		PRINT ("Insert next number: ");
 		READ (x);
 
-		matrix [i][j] = x;
+		D2 matrix [i][j] = x;
 
 		soma = soma + x;
 

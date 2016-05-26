@@ -1,8 +1,10 @@
 %{
 
 #define _GNU_SOURCE
+
 #define NO  0
 #define YES 1
+
 #define INTEGER 0
 #define ARRAY   1
 #define MATRIX  2
@@ -100,7 +102,7 @@ ListIfs listIfs = NULL;
 %token <str> NAME TEXT EQLS DIFF SMEQ GTEQ
 %token <num> NUMBER
 %token AND OR  
-%token START END WHILE IF READ PRINT ELSE
+%token START END WHILE IF READ PRINT ELSE D1 D2
 
 /* Non-terminal symbols */
 //%type <str> Declarations Declaration InitArray InitMatrix Body Statement Args MoreArgs Value Prints Else Expression Parcel Factor BooleanExpression BooleanFactor
@@ -137,32 +139,32 @@ Declarations : /* EMPTY */
 			}
 
              }
-	     | Declarations NAME '[' NUMBER ']'	';' {
+	     | Declarations D1 NAME '[' NUMBER ']' ';' {
 
-			if(existVar(t, $2) == YES) {
+			if(existVar(t, $3) == YES) {
 				char buf[50];
-				sprintf(buf, "variable %s already declared", $2);
+				sprintf(buf, "variable %s already declared", $3);
 				yyerror(buf);
 			}
 			else {
-				t = insertVar(t, $2, ARRAY, sp, 1, $4);
-				fprintf(fp, "     pushn %d\n", $4);
-				sp += $4;
+				t = insertVar(t, $3, ARRAY, sp, 1, $5);
+				fprintf(fp, "     pushn %d\n", $5);
+				sp += $5;
 				addr++;
 			}
 
 	     }			
-             | Declarations NAME '[' NUMBER ']' '[' NUMBER ']' ';' {
+             | Declarations D2 NAME '[' NUMBER ']' '[' NUMBER ']' ';' {
 
-			if(existVar(t, $2) == YES) {
+			if(existVar(t, $3) == YES) {
 				char buf[50];
-				sprintf(buf, "variable %s already declared", $2);
+				sprintf(buf, "variable %s already declared", $3);
 				yyerror(buf);
 			}
 			else {
-				t = insertVar(t, $2, MATRIX, sp, $4, $7);
-				fprintf(fp, "     pushn %d\n", $4 * $7);
-				sp += $4 * $7;
+				t = insertVar(t, $3, MATRIX, sp, $5, $8);
+				fprintf(fp, "     pushn %d\n", $5 * $8);
+				sp += $5 * $8;
 				addr++;
 			}
    
@@ -194,23 +196,23 @@ Statement : NAME '=' Expression ';' {
 			}
           
 	  }									
-          | NAME {
+          | D1 NAME {
 
-			if(existVar(t, $1) == YES) {
-				if(getTypeVar(t, $1) == ARRAY) {
-					int varIndex = getVarIndex(t, $1);
+			if(existVar(t, $2) == YES) {
+				if(getTypeVar(t, $2) == ARRAY) {
+					int varIndex = getVarIndex(t, $2);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
 					addr += 3;
 				}
 				else {
 					char buf[50];
-					sprintf(buf, "variable %s has another type", $1);
+					sprintf(buf, "variable %s has another type", $2);
 					yyerror(buf);
 				}
 			}
 			else {
 				char buf[50];
-				sprintf(buf, "variable %s is not declared", $1);
+				sprintf(buf, "variable %s is not declared", $2);
 				yyerror(buf);
 			}
           
@@ -220,29 +222,29 @@ Statement : NAME '=' Expression ';' {
 			addr++;
 
           }				
-          | NAME {
+          | D2 NAME {
 
-			if(existVar(t, $1) == YES) {
-				if(getTypeVar(t, $1) == MATRIX) {
-					int varIndex = getVarIndex(t, $1);
+			if(existVar(t, $2) == YES) {
+				if(getTypeVar(t, $2) == MATRIX) {
+					int varIndex = getVarIndex(t, $2);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
 					addr += 3;
 				}
 				else {
 					char buf[50];
-					sprintf(buf, "variable %s has another type", $1);
+					sprintf(buf, "variable %s has another type", $2);
 					yyerror(buf);
 				}
 			}
 			else {
 				char buf[50];
-				sprintf(buf, "variable %s is not declared", $1);
+				sprintf(buf, "variable %s is not declared", $2);
 				yyerror(buf);
 			}
           
 	  } '[' Expression ']' {
 
-			int numCols = getNumCols(t, $1);
+			int numCols = getNumCols(t, $2);
 			fprintf(fp, "     pushi %d\n     mul\n", numCols);
 			addr += 2;
 
@@ -317,23 +319,23 @@ Statement : NAME '=' Expression ';' {
 			}
           
 	  }
- 	  | READ '(' NAME {
+ 	  | READ '(' D1 NAME {
 
-			if(existVar(t, $3) == YES) {
-				if(getTypeVar(t, $3) == ARRAY) {
-					int varIndex = getVarIndex(t, $3);
+			if(existVar(t, $4) == YES) {
+				if(getTypeVar(t, $4) == ARRAY) {
+					int varIndex = getVarIndex(t, $4);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
 					addr += 3;
 				}
 				else {
 					char buf[50];
-					sprintf(buf, "variable %s has another type", $3);
+					sprintf(buf, "variable %s has another type", $4);
 					yyerror(buf);
 				}
 			}
 			else {
 				char buf[50];
-				sprintf(buf, "variable %s is not declared", $3);
+				sprintf(buf, "variable %s is not declared", $4);
 				yyerror(buf);
 			}
           
@@ -343,29 +345,29 @@ Statement : NAME '=' Expression ';' {
 			addr += 3;
 
           }
-          | READ '(' NAME {
+          | READ '(' D2 NAME {
 
-			if(existVar(t, $3) == YES) {
-				if(getTypeVar(t, $3) == MATRIX) {
-					int varIndex = getVarIndex(t, $3);
+			if(existVar(t, $4) == YES) {
+				if(getTypeVar(t, $4) == MATRIX) {
+					int varIndex = getVarIndex(t, $4);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
 					addr += 3;
 				}
 				else {
 					char buf[50];
-					sprintf(buf, "variable %s has another type", $3);
+					sprintf(buf, "variable %s has another type", $4);
 					yyerror(buf);
 				}
 			}
 			else {
 				char buf[50];
-				sprintf(buf, "variable %s is not declared", $3);
+				sprintf(buf, "variable %s is not declared", $4);
 				yyerror(buf);
 			}
           
 	  } '[' Expression ']' {
 
-			int numCols = getNumCols(t, $3);
+			int numCols = getNumCols(t, $4);
 			fprintf(fp, "     pushi %d\n     mul\n", numCols);
 			addr += 2;
 
@@ -496,23 +498,23 @@ Value : NAME {
 			}
           
       }											     				
-      | NAME {
+      | D1 NAME {
 
-			if(existVar(t, $1) == YES) {
-				if(getTypeVar(t, $1) == ARRAY) {
-					int varIndex = getVarIndex(t, $1);
+			if(existVar(t, $2) == YES) {
+				if(getTypeVar(t, $2) == ARRAY) {
+					int varIndex = getVarIndex(t, $2);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
 					addr += 3;
 				}
 				else {
 					char buf[50];
-					sprintf(buf, "variable %s has another type", $1);
+					sprintf(buf, "variable %s has another type", $2);
 					yyerror(buf);
 				}
 			}
 			else {
 				char buf[50];
-				sprintf(buf, "variable %s is not declared", $1);
+				sprintf(buf, "variable %s is not declared", $2);
 				yyerror(buf);
 			}
           
@@ -522,29 +524,29 @@ Value : NAME {
 			addr++;
 
       }															
-      | NAME {
+      | D2 NAME {
 
-			if(existVar(t, $1) == YES) {
-				if(getTypeVar(t, $1) == MATRIX) {
-					int varIndex = getVarIndex(t, $1);
+			if(existVar(t, $2) == YES) {
+				if(getTypeVar(t, $2) == MATRIX) {
+					int varIndex = getVarIndex(t, $2);
 					fprintf(fp, "     pushgp\n     pushi %d\n     padd\n", varIndex);
 					addr += 3;
 				}
 				else {
 					char buf[50];
-					sprintf(buf, "variable %s has another type", $1);
+					sprintf(buf, "variable %s has another type", $2);
 					yyerror(buf);
 				}
 			}
 			else {
 				char buf[50];
-				sprintf(buf, "variable %s is not declared", $1);
+				sprintf(buf, "variable %s is not declared", $2);
 				yyerror(buf);
 			}
           
       } '[' Expression ']' {
 
-			int numCols = getNumCols(t, $1);
+			int numCols = getNumCols(t, $2);
 			fprintf(fp, "     pushi %d\n     mul\n", numCols);
 			addr += 2;
 

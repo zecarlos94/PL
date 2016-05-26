@@ -3,9 +3,7 @@ x; y; z;
 START
 
 READ (x);
-
 READ (y);
-
 READ (z);
 
 
