@@ -473,7 +473,12 @@ Factor : NUMBER	{
 
        }		
        | Value
-       | NAME '(' Args ')' /* loading information... */
+       | NAME '(' Args ')' {
+	
+			fprintf(fp, "     jump %s\nreturn:\n", $1);
+			addr++;
+
+       }
        | '(' Expression ')'
        ;
 
@@ -563,6 +568,12 @@ Args : /* EMPTY */
      ;
 
 MoreArgs : Value 
+         | MoreArgs ',' NUMBER {
+
+			fprintf(fp, "     pushi %d\n", $3);
+			addr++;
+
+         }
          | MoreArgs ',' Value 
          ;
 
@@ -619,7 +630,7 @@ int yyerror(char *s) {
 	return 0;
 }
 
-int main(int argc, char *argv[]) {
+int main() {
 	fp = fopen("test.vm", "w");
 	yyparse();
 	return 0;

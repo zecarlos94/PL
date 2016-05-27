@@ -11,6 +11,7 @@ WHILE (i < n) {
 
 	WHILE (j < m) {
 
+		PRINT ("Insert next number: ");
 		READ (x);
 
 		D2 matrix [i][j] = x;
@@ -36,7 +37,7 @@ med = soma / (n * m);
 PRINT ("Average = ");
 PRINT (med);
 
-PRINT ("\nMax = ");
+PRINT ("Max = ");
 PRINT (max);
 
 END

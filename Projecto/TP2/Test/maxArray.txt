@@ -1,0 +1,32 @@
+D1 a[4]; i; max;
+
+START
+
+WHILE (i < 4) {
+
+	READ (D1 a[i]);
+	i = i + 1;
+
+}
+
+max = D1 a[0];
+i = 1;
+
+WHILE (i < 4) {
+
+	IF (D1 a[i] > max) {
+
+		max = D1 a[i];
+
+	}
+
+	i = i + 1;
+
+}
+
+PRINT ("Max = ");
+PRINT (max);
+
+END
+
+	

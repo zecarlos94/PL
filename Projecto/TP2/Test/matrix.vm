@@ -1,0 +1,77 @@
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushn 4
+start
+     pushi 2
+     storeg 6
+     pushi 2
+     storeg 7
+while1:
+     pushg 0
+     pushg 6
+     inf
+     jz endWhile1
+     pushi 0
+     storeg 1
+while2:
+     pushg 1
+     pushg 7
+     inf
+     jz endWhile2
+     read
+     atoi
+     storeg 5
+     pushgp
+     pushi 8
+     padd
+     pushg 0
+     pushi 2
+     mul
+     pushg 1
+     add
+     pushg 5
+     storen
+     pushg 3
+     pushg 5
+     add
+     storeg 3
+     pushg 5
+     pushg 2
+     sup
+     jz else1
+     pushg 5
+     storeg 2
+else1:
+     pushg 1
+     pushi 1
+     add
+     storeg 1
+     jump while2
+endWhile2:
+     pushg 0
+     pushi 1
+     add
+     storeg 0
+     jump while1
+endWhile1:
+     pushg 3
+     pushg 6
+     pushg 7
+     mul
+     div
+     storeg 4
+     pushs "Average = "
+     writes
+     pushg 4
+     writei
+     pushs "\nMax = "
+     writes
+     pushg 2
+     writei
+     end

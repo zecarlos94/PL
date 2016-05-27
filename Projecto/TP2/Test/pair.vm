@@ -1,0 +1,40 @@
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+start
+     pushs "How many numbers do you want to read?\n"
+     writes
+     read
+     atoi
+     storeg 0
+while1:
+     pushg 2
+     pushg 0
+     inf
+     jz endWhile1
+     read
+     atoi
+     storeg 1
+     pushg 1
+     pushi 2
+     mod
+     pushi 0
+     equal
+     jz else1
+     pushg 3
+     pushi 1
+     add
+     storeg 3
+else1:
+     pushg 2
+     pushi 1
+     add
+     storeg 2
+     jump while1
+endWhile1:
+     pushs "Resultado: "
+     writes
+     pushg 3
+     writei
+     end

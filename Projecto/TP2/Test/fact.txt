@@ -1,0 +1,19 @@
+n; q;
+
+START
+
+READ (n);
+q = 1;
+
+WHILE (n > 0) {
+
+	q = q * n;
+	n = n - 1;
+
+}
+
+PRINT ("Fact = ");
+PRINT (q);
+
+END
+

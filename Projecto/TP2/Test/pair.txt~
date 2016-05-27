@@ -2,11 +2,12 @@ n; x; i; count;
 
 START
 
-PRINT ("How many numbers do you want to read?\n");
+PRINT ("How many numbers you want to read? ");
 READ (n);
 
 WHILE (i < n) {
 
+	PRINT ("Insert the next number: ");
 	READ (x);
 	
 	IF (x % 2 == 0) {
@@ -18,7 +19,6 @@ WHILE (i < n) {
 	i = i + 1;
 }
 
-PRINT ("Resultado: ");
 PRINT (count);
 
 END
