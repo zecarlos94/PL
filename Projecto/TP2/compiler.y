@@ -577,8 +577,18 @@ MoreArgs : Value
          | MoreArgs ',' Value 
          ;
 
-BooleanExpression : BooleanExpression AND BooleanFactor /* loading information... */
-                  | BooleanExpression OR BooleanFactor /* loading information... */
+BooleanExpression : BooleanExpression AND BooleanFactor {
+
+			fprintf(fp, "     mul\n");
+			addr++;
+
+		  }
+                  | BooleanExpression OR BooleanFactor {
+
+			fprintf(fp, "     add\n");
+			addr++;
+
+	          }
                   | BooleanFactor
                   ;
 

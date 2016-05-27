@@ -1,0 +1,19 @@
+a; b;
+
+START
+
+READ (a);
+READ (b);
+
+IF ((a == b) || (b > a)) {
+	
+	PRINT (a);
+
+}
+ELSE {
+
+	PRINT (b);
+
+}
+
+END
