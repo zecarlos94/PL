@@ -284,6 +284,7 @@ Statement : NAME '=' Expression ';' {
 			}		
 			else fprintf(fp, "endWhile%d:\n", listWhiles->numWhile);
 			endAddr = addr;
+			addr++;
 			listWhiles = listWhiles->next;
 
           }	
@@ -600,8 +601,8 @@ BooleanFactor : Expression EQLS Expression {
               }
               | Expression DIFF Expression {
 
-   			fprintf(fp, "     not\n");
-			addr++;
+   			fprintf(fp, "     equal\n     pushi 0\n     equal\n");
+			addr += 3;
 
               }
               | Expression '<' Expression {

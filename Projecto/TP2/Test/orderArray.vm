@@ -1,0 +1,136 @@
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushi 0
+     pushn 3
+start
+     pushi 3
+     storeg 3
+while1:
+     pushg 0
+     pushg 3
+     inf
+     jz endWhile1
+     read
+     atoi
+     storeg 2
+     pushgp
+     pushi 6
+     padd
+     pushg 0
+     pushg 2
+     storen
+     pushg 0
+     pushi 1
+     add
+     storeg 0
+     jump while1
+endWhile1:
+     pushi 0
+     storeg 0
+while2:
+     pushg 0
+     pushg 3
+     inf
+     jz endWhile2
+     pushg 0
+     storeg 4
+     pushg 0
+     pushi 1
+     add
+     storeg 1
+while3:
+     pushg 1
+     pushg 3
+     inf
+     jz endWhile3
+     pushgp
+     pushi 6
+     padd
+     pushg 4
+     loadn
+     pushgp
+     pushi 6
+     padd
+     pushg 1
+     loadn
+     sup
+     jz else1
+     pushg 1
+     storeg 4
+else1:
+     pushg 1
+     pushi 1
+     add
+     storeg 1
+     jump while3
+endWhile3:
+     pushg 4
+     pushg 0
+     equal
+     pushi 0
+     equal
+     jz else2
+     pushgp
+     pushi 6
+     padd
+     pushg 0
+     loadn
+     storeg 5
+     pushgp
+     pushi 6
+     padd
+     pushg 0
+     pushgp
+     pushi 6
+     padd
+     pushg 4
+     loadn
+     storen
+     pushgp
+     pushi 6
+     padd
+     pushg 4
+     pushg 5
+     storen
+else2:
+     pushg 0
+     pushi 1
+     add
+     storeg 0
+     jump while2
+endWhile2:
+     pushi 0
+     storeg 0
+while4:
+     pushg 0
+     pushg 3
+     inf
+     jz endWhile4
+     pushgp
+     pushi 6
+     padd
+     pushg 0
+     loadn
+     writei
+     pushg 0
+     pushg 3
+     pushi 1
+     sub
+     equal
+     pushi 0
+     equal
+     jz else3
+     pushs ", "
+     writes
+else3:
+     pushg 0
+     pushi 1
+     add
+     storeg 0
+     jump while4
+endWhile4:
+     nop
+     end

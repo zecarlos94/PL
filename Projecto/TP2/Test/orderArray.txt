@@ -1,14 +1,13 @@
-i; j; x; n; pos; swap; array [5];
+i; j; x; n; pos; swap; D1 array [3];
 
 START
 
+n = 3;
+
 WHILE (i < n) {
 
-	PRINT ("Insert number: ");
 	READ (x);
-
-	array [i] = x;
-
+	D1 array [i] = x;
 	i = i + 1;
 }
 
@@ -17,36 +16,41 @@ i = 0;
 WHILE (i < n) {
 
 	pos = i;
-
 	j = i + 1;
 
 	WHILE (j < n) {
 
-		IF (array [pos] > array [j]) {
+		IF (D1 array [pos] > D1 array [j]) {
 
 			pos = j;
 
 		}
+
+		j = j + 1;
+
 	}
 
 	IF (pos != i) {
 
-		swap = array [i];
-		array [i] = array [pos];
-		array [pos] = swap;
+		swap = D1 array [i];
+		D1 array [i] = D1 array [pos];
+		D1 array [pos] = swap;
 
 	}
+
+	i = i + 1;
+
 }
 
 i = 0;
 
 WHILE (i < n) {
 
-	PRINT (array [i]);
+	PRINT (D1 array [i]);
 
 	IF (i != n - 1) {
 
-		PRINT (" ,");
+		PRINT (", ");
 
 	}
 
