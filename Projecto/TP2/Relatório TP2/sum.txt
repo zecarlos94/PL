@@ -1,0 +1,20 @@
+i; n; x; sum;
+
+START
+
+PRINT ("How many numbers you want to read?\n");
+READ (n);
+
+WHILE (i < n) {
+
+	READ (x);
+
+	sum = sum + x;
+
+	i = i + 1;
+}
+
+PRINT ("Resultado: ");
+PRINT (sum);
+
+END

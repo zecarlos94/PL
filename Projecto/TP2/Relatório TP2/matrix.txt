@@ -1,0 +1,42 @@
+i; j; max; soma; med; x; n; m; D2 matrix [2][2]; 
+
+START
+
+n = 2;
+m = 2;
+
+WHILE (i < n) {	
+
+	j = 0;
+
+	WHILE (j < m) {
+
+		READ (x);
+
+		D2 matrix [i][j] = x;
+
+		soma = soma + x;
+
+		IF (x > max) {
+
+			max = x;
+
+		}
+
+		j = j + 1;
+
+	}
+
+	i = i + 1;
+
+}
+
+med = soma / (n * m);
+
+PRINT ("Average = ");
+PRINT (med);
+
+PRINT ("\nMax = ");
+PRINT (max);
+
+END

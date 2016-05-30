@@ -1,0 +1,42 @@
+x; y; z;
+
+START
+
+READ (x);
+READ (y);
+READ (z);
+
+
+IF (x >= y) {
+
+	IF (x >= z) {
+
+		PRINT ("Resultado: ");
+		PRINT (x);
+	}
+
+	ELSE {
+
+		PRINT ("Resultado: ");
+		PRINT (z);
+
+	}
+}
+ELSE {
+
+	IF (y >= z) {
+
+		PRINT ("Resultado: ");
+		PRINT (y);
+
+	}
+ 	ELSE {
+
+		PRINT ("Resultado: ");
+		PRINT (z);
+
+	}
+
+}
+
+END

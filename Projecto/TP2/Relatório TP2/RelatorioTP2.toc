@@ -1,4 +1,3 @@
-\select@language {portuges}
 \contentsline {paragraph}{}{1}
 \contentsline {paragraph}{}{1}
 \contentsline {paragraph}{}{1}
@@ -13,14 +12,24 @@
 \contentsline {paragraph}{}{3}
 \contentsline {paragraph}{}{3}
 \contentsline {paragraph}{}{3}
-\contentsline {section}{\numberline {2.2}Especifica\c c\~ao do Requisitos}{4}
-\contentsline {chapter}{\numberline {3}Concep\c c\~ao/desenho da Resolu\c c\~ao}{5}
-\contentsline {section}{\numberline {3.1}Estruturas de Dados}{5}
-\contentsline {section}{\numberline {3.2}Algoritmos Implementados}{5}
-\contentsline {chapter}{\numberline {4}Codifica\c c\~ao}{6}
-\contentsline {section}{\numberline {4.1}Alternativas, Decis\~oes e Problemas de Implementa\c c\~ao}{6}
-\contentsline {section}{\numberline {4.2}Testes realizados e Resultados}{6}
-\contentsline {chapter}{\numberline {5}Conclus\~ao}{7}
-\contentsline {paragraph}{}{7}
-\contentsline {paragraph}{}{7}
-\contentsline {chapter}{\numberline {A}C\'odigo do Programa}{8}
+\contentsline {section}{\numberline {2.2}Especifica\c c\~ao de Requisitos}{4}
+\contentsline {chapter}{\numberline {3}Concep\c c\~ao/Desenho da Resolu\c c\~ao}{6}
+\contentsline {section}{\numberline {3.1}Estruturas de Dados}{6}
+\contentsline {section}{\numberline {3.2}Algoritmos Implementados}{7}
+\contentsline {chapter}{\numberline {4}Codifica\c c\~ao}{8}
+\contentsline {section}{\numberline {4.1}Alternativas, Decis\~oes e Problemas de Implementa\c c\~ao}{8}
+\contentsline {subsubsection}{Operadores}{8}
+\contentsline {subsubsection}{Aninhamento}{8}
+\contentsline {subsubsection}{Conflitos}{8}
+\contentsline {section}{\numberline {4.2}Testes realizados e Resultados}{9}
+\contentsline {subsubsection}{Lidos 3 n\'umeros, escrever o maior deles}{9}
+\contentsline {subsubsection}{Ler N n\'umeros, calcular e imprimir o seu somat\'orio}{11}
+\contentsline {subsubsection}{Contar e imprimir os n\'umeros pares de uma sequ\^encia de N n\'umeros dados}{13}
+\contentsline {subsubsection}{Ler e armazenar os elementos de um vetor de comprimento N. Imprimir os valores por ordem crescente ap\'os fazer a ordena\c c\~ao do array por trocas diretas}{15}
+\contentsline {subsubsection}{Ler e armazenar os elementos de uma matriz NxM. Calcular e imprimir a m\'edia e m\'aximo dessa matriz}{18}
+\contentsline {chapter}{\numberline {5}Conclus\~ao}{20}
+\contentsline {paragraph}{}{20}
+\contentsline {paragraph}{}{20}
+\contentsline {chapter}{\numberline {A}Ficheiro \textit {Yacc}}{21}
+\contentsline {chapter}{\numberline {B}Ficheiro \textit {Flex}}{30}
+\contentsline {chapter}{\numberline {C}Makefile}{31}

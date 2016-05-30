@@ -3,39 +3,30 @@
      pushi 0
      pushi 0
 start
-     pushs "How many numbers do you want to read?\n\n"
+     pushs "How many numbers you want to read?\n"
      writes
      read
      atoi
-     storeg 0
+     storeg 1
 while1:
-     pushg 2
      pushg 0
+     pushg 1
      inf
      jz endWhile1
      read
      atoi
-     storeg 1
-     pushg 1
-     pushi 2
-     mod
-     pushi 0
-     equal
-     jz else1
-     pushg 1
-     writei
+     storeg 2
      pushg 3
-     pushi 1
+     pushg 2
      add
      storeg 3
-else1:
-     pushg 2
+     pushg 0
      pushi 1
      add
-     storeg 2
+     storeg 0
      jump while1
 endWhile1:
-     pushs "\nNumber of pairs: "
+     pushs "Resultado: "
      writes
      pushg 3
      writei
